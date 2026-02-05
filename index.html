@@ -552,6 +552,53 @@
             font-weight: 500;
         }
 
+        .section-subtitle {
+            margin-top: 20px;
+            margin-bottom: 12px;
+            color: var(--f2-blue-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            font-size: 0.85em;
+        }
+
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            margin-top: 15px;
+        }
+
+        .insight-card {
+            background: linear-gradient(135deg, var(--f2-white) 0%, #f7f9fc 100%);
+            border-radius: 12px;
+            padding: 20px 22px;
+            box-shadow: 0 6px 16px rgba(0,51,102,0.12);
+            border-left: 4px solid var(--f2-blue-accent);
+        }
+
+        .insight-card .label {
+            color: var(--f2-gray-medium);
+            text-transform: uppercase;
+            font-size: 0.72em;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            margin-bottom: 8px;
+        }
+
+        .insight-card .value {
+            font-size: 1.9em;
+            font-weight: 800;
+            color: var(--f2-blue-dark);
+        }
+
+        .insight-card .subtext {
+            margin-top: 6px;
+            color: var(--f2-gray-light);
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
         .comparison-section {
             margin-top: 30px;
         }
@@ -703,6 +750,14 @@
             </div>
         </div>
 
+        <!-- Global Insights -->
+        <div class="section" id="global-insights-section">
+            <h2 class="section-title">Resumen General</h2>
+            <div class="insight-grid" id="global-insights-grid"></div>
+            <div class="section-subtitle">Líderes del rendimiento</div>
+            <div class="insight-grid" id="leader-insights-grid"></div>
+        </div>
+
         <!-- Historical Stats (only shown in overall view) -->
         <div id="historical-stats" style="display: none;">
             <div class="section">
@@ -767,6 +822,13 @@
                             <th>Piloto</th>
                             <th>Equipo</th>
                             <th class="center">Puntos</th>
+                            <th class="center">Carreras</th>
+                            <th class="center">Victorias</th>
+                            <th class="center">Podios</th>
+                            <th class="center">Top 5</th>
+                            <th class="center">Avg Pos</th>
+                            <th class="center">Avg Pts</th>
+                            <th class="center">DNF</th>
                             <th class="center">Superlicencia</th>
                             <th class="center">Asistencia</th>
                         </tr>
@@ -861,16 +923,14 @@
             // List of possible season files to check
             const possibleFiles = [
                 { key: 'overall', file: 'championship_master_overall_export.json', name: 'General Histórico', isOverall: true },
-                { key: 's1', file: 'championship_master_export_s.json', name: 'Temporada 1', isOverall: false },
-                { key: 's2', file: 'championship_master_export_s2.json', name: 'Temporada 2', isOverall: false },
-                { key: 's3', file: 'championship_master_export_s3.json', name: 'Temporada 3', isOverall: false },
-                { key: 's4', file: 'championship_master_export_s4.json', name: 'Temporada 4', isOverall: false },
-                { key: 's5', file: 'championship_master_export_s5.json', name: 'Temporada 5', isOverall: false },
-                { key: 's6', file: 'championship_master_export_s6.json', name: 'Temporada 6', isOverall: false },
-                { key: 's7', file: 'championship_master_export_s7.json', name: 'Temporada 7', isOverall: false },
-                { key: 's8', file: 'championship_master_export_s8.json', name: 'Temporada 8', isOverall: false },
-                { key: 's9', file: 'championship_master_export_s9.json', name: 'Temporada 9', isOverall: false },
-                { key: 's10', file: 'championship_master_export_s10.json', name: 'Temporada 10', isOverall: false }
+                { key: 's1', file: 'Series1.json', name: 'Temporada 1', isOverall: false },
+                { key: 's2', file: 'Series2.json', name: 'Temporada 2', isOverall: false },
+                { key: 's2s', file: 'Series2s.json', name: 'Temporada 2S', isOverall: false },
+                { key: 's3', file: 'Series3.json', name: 'Temporada 3', isOverall: false },
+                { key: 's4', file: 'Series4.json', name: 'Temporada 4', isOverall: false },
+                { key: 's6', file: 'Series6.json', name: 'Temporada 6', isOverall: false },
+                { key: 'academy1', file: 'Academy1.json', name: 'Academy 1', isOverall: false },
+                { key: 'academy2', file: 'Academy2.json', name: 'Academy 2', isOverall: false }
             ];
 
             seasonsList = [];
@@ -1114,6 +1174,7 @@
             let totalRaces = 0;
             let totalDriversEver = new Set();
             const attendanceTotals = {};
+            const overallRaces = [];
 
             // Get season info
             const regularSeasons = seasonsList.filter(s => !s.isOverall);
@@ -1123,6 +1184,8 @@
             for (const season of regularSeasons) {
                 const seasonData = allData[season.key];
                 if (!seasonData) continue;
+
+                overallRaces.push(...(seasonData.races || []));
 
                 // Count races
                 totalRaces += (seasonData.races || []).filter(r => !r.planned && r.results?.length > 0).length;
@@ -1182,6 +1245,8 @@
             const mostPodiums = driversArray.reduce((max, d) => d.podiums > max.podiums ? d : max, driversArray[0] || { podiums: 0 });
             const mostRaces = driversArray.reduce((max, d) => d.races > max.races ? d : max, driversArray[0] || { races: 0 });
 
+            const overallPerformance = buildRacePerformanceStats(overallRaces);
+
             // Update stats cards
             setStatCardTitles('overall');
             document.getElementById('current-round').textContent = regularSeasons.length;
@@ -1233,6 +1298,15 @@
                 </div>
             `;
 
+            renderGlobalInsights(overallPerformance, 'Histórico');
+            renderLeaderInsights(
+                buildLeaderInsights(
+                    overallPerformance.statsByDriver,
+                    (driverId) => allDrivers.get(driverId)?.name || driverId,
+                    overallPerformance.completedRaces.length
+                )
+            );
+
             // Render season comparison
             renderSeasonComparison();
 
@@ -1243,7 +1317,8 @@
                 allDrivers,
                 allTeams,
                 attendanceTotals,
-                totalRounds: totalRaces
+                totalRounds: totalRaces,
+                driverPerformance: overallPerformance.statsByDriver
             };
 
             // Render combined standings
@@ -1253,7 +1328,7 @@
             renderHistoricalProgression(driversArray.slice(0, 8));
 
             // Driver stats and race selector
-            renderDriverStatsOverall(driversArray, allDrivers, allTeams, attendanceTotals, totalRaces);
+            renderDriverStatsOverall(driversArray, allDrivers, allTeams, attendanceTotals, totalRaces, overallPerformance.statsByDriver);
             renderAttendanceTableOverall(driversArray, allTeams, attendanceTotals, totalRaces);
             renderSuperlicenseTableOverall(driversArray, allTeams, allDrivers);
             renderRaceSelector(buildOverallRaceItems(), 'overall');
@@ -1476,6 +1551,8 @@
             const plannedRaces = data.races.filter(r => r.planned === true);
 
             const calculatedStandings = calculateStandingsFromRaces(data.races, data.drivers, data.teams);
+            const performance = buildRacePerformanceStats(data.races || []);
+            const seasonInfo = seasonsList.find(s => s.key === seasonKey);
 
             // Update stats cards with proper labels
             setStatCardTitles(isInProgress ? 'season' : 'season-finished');
@@ -1486,6 +1563,15 @@
             document.getElementById('planned-races').textContent = isInProgress ? plannedRaces.length : data.races.length;
             document.getElementById('total-teams').textContent = Object.keys(data.teams || {}).length;
             document.getElementById('total-races').textContent = data.races.length;
+
+            renderGlobalInsights(performance, seasonInfo?.name || 'Temporada');
+            renderLeaderInsights(
+                buildLeaderInsights(
+                    performance.statsByDriver,
+                    (driverId) => data.drivers?.[driverId]?.name || driverId,
+                    performance.completedRaces.length
+                )
+            );
 
             // Update standings header and title
             setStandingsHeader(false);
@@ -1498,7 +1584,8 @@
                 seasonKey,
                 data,
                 standings: calculatedStandings,
-                totalRounds: completedRaces.length
+                totalRounds: completedRaces.length,
+                driverPerformance: performance.statsByDriver
             };
 
             // Render all sections
@@ -1506,7 +1593,7 @@
             renderStandings(calculatedStandings, data.drivers, data.races, isInProgress);
 
             if (mode !== 'home') {
-                renderDriverStats(data.drivers, data.teams, calculatedStandings, data.attendance, completedRaces.length);
+                renderDriverStats(data.drivers, data.teams, calculatedStandings, data.attendance, completedRaces.length, performance.statsByDriver);
                 renderAttendanceTable(data.drivers, data.teams, data.attendance, completedRaces.length);
                 renderSuperlicenseTable(data.drivers, data.teams);
                 renderRaceSelector(buildSeasonRaceItems(data), seasonKey);
@@ -1585,6 +1672,211 @@
             });
 
             return standingsArray;
+        }
+
+        function normalizeStatus(status) {
+            if (status === null || status === undefined) return '';
+            return String(status).trim().toUpperCase();
+        }
+
+        function isNonFinish(status) {
+            const normalized = normalizeStatus(status);
+            if (!normalized || normalized === 'NAN' || normalized === 'FIN' || normalized === '-') return false;
+            const nonFinishTokens = ['DNF', 'NC', 'DSQ', 'DNS', 'RET', 'DQ', 'DNQ', 'MECH'];
+            return nonFinishTokens.some(token => normalized.includes(token));
+        }
+
+        function calculateStdDev(values) {
+            if (!values || values.length === 0) return 0;
+            const mean = values.reduce((sum, v) => sum + v, 0) / values.length;
+            const variance = values.reduce((sum, v) => sum + Math.pow(v - mean, 2), 0) / values.length;
+            return Math.sqrt(variance);
+        }
+
+        function buildRacePerformanceStats(races) {
+            const completedRaces = (races || []).filter(r => !r.planned && r.results?.length > 0);
+            const statsByDriver = {};
+            let totalResults = 0;
+            let totalPoints = 0;
+            let totalDnfs = 0;
+
+            completedRaces.forEach(race => {
+                (race.results || []).forEach(result => {
+                    const driverId = result.driver_id;
+                    if (!driverId) return;
+
+                    if (!statsByDriver[driverId]) {
+                        statsByDriver[driverId] = {
+                            races: 0,
+                            points: 0,
+                            wins: 0,
+                            podiums: 0,
+                            top5: 0,
+                            top10: 0,
+                            dnfs: 0,
+                            bestFinish: null,
+                            worstFinish: null,
+                            finishPositions: []
+                        };
+                    }
+
+                    const stats = statsByDriver[driverId];
+                    const position = Number(result.position) || null;
+                    const points = Number(result.points) || 0;
+                    const status = normalizeStatus(result.status);
+
+                    stats.races += 1;
+                    stats.points += points;
+                    totalResults += 1;
+                    totalPoints += points;
+
+                    if (position !== null) {
+                        stats.finishPositions.push(position);
+                        stats.bestFinish = stats.bestFinish === null ? position : Math.min(stats.bestFinish, position);
+                        stats.worstFinish = stats.worstFinish === null ? position : Math.max(stats.worstFinish, position);
+
+                        if (position === 1) stats.wins += 1;
+                        if (position <= 3) stats.podiums += 1;
+                        if (position <= 5) stats.top5 += 1;
+                        if (position <= 10) stats.top10 += 1;
+                    }
+
+                    if (isNonFinish(status)) {
+                        stats.dnfs += 1;
+                        totalDnfs += 1;
+                    }
+                });
+            });
+
+            Object.values(statsByDriver).forEach(stats => {
+                const finishCount = stats.finishPositions.length;
+                stats.avgPoints = stats.races > 0 ? stats.points / stats.races : 0;
+                stats.avgFinish = finishCount > 0 ? stats.finishPositions.reduce((sum, v) => sum + v, 0) / finishCount : 0;
+                stats.consistency = finishCount > 0 ? calculateStdDev(stats.finishPositions) : 0;
+                stats.winRate = stats.races > 0 ? stats.wins / stats.races : 0;
+                stats.podiumRate = stats.races > 0 ? stats.podiums / stats.races : 0;
+                stats.top5Rate = stats.races > 0 ? stats.top5 / stats.races : 0;
+                stats.dnfRate = stats.races > 0 ? stats.dnfs / stats.races : 0;
+            });
+
+            return { statsByDriver, completedRaces, totalResults, totalPoints, totalDnfs };
+        }
+
+        function formatNumber(value, decimals = 0) {
+            const num = Number(value);
+            if (Number.isNaN(num)) return '-';
+            return num.toLocaleString('es-MX', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+        }
+
+        function renderGlobalInsights(performance, contextLabel = '') {
+            const container = document.getElementById('global-insights-grid');
+            if (!container || !performance) return;
+
+            const totalRaces = performance.completedRaces.length;
+            const avgDrivers = totalRaces > 0 ? performance.totalResults / totalRaces : 0;
+            const avgPoints = totalRaces > 0 ? performance.totalPoints / totalRaces : 0;
+            const dnfRate = performance.totalResults > 0 ? (performance.totalDnfs / performance.totalResults) * 100 : 0;
+
+            container.innerHTML = `
+                <div class="insight-card">
+                    <div class="label">${contextLabel} Carreras disputadas</div>
+                    <div class="value">${formatNumber(totalRaces)}</div>
+                    <div class="subtext">Solo carreras con resultados</div>
+                </div>
+                <div class="insight-card">
+                    <div class="label">Participaciones totales</div>
+                    <div class="value">${formatNumber(performance.totalResults)}</div>
+                    <div class="subtext">Promedio ${formatNumber(avgDrivers, 1)} pilotos/carrera</div>
+                </div>
+                <div class="insight-card">
+                    <div class="label">Puntos otorgados</div>
+                    <div class="value">${formatNumber(performance.totalPoints)}</div>
+                    <div class="subtext">Promedio ${formatNumber(avgPoints, 1)} pts/carrera</div>
+                </div>
+                <div class="insight-card">
+                    <div class="label">DNF / NC</div>
+                    <div class="value">${formatNumber(performance.totalDnfs)}</div>
+                    <div class="subtext">${formatNumber(dnfRate, 1)}% de resultados</div>
+                </div>
+            `;
+        }
+
+        function buildLeaderInsights(statsByDriver, nameResolver, totalRaces) {
+            const entries = Object.entries(statsByDriver)
+                .map(([driverId, stats]) => ({ driverId, name: nameResolver(driverId), ...stats }))
+                .filter(entry => entry.races > 0);
+
+            if (entries.length === 0) return [];
+
+            const minRaces = Math.max(1, Math.floor(totalRaces * 0.4));
+            const eligibleFiltered = entries.filter(entry => entry.races >= minRaces);
+            const eligible = eligibleFiltered.length > 0 ? eligibleFiltered : entries;
+
+            const byTotalPoints = entries.reduce((max, d) => d.points > max.points ? d : max, entries[0]);
+            const byAvgPoints = eligible.reduce((max, d) => d.avgPoints > max.avgPoints ? d : max, eligible[0]);
+            const byWins = entries.reduce((max, d) => d.wins > max.wins ? d : max, entries[0]);
+            const byWinRate = eligible.reduce((max, d) => d.winRate > max.winRate ? d : max, eligible[0]);
+            const byAvgFinish = eligible.reduce((best, d) => {
+                const bestValue = best.avgFinish || Number.POSITIVE_INFINITY;
+                const currentValue = d.avgFinish || Number.POSITIVE_INFINITY;
+                return currentValue < bestValue ? d : best;
+            }, eligible[0]);
+            const byConsistency = eligible.reduce((best, d) => {
+                const bestValue = best.consistency || Number.POSITIVE_INFINITY;
+                const currentValue = d.consistency || Number.POSITIVE_INFINITY;
+                return currentValue < bestValue ? d : best;
+            }, eligible[0]);
+
+            return [
+                {
+                    label: 'Máximo de puntos',
+                    value: formatNumber(byTotalPoints.points),
+                    subtext: byTotalPoints.name
+                },
+                {
+                    label: 'Mejor promedio de puntos',
+                    value: formatNumber(byAvgPoints.avgPoints, 1),
+                    subtext: `${byAvgPoints.name} (${byAvgPoints.races} carreras)`
+                },
+                {
+                    label: 'Más victorias',
+                    value: formatNumber(byWins.wins),
+                    subtext: byWins.name
+                },
+                {
+                    label: 'Mejor % de victorias',
+                    value: formatNumber(byWinRate.winRate * 100, 1) + '%',
+                    subtext: `${byWinRate.name} (${byWinRate.races} carreras)`
+                },
+                {
+                    label: 'Mejor promedio de posición',
+                    value: Number.isFinite(byAvgFinish.avgFinish) ? formatNumber(byAvgFinish.avgFinish, 2) : '-',
+                    subtext: byAvgFinish.name
+                },
+                {
+                    label: 'Más consistente',
+                    value: Number.isFinite(byConsistency.consistency) ? formatNumber(byConsistency.consistency, 2) : '-',
+                    subtext: byConsistency.name
+                }
+            ];
+        }
+
+        function renderLeaderInsights(leaders) {
+            const container = document.getElementById('leader-insights-grid');
+            if (!container) return;
+
+            if (!leaders || leaders.length === 0) {
+                container.innerHTML = '<div class="no-data">No hay suficientes datos para líderes</div>';
+                return;
+            }
+
+            container.innerHTML = leaders.map(leader => `
+                <div class="insight-card">
+                    <div class="label">${leader.label}</div>
+                    <div class="value">${leader.value}</div>
+                    <div class="subtext">${leader.subtext || '-'}</div>
+                </div>
+            `).join('');
         }
 
         function renderProgressionChart(standings, races, isInProgress) {
@@ -1792,13 +2084,13 @@
             });
         }
 
-        function renderDriverStats(drivers, teams, standings, attendance, totalRounds) {
+        function renderDriverStats(drivers, teams, standings, attendance, totalRounds, performanceStats = {}) {
             const tbody = document.getElementById('driver-stats-body');
             if (!tbody) return;
             tbody.innerHTML = '';
 
             if (!drivers || Object.keys(drivers).length === 0) {
-                tbody.innerHTML = '<tr><td colspan="5" class="no-data">No hay datos de pilotos</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="12" class="no-data">No hay datos de pilotos</td></tr>';
                 return;
             }
 
@@ -1812,12 +2104,20 @@
                 const attendanceText = totalRounds > 0
                     ? `${attended}/${totalRounds} (${Math.round((attended / totalRounds) * 100)}%)`
                     : '-';
+                const perf = performanceStats?.[row.driverId] || {};
 
                 return {
                     driverId: row.driverId,
                     name: driver.name,
                     teamName,
                     points: row.Total || 0,
+                    races: perf.races || 0,
+                    wins: perf.wins || 0,
+                    podiums: perf.podiums || 0,
+                    top5: perf.top5 || 0,
+                    avgFinish: perf.avgFinish ? perf.avgFinish.toFixed(2) : '-',
+                    avgPoints: perf.avgPoints ? perf.avgPoints.toFixed(1) : '0.0',
+                    dnfs: perf.dnfs || 0,
                     penalty,
                     attendanceText
                 };
@@ -1829,6 +2129,13 @@
                     <td class="driver-name clickable" data-driver-id="${row.driverId}">${row.name}</td>
                     <td class="team-name">${row.teamName}</td>
                     <td class="points">${row.points}</td>
+                    <td class="points">${row.races}</td>
+                    <td class="points">${row.wins}</td>
+                    <td class="points">${row.podiums}</td>
+                    <td class="points">${row.top5}</td>
+                    <td class="points">${row.avgFinish}</td>
+                    <td class="points">${row.avgPoints}</td>
+                    <td class="points">${row.dnfs}</td>
                     <td class="points">${row.penalty.toFixed(1)}</td>
                     <td class="points">${row.attendanceText}</td>
                 `;
@@ -1838,13 +2145,13 @@
             attachDriverClickHandlers();
         }
 
-        function renderDriverStatsOverall(driversArray, allDrivers, allTeams, attendanceTotals, totalRounds) {
+        function renderDriverStatsOverall(driversArray, allDrivers, allTeams, attendanceTotals, totalRounds, performanceStats = {}) {
             const tbody = document.getElementById('driver-stats-body');
             if (!tbody) return;
             tbody.innerHTML = '';
 
             if (!driversArray || driversArray.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="5" class="no-data">No hay datos de pilotos</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="12" class="no-data">No hay datos de pilotos</td></tr>';
                 return;
             }
 
@@ -1858,13 +2165,22 @@
                 const attendanceText = totalRounds > 0
                     ? `${attended}/${totalRounds} (${Math.round((attended / totalRounds) * 100)}%)`
                     : '-';
+                const perf = performanceStats?.[driver.guid] || {};
+                const penalty = allDrivers.get(driver.guid)?.penalty_points || 0;
 
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
                     <td class="driver-name clickable" data-driver-id="${driver.guid}">${driver.name}</td>
                     <td class="team-name">${teamNames}</td>
                     <td class="points">${driver.totalPoints}</td>
-                    <td class="points">0.0</td>
+                    <td class="points">${perf.races || 0}</td>
+                    <td class="points">${perf.wins || 0}</td>
+                    <td class="points">${perf.podiums || 0}</td>
+                    <td class="points">${perf.top5 || 0}</td>
+                    <td class="points">${perf.avgFinish ? perf.avgFinish.toFixed(2) : '-'}</td>
+                    <td class="points">${perf.avgPoints ? perf.avgPoints.toFixed(1) : '0.0'}</td>
+                    <td class="points">${perf.dnfs || 0}</td>
+                    <td class="points">${penalty.toFixed(1)}</td>
                     <td class="points">${attendanceText}</td>
                 `;
                 tbody.appendChild(tr);
@@ -2262,6 +2578,10 @@
                 const attendanceText = currentStatsContext.totalRounds > 0
                     ? `${attended}/${currentStatsContext.totalRounds} (${Math.round((attended / currentStatsContext.totalRounds) * 100)}%)`
                     : '-';
+                const perf = currentStatsContext.driverPerformance?.[driver.guid] || {};
+                const avgFinish = perf.avgFinish ? perf.avgFinish.toFixed(2) : '-';
+                const avgPoints = perf.avgPoints ? perf.avgPoints.toFixed(1) : '0.0';
+                const consistency = perf.consistency ? perf.consistency.toFixed(2) : '-';
 
                 title.textContent = `Detalle del piloto: ${driver.name}`;
                 grid.innerHTML = `
@@ -2270,6 +2590,14 @@
                     <div><strong>Carreras:</strong> ${driver.races}</div>
                     <div><strong>Victorias:</strong> ${driver.wins}</div>
                     <div><strong>Podios:</strong> ${driver.podiums}</div>
+                    <div><strong>Top 5:</strong> ${perf.top5 || 0}</div>
+                    <div><strong>Top 10:</strong> ${perf.top10 || 0}</div>
+                    <div><strong>Mejor resultado:</strong> ${perf.bestFinish ?? '-'}</div>
+                    <div><strong>Peor resultado:</strong> ${perf.worstFinish ?? '-'}</div>
+                    <div><strong>Prom. posición:</strong> ${avgFinish}</div>
+                    <div><strong>Puntos por carrera:</strong> ${avgPoints}</div>
+                    <div><strong>DNF/NC:</strong> ${perf.dnfs || 0}</div>
+                    <div><strong>Consistencia:</strong> ${consistency}</div>
                     <div><strong>Superlicencia:</strong> -</div>
                     <div><strong>Asistencia:</strong> ${attendanceText}</div>
                 `;
@@ -2303,6 +2631,10 @@
                 const attendanceText = currentStatsContext.totalRounds > 0
                     ? `${attended}/${currentStatsContext.totalRounds} (${Math.round((attended / currentStatsContext.totalRounds) * 100)}%)`
                     : '-';
+                const perf = currentStatsContext.driverPerformance?.[driverId] || {};
+                const avgFinish = perf.avgFinish ? perf.avgFinish.toFixed(2) : '-';
+                const avgPoints = perf.avgPoints ? perf.avgPoints.toFixed(1) : '0.0';
+                const consistency = perf.consistency ? perf.consistency.toFixed(2) : '-';
 
                 title.textContent = `Detalle del piloto: ${driver.name}`;
                 grid.innerHTML = `
@@ -2311,6 +2643,14 @@
                     <div><strong>Carreras:</strong> ${races}</div>
                     <div><strong>Victorias:</strong> ${wins}</div>
                     <div><strong>Podios:</strong> ${podiums}</div>
+                    <div><strong>Top 5:</strong> ${perf.top5 || 0}</div>
+                    <div><strong>Top 10:</strong> ${perf.top10 || 0}</div>
+                    <div><strong>Mejor resultado:</strong> ${perf.bestFinish ?? '-'}</div>
+                    <div><strong>Peor resultado:</strong> ${perf.worstFinish ?? '-'}</div>
+                    <div><strong>Prom. posición:</strong> ${avgFinish}</div>
+                    <div><strong>Puntos por carrera:</strong> ${avgPoints}</div>
+                    <div><strong>DNF/NC:</strong> ${perf.dnfs || 0}</div>
+                    <div><strong>Consistencia:</strong> ${consistency}</div>
                     <div><strong>Superlicencia:</strong> ${penalty.toFixed(1)}</div>
                     <div><strong>Asistencia:</strong> ${attendanceText}</div>
                 `;
