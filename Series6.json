@@ -1554,11 +1554,9 @@
                 {
                     "driver_id": "driver_sz_angel",
                     "team_id": "team_mercedes",
-                    "position": 1,
-                    "points": 25.0,
+                    "position": 2,
+                    "points": 18.0,
                     "status": "",
-                    "guid": "sz angel",
-                    "name": "Sz Angel",
                     "attendance": "green"
                 },
                 {
@@ -1649,6 +1647,14 @@
                     "status": "",
                     "guid": "anboo",
                     "name": "Anboo",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "driver_mtsfrg",
+                    "team_id": "team_haas",
+                    "position": 1,
+                    "points": 25.0,
+                    "status": "",
                     "attendance": "green"
                 }
             ],
@@ -1880,11 +1886,9 @@
                 {
                     "driver_id": "driver_sz_angel",
                     "team_id": "team_mercedes",
-                    "position": 1,
-                    "points": 25.0,
+                    "position": 2,
+                    "points": 18.0,
                     "status": "",
-                    "guid": "sz angel",
-                    "name": "Sz Angel",
                     "attendance": "green"
                 },
                 {
@@ -2016,6 +2020,14 @@
                     "guid": "anboo",
                     "name": "Anboo",
                     "attendance": "green"
+                },
+                {
+                    "driver_id": "driver_mtsfrg",
+                    "team_id": "team_haas",
+                    "position": 1,
+                    "points": 25.0,
+                    "status": "",
+                    "attendance": "green"
                 }
             ],
             "sprint_results": [],
@@ -2123,6 +2135,14 @@
                     "status": "",
                     "guid": "sgc lionel",
                     "name": "SGC Lionel",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "driver_mtsfrg",
+                    "team_id": "team_haas",
+                    "position": 1,
+                    "points": 25.0,
+                    "status": "",
                     "attendance": "green"
                 }
             ],
@@ -2918,7 +2938,7 @@
             "Total": 0.0
         }
     ],
-    "standings_updated_at": "2026-02-05T20:45:38",
+    "standings_updated_at": "2026-02-05T21:25:49",
     "standings_source": "positions",
     "standings_positions": [
         {
@@ -4164,5 +4184,5 @@
     "season_name": "Season 6",
     "season_status": "Finished",
     "season_meta": {},
-    "updated_at": "2026-02-05T20:57:55"
+    "updated_at": "2026-02-05T21:31:03"
 }
