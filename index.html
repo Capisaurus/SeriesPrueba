@@ -839,11 +839,14 @@
 <body>
     <div class="app-layout">
         <aside class="sidebar">
-            <div class="sidebar-header">
-                <div class="sidebar-title">Temporadas</div>
-                <select id="season-select" class="nav-select"></select>
-            </div>
-            <div class="sidebar-meta" id="sidebar-status">Cargando...</div>
+                        <button id="sidebar-toggle" aria-label="Mostrar/Ocultar menú" style="background:none;border:none;color:var(--f2-white);font-size:1.5em;position:absolute;top:10px;right:10px;z-index:200;cursor:pointer;">☰</button>
+                        <div class="sidebar-header" id="sidebar-header">
+                                <div class="sidebar-title" id="sidebar-title" style="cursor:pointer;user-select:none;">Temporadas <span id="season-arrow" style="font-size:0.9em;">▼</span></div>
+                                <div id="season-select-container">
+                                    <select id="season-select" class="nav-select"></select>
+                                </div>
+                        </div>
+                        <div class="sidebar-meta" id="sidebar-status">Cargando...</div>
         </aside>
 
         <main class="main-content">
@@ -1031,6 +1034,99 @@
     </div>
 
     <script>
+                // Sidebar collapsible logic
+                document.addEventListener('DOMContentLoaded', function() {
+                    const sidebar = document.querySelector('.sidebar');
+                    const sidebarToggle = document.getElementById('sidebar-toggle');
+                    const sidebarHeader = document.getElementById('sidebar-header');
+                    const sidebarTitle = document.getElementById('sidebar-title');
+                    const seasonSelectContainer = document.getElementById('season-select-container');
+                    const seasonArrow = document.getElementById('season-arrow');
+                    let sidebarCollapsed = false;
+                    let seasonCollapsed = false;
+
+                    sidebarToggle.addEventListener('click', function() {
+                        sidebarCollapsed = !sidebarCollapsed;
+                        if (sidebarCollapsed) {
+                            sidebar.style.width = '0';
+                            sidebar.style.minWidth = '0';
+                            sidebar.style.padding = '0';
+                            sidebar.style.overflow = 'hidden';
+                            sidebar.style.borderRight = 'none';
+                        } else {
+                            sidebar.style.width = '';
+                            sidebar.style.minWidth = '';
+                            sidebar.style.padding = '';
+                            sidebar.style.overflow = '';
+                            sidebar.style.borderRight = '';
+                        }
+                    });
+
+                    sidebarTitle.addEventListener('click', function() {
+                        seasonCollapsed = !seasonCollapsed;
+                        if (seasonCollapsed) {
+                            seasonSelectContainer.style.display = 'none';
+                            seasonArrow.textContent = '►';
+                        } else {
+                            seasonSelectContainer.style.display = '';
+                            seasonArrow.textContent = '▼';
+                        }
+                    });
+                });
+
+                // Table sorting logic for standings, driver stats, attendance
+                function sortStandingsTable() {
+                    const tbody = document.getElementById('standings-body');
+                    if (!tbody) return;
+                    const rows = Array.from(tbody.querySelectorAll('tr'));
+                    rows.sort((a, b) => {
+                        const apos = parseInt(a.querySelector('.position')?.textContent || '999', 10);
+                        const bpos = parseInt(b.querySelector('.position')?.textContent || '999', 10);
+                        return apos - bpos;
+                    });
+                    rows.forEach(row => tbody.appendChild(row));
+                }
+
+                function sortDriverStatsTable() {
+                    const tbody = document.getElementById('driver-stats-body');
+                    if (!tbody) return;
+                    const rows = Array.from(tbody.querySelectorAll('tr'));
+                    rows.sort((a, b) => {
+                        const apoints = parseFloat(a.children[2]?.textContent || '0');
+                        const bpoints = parseFloat(b.children[2]?.textContent || '0');
+                        return bpoints - apoints;
+                    });
+                    rows.forEach(row => tbody.appendChild(row));
+                }
+
+                function sortAttendanceTable() {
+                    const tbody = document.getElementById('attendance-body');
+                    if (!tbody) return;
+                    const rows = Array.from(tbody.querySelectorAll('tr'));
+                    rows.sort((a, b) => {
+                        const aatt = parseInt((a.children[2]?.textContent || '0').split('/')[0], 10);
+                        const batt = parseInt((b.children[2]?.textContent || '0').split('/')[0], 10);
+                        return batt - aatt;
+                    });
+                    rows.forEach(row => tbody.appendChild(row));
+                }
+
+                // Patch render functions to auto-sort
+                const origRenderStandings = window.renderStandings;
+                window.renderStandings = function(...args) {
+                    origRenderStandings.apply(this, args);
+                    sortStandingsTable();
+                };
+                const origRenderDriverStats = window.renderDriverStats;
+                window.renderDriverStats = function(...args) {
+                    origRenderDriverStats.apply(this, args);
+                    sortDriverStatsTable();
+                };
+                const origRenderAttendanceTable = window.renderAttendanceTable;
+                window.renderAttendanceTable = function(...args) {
+                    origRenderAttendanceTable.apply(this, args);
+                    sortAttendanceTable();
+                };
         let progressionChart = null;
         let currentSeason = null;
         let currentView = 'home';
