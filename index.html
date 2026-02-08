@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>N&E SERIES - Championship</title>
+    <title>N&E Series by N&E Racing</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <style>
         * {
@@ -1230,10 +1230,6 @@
                 <h3>Equipos</h3>
                 <div class="value" id="total-teams">-</div>
             </div>
-            <div class="stat-card">
-                <h3>Total Carreras</h3>
-                <div class="value" id="total-races">-</div>
-            </div>
         </div>
 
         <details class="section-details" id="global-insights-section" open>
@@ -1646,12 +1642,9 @@
             }
 
             const isLastSeason = seasonKey === lastSeason;
-            const rawStatus = (seasonInfo.status || '').toLowerCase();
-            let statusText;
-            if (rawStatus === 'finished') statusText = 'Finalizada';
-            else if (rawStatus === 'in progress') statusText = 'En Progreso';
-            else if (seasonInfo.status) statusText = seasonInfo.status;
-            else statusText = isLastSeason ? 'En Curso' : 'Finalizada';
+            const statusText = seasonInfo.status
+                ? (seasonInfo.status.toLowerCase() === 'finished' ? 'Finalizada' : seasonInfo.status)
+                : (isLastSeason ? 'En Curso' : 'Finalizada');
             document.getElementById('season-subtitle').textContent = `${seasonInfo.name} • ${statusText}`;
         }
 
@@ -1740,21 +1733,21 @@
                 if (statCards[2]) statCards[2].textContent = 'Carreras Totales';
                 if (statCards[3]) statCards[3].textContent = 'Temporadas Completadas';
                 if (statCards[4]) statCards[4].textContent = 'Equipos Históricos';
-                if (statCards[5]) statCards[5].textContent = 'Carreras Registradas';
+                // Eliminada la sexta tarjeta
             } else if (mode === 'season-finished') {
                 if (statCards[0]) statCards[0].textContent = 'Rondas Totales';
                 if (statCards[1]) statCards[1].textContent = 'Total Pilotos';
                 if (statCards[2]) statCards[2].textContent = 'Carreras Disputadas';
                 if (statCards[3]) statCards[3].textContent = 'Rondas Totales';
                 if (statCards[4]) statCards[4].textContent = 'Equipos';
-                if (statCards[5]) statCards[5].textContent = 'Total Carreras';
+                // Eliminada la sexta tarjeta
             } else {
                 if (statCards[0]) statCards[0].textContent = 'Ronda Actual';
                 if (statCards[1]) statCards[1].textContent = 'Total Pilotos';
                 if (statCards[2]) statCards[2].textContent = 'Carreras Disputadas';
                 if (statCards[3]) statCards[3].textContent = 'Por Disputar';
                 if (statCards[4]) statCards[4].textContent = 'Equipos';
-                if (statCards[5]) statCards[5].textContent = 'Total Carreras';
+                // Eliminada la sexta tarjeta
             }
         }
 
@@ -1856,27 +1849,6 @@
                 Object.entries(seasonData.teams || {}).forEach(([teamId, team]) => {
                     allTeams.set(teamId, team);
                 });
-            }
-
-            // Enrich driver teams using teams_history from Championship.json
-            overallMeta.forEach((meta, driverId) => {
-                if (meta.teams_history && Array.isArray(meta.teams_history)) {
-                    const driverData = allDrivers.get(driverId);
-                    meta.teams_history.forEach(th => {
-                        if (th.team_id) {
-                            if (driverData) driverData.teams.add(th.team_id);
-                            if (!allTeams.has(th.team_id)) {
-                                allTeams.set(th.team_id, { name: th.team_name || th.team_id });
-                            }
-                        }
-                    });
-                }
-            });
-
-            // Aggregate race results from all seasons
-            for (const season of regularSeasons) {
-                const seasonData = allData[season.key];
-                if (!seasonData) continue;
 
                 // Process race results
                 (seasonData.races || []).forEach(race => {
@@ -2031,11 +2003,10 @@
 
                 const isInProgress = isSeasonInProgress(season.key);
                 const championTitle = isInProgress ? 'Líder actual' : 'Campeón';
-                const statusLabel = isInProgress ? '(En Progreso)' : '(Finalizada)';
 
                 html += `
                     <div class="season-summary-card">
-                        <h3>${season.name} ${statusLabel}</h3>
+                        <h3>${season.name} ${isInProgress ? '(En Curso)' : '(Finalizada)'}</h3>
                         <ul class="season-stats-list">
                             <li><span>${championTitle}:</span> <strong class="highlight">${leader?.['Piloto/Ronda'] || (completedRaces.length === 0 ? 'Sin datos' : '-')}</strong></li>
                             <li><span>Puntos del ${isInProgress ? 'líder' : 'campeón'}:</span> <strong>${leader?.Total || 0}</strong></li>
