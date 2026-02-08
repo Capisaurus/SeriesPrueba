@@ -1,6 +1,6 @@
 {
     "export_type": "championship",
-    "championship_name": "NyE Series",
+    "championship_name": "ne series",
     "total_seasons": 10,
     "total_races": 114,
     "seasons": [
@@ -3032,5 +3032,5 @@
             ]
         }
     ],
-    "exported_at": "2026-02-08T16:35:26"
+    "exported_at": "2026-02-08T16:58:23"
 }
