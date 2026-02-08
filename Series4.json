@@ -1,8 +1,8 @@
 {
     "export_type": "season",
-    "championship_name": "ne series",
+    "championship_name": "NyE Series",
     "season_id": "series_4",
-    "season_name": "series 4",
+    "season_name": "Series 4",
     "total_rounds": 13,
     "disputed_rounds": 13,
     "pending_rounds": 0,
@@ -68,8 +68,8 @@
                 },
                 {
                     "position": 7,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 6.0,
                     "status": ""
@@ -140,8 +140,8 @@
                 },
                 {
                     "position": 16,
-                    "driver": "Fernando Angarita",
-                    "driver_id": "fernando_angarita",
+                    "driver": "Fernandoangarita",
+                    "driver_id": "fernandoangarita",
                     "team": "Haas",
                     "points": 0.0,
                     "status": "DNF"
@@ -172,8 +172,8 @@
                 },
                 {
                     "position": 20,
-                    "driver": "Drastical",
-                    "driver_id": "drastical",
+                    "driver": "Drasticalrose",
+                    "driver_id": "drasticalrose",
                     "team": "Reserve Driver",
                     "points": 0.0,
                     "status": "DNF"
@@ -305,8 +305,8 @@
                 },
                 {
                     "position": 15,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 0.0,
                     "status": ""
@@ -406,8 +406,8 @@
                 },
                 {
                     "position": 7,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 6.0,
                     "status": ""
@@ -438,8 +438,8 @@
                 },
                 {
                     "position": 11,
-                    "driver": "Fernando Angarita",
-                    "driver_id": "fernando_angarita",
+                    "driver": "Fernandoangarita",
+                    "driver_id": "fernandoangarita",
                     "team": "Haas",
                     "points": 0.0,
                     "status": ""
@@ -547,8 +547,8 @@
                 },
                 {
                     "position": 6,
-                    "driver": "Fernando Angarita",
-                    "driver_id": "fernando_angarita",
+                    "driver": "Fernandoangarita",
+                    "driver_id": "fernandoangarita",
                     "team": "Haas",
                     "points": 8.0,
                     "status": ""
@@ -712,8 +712,8 @@
                 },
                 {
                     "position": 10,
-                    "driver": "Fernando Angarita",
-                    "driver_id": "fernando_angarita",
+                    "driver": "Fernandoangarita",
+                    "driver_id": "fernandoangarita",
                     "team": "Haas",
                     "points": 1.0,
                     "status": ""
@@ -728,8 +728,8 @@
                 },
                 {
                     "position": 12,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 0.0,
                     "status": ""
@@ -885,8 +885,8 @@
                 },
                 {
                     "position": 11,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 0.0,
                     "status": ""
@@ -909,8 +909,8 @@
                 },
                 {
                     "position": 14,
-                    "driver": "Fernando Angarita",
-                    "driver_id": "fernando_angarita",
+                    "driver": "Fernandoangarita",
+                    "driver_id": "fernandoangarita",
                     "team": "Haas",
                     "points": 0.0,
                     "status": ""
@@ -970,8 +970,8 @@
                 },
                 {
                     "position": 6,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 8.0,
                     "status": ""
@@ -1026,8 +1026,8 @@
                 },
                 {
                     "position": 13,
-                    "driver": "Fernando Angarita",
-                    "driver_id": "fernando_angarita",
+                    "driver": "Fernandoangarita",
+                    "driver_id": "fernandoangarita",
                     "team": "Haas",
                     "points": 0.0,
                     "status": ""
@@ -1103,16 +1103,16 @@
                 },
                 {
                     "position": 8,
-                    "driver": "Fernando Angarita",
-                    "driver_id": "fernando_angarita",
+                    "driver": "Fernandoangarita",
+                    "driver_id": "fernandoangarita",
                     "team": "Haas",
                     "points": 4.0,
                     "status": ""
                 },
                 {
                     "position": 9,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 2.0,
                     "status": ""
@@ -1220,8 +1220,8 @@
                 },
                 {
                     "position": 5,
-                    "driver": "Fernando Angarita",
-                    "driver_id": "fernando_angarita",
+                    "driver": "Fernandoangarita",
+                    "driver_id": "fernandoangarita",
                     "team": "Haas",
                     "points": 10.0,
                     "status": ""
@@ -1268,8 +1268,8 @@
                 },
                 {
                     "position": 11,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 0.0,
                     "status": ""
@@ -1377,8 +1377,8 @@
                 },
                 {
                     "position": 9,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 2.0,
                     "status": ""
@@ -1393,8 +1393,8 @@
                 },
                 {
                     "position": 11,
-                    "driver": "Fernando Angarita",
-                    "driver_id": "fernando_angarita",
+                    "driver": "Fernandoangarita",
+                    "driver_id": "fernandoangarita",
                     "team": "Haas",
                     "points": 0.0,
                     "status": ""
@@ -1534,8 +1534,8 @@
                 },
                 {
                     "position": 13,
-                    "driver": "Fernando Angarita",
-                    "driver_id": "fernando_angarita",
+                    "driver": "Fernandoangarita",
+                    "driver_id": "fernandoangarita",
                     "team": "Haas",
                     "points": 0.0,
                     "status": ""
@@ -1659,8 +1659,8 @@
                 },
                 {
                     "position": 14,
-                    "driver": "Fernando Angarita",
-                    "driver_id": "fernando_angarita",
+                    "driver": "Fernandoangarita",
+                    "driver_id": "fernandoangarita",
                     "team": "Haas",
                     "points": 0.0,
                     "status": ""
@@ -1784,8 +1784,8 @@
                 },
                 {
                     "position": 13,
-                    "driver": "Fernando Angarita",
-                    "driver_id": "fernando_angarita",
+                    "driver": "Fernandoangarita",
+                    "driver_id": "fernandoangarita",
                     "team": "Haas",
                     "points": 0.0,
                     "status": ""
@@ -2670,8 +2670,8 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "tgouu",
-            "name": "Tgouu",
+            "driver_id": "tgoou",
+            "name": "Tgoou",
             "team": "Mercedes",
             "team_id": "team_mercedes",
             "total_points": 25.0,
@@ -2730,10 +2730,10 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "fernando_angarita",
-            "name": "Fernando Angarita",
-            "team": "Haas",
-            "team_id": "team_haas",
+            "driver_id": "fernandoangarita",
+            "name": "Fernandoangarita",
+            "team": "McLaren",
+            "team_id": "team_mclaren",
             "total_points": 23.0,
             "rounds": {
                 "1": {
@@ -3163,8 +3163,8 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "drastical",
-            "name": "Drastical",
+            "driver_id": "drasticalrose",
+            "name": "Drasticalrose",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
             "total_points": 0.0,
@@ -3240,5 +3240,5 @@
             "driver_of_the_day": 0
         }
     ],
-    "exported_at": "2026-02-08T02:44:32"
+    "exported_at": "2026-02-08T15:53:42"
 }

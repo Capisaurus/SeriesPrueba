@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -72,34 +72,26 @@
             letter-spacing: 1px;
         }
 
+        .season-selector {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .season-select-label {
+            color: var(--f2-white);
+            font-size: 0.9em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
         .app-layout {
             display: grid;
-            grid-template-columns: 280px 1fr;
+            grid-template-columns: 1fr;
             min-height: 100vh;
-        }
-
-        .sidebar {
-            background: linear-gradient(180deg, var(--primary-gray-dark) 0%, var(--primary-gray-medium) 100%);
-            padding: 28px 22px;
-            border-right: 1px solid rgba(255,255,255,0.08);
-            position: sticky;
-            top: 0;
-            height: 100vh;
-        }
-
-        .sidebar-header {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-
-        .sidebar-title {
-            color: var(--f2-white);
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 1px;
-            font-size: 0.9em;
         }
 
         .nav-select {
@@ -118,12 +110,6 @@
         .nav-select:focus {
             border-color: var(--f2-blue-accent);
             box-shadow: 0 0 0 2px rgba(51,153,255,0.25);
-        }
-
-        .sidebar-meta {
-            color: var(--f2-gray-light);
-            font-size: 0.85em;
-            line-height: 1.5;
         }
 
         .main-content {
@@ -382,6 +368,12 @@
         .race-card.planned {
             border-left-color: var(--f2-orange);
             background: linear-gradient(90deg, rgba(255,102,0,0.05) 0%, var(--f2-white) 100%);
+        }
+
+        .races-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
         }
 
         .race-card h3 {
@@ -710,17 +702,9 @@
         @media (max-width: 1024px) {
             h1 { font-size: 2.2em; }
             .chart-container { height: 400px; }
-            .app-layout { grid-template-columns: 220px 1fr; }
         }
 
         @media (max-width: 768px) {
-            .app-layout { grid-template-columns: 1fr; }
-            .sidebar {
-                position: relative;
-                height: auto;
-                border-right: none;
-                border-bottom: 1px solid rgba(255,255,255,0.08);
-            }
             h1 { font-size: 1.8em; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
             .chart-container { height: 350px; }
@@ -735,29 +719,497 @@
             h1 { font-size: 1.5em; }
             .chart-container { height: 300px; }
         }
+
+        /* ===== OVERVIEW STYLES ===== */
+        #overview-container {
+            display: none;
+        }
+
+        .overview-banner {
+            background: linear-gradient(135deg, var(--f2-blue-dark) 0%, var(--f2-blue-medium) 50%, var(--f2-blue-light) 100%);
+            border-radius: 16px;
+            padding: 45px 30px;
+            text-align: center;
+            color: var(--f2-white);
+            margin-bottom: 30px;
+            box-shadow: 0 12px 40px rgba(0,51,102,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .overview-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+        }
+
+        .overview-banner-badge {
+            display: inline-block;
+            background: var(--f2-orange);
+            color: var(--f2-white);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .overview-banner-title {
+            font-size: 2.8em;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .overview-banner-subtitle {
+            font-size: 1.1em;
+            opacity: 0.85;
+            font-weight: 500;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .overview-banner-countdown {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .countdown-number {
+            font-size: 4em;
+            font-weight: 900;
+            line-height: 1;
+            color: var(--f2-orange);
+            text-shadow: 0 4px 15px rgba(255,102,0,0.4);
+        }
+
+        .countdown-label {
+            font-size: 1.2em;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .overview-banner-detail {
+            font-size: 0.95em;
+            opacity: 0.8;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .overview-progress-bar {
+            width: 80%;
+            max-width: 400px;
+            height: 8px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            margin: 15px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .overview-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--f2-orange), #ff8533);
+            border-radius: 10px;
+            transition: width 0.8s ease;
+        }
+
+        .overview-quick-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .overview-quick-stat {
+            background: var(--f2-white);
+            border-radius: 12px;
+            padding: 22px 18px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--f2-blue-accent);
+            transition: transform 0.3s ease;
+        }
+
+        .overview-quick-stat:hover {
+            transform: translateY(-4px);
+        }
+
+        .overview-quick-stat-value {
+            font-size: 2.4em;
+            font-weight: 900;
+            color: var(--f2-blue-dark);
+            font-family: 'Arial Black', sans-serif;
+            line-height: 1.1;
+        }
+
+        .overview-quick-stat-label {
+            font-size: 0.78em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--f2-gray-medium);
+            margin-top: 8px;
+        }
+
+        .overview-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .overview-two-col { grid-template-columns: 1fr; }
+            .overview-banner-title { font-size: 2em; }
+            .countdown-number { font-size: 3em; }
+        }
+
+        .overview-card {
+            background: var(--f2-white);
+            border-radius: 14px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .overview-card:hover {
+            box-shadow: 0 12px 35px rgba(0,0,0,0.16);
+        }
+
+        .overview-card.full-width {
+            margin-bottom: 30px;
+        }
+
+        .overview-card-header {
+            background: linear-gradient(135deg, var(--f2-blue-dark), var(--f2-blue-medium));
+            color: var(--f2-white);
+            padding: 18px 24px;
+            font-size: 1.15em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .overview-card-header.next-race {
+            background: linear-gradient(135deg, var(--f2-orange), #ff8533);
+        }
+
+        .overview-card-icon {
+            font-size: 1.2em;
+        }
+
+        .overview-card-body {
+            padding: 24px;
+        }
+
+        .overview-race-title {
+            font-size: 1.5em;
+            font-weight: 800;
+            color: var(--f2-blue-dark);
+            margin-bottom: 6px;
+        }
+
+        .overview-race-info {
+            color: var(--f2-gray-medium);
+            font-size: 0.95em;
+            margin-bottom: 18px;
+            font-weight: 500;
+        }
+
+        .overview-podium {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .overview-podium-item {
+            flex: 1;
+            padding: 14px 12px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .overview-podium-item.podium-1 {
+            background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(255,215,0,0.05));
+            border-color: var(--gold);
+        }
+
+        .overview-podium-item.podium-2 {
+            background: linear-gradient(135deg, rgba(192,192,192,0.15), rgba(192,192,192,0.05));
+            border-color: var(--silver);
+        }
+
+        .overview-podium-item.podium-3 {
+            background: linear-gradient(135deg, rgba(205,127,50,0.15), rgba(205,127,50,0.05));
+            border-color: var(--bronze);
+        }
+
+        .overview-podium-pos {
+            font-size: 1.6em;
+            margin-bottom: 6px;
+        }
+
+        .overview-podium-name {
+            font-weight: 800;
+            color: var(--f2-blue-dark);
+            font-size: 0.95em;
+        }
+
+        .overview-podium-team {
+            color: var(--f2-gray-medium);
+            font-size: 0.78em;
+            margin-top: 3px;
+        }
+
+        .overview-podium-points {
+            color: var(--f2-blue-accent);
+            font-weight: 700;
+            font-size: 0.85em;
+            margin-top: 6px;
+        }
+
+        .overview-race-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            color: var(--f2-gray-medium);
+            font-size: 0.88em;
+            font-weight: 500;
+            padding-top: 14px;
+            border-top: 1px solid var(--f2-bg-light);
+        }
+
+        .overview-countdown-inline {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0 15px;
+        }
+
+        .overview-countdown-big {
+            font-size: 4em;
+            font-weight: 900;
+            color: var(--f2-orange);
+            line-height: 1;
+        }
+
+        .overview-countdown-text {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--f2-gray-medium);
+        }
+
+        .overview-race-date {
+            text-align: center;
+            font-size: 1.05em;
+            font-weight: 600;
+            color: var(--f2-blue-dark);
+            margin-bottom: 8px;
+        }
+
+        .overview-race-season {
+            text-align: center;
+            font-size: 0.85em;
+            color: var(--f2-gray-light);
+            font-weight: 500;
+        }
+
+        .overview-standings {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .overview-standing-row {
+            display: grid;
+            grid-template-columns: 50px 1fr 1fr auto;
+            align-items: center;
+            padding: 14px 18px;
+            border-radius: 10px;
+            gap: 16px;
+            transition: background 0.2s;
+        }
+
+        .overview-standing-row:hover {
+            background: rgba(51,153,255,0.06);
+        }
+
+        .overview-standing-row.podium-1 {
+            background: linear-gradient(90deg, rgba(255,215,0,0.18), transparent);
+            border-left: 4px solid var(--gold);
+        }
+
+        .overview-standing-row.podium-2 {
+            background: linear-gradient(90deg, rgba(192,192,192,0.18), transparent);
+            border-left: 4px solid var(--silver);
+        }
+
+        .overview-standing-row.podium-3 {
+            background: linear-gradient(90deg, rgba(205,127,50,0.18), transparent);
+            border-left: 4px solid var(--bronze);
+        }
+
+        .overview-standing-pos {
+            font-size: 1.4em;
+            font-weight: 900;
+            color: var(--f2-blue-dark);
+            text-align: center;
+        }
+
+        .overview-standing-driver {
+            font-weight: 700;
+            color: var(--f2-gray-dark);
+        }
+
+        .overview-standing-team {
+            color: var(--f2-gray-medium);
+            font-size: 0.88em;
+        }
+
+        .overview-standing-points {
+            font-weight: 800;
+            color: var(--f2-blue-accent);
+            font-size: 1.1em;
+            text-align: right;
+        }
+
+        .overview-leaders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .overview-leader-item {
+            padding: 18px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--f2-bg-light), var(--f2-white));
+            border-left: 4px solid var(--f2-orange);
+            transition: transform 0.2s;
+        }
+
+        .overview-leader-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .overview-leader-label {
+            font-size: 0.72em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--f2-gray-medium);
+            margin-bottom: 8px;
+        }
+
+        .overview-leader-value {
+            font-size: 1.25em;
+            font-weight: 800;
+            color: var(--f2-blue-dark);
+            margin-bottom: 4px;
+        }
+
+        .overview-leader-stat {
+            font-size: 0.9em;
+            color: var(--f2-orange);
+            font-weight: 700;
+        }
+
+        .overview-calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 14px;
+        }
+
+        .overview-calendar-item {
+            padding: 16px;
+            border-radius: 10px;
+            background: var(--f2-bg-light);
+            border-left: 4px solid var(--f2-orange);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .overview-calendar-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .overview-calendar-item.next-up {
+            border-left-color: var(--f2-blue-accent);
+            background: linear-gradient(135deg, rgba(51,153,255,0.08), var(--f2-bg-light));
+            box-shadow: 0 4px 15px rgba(51,153,255,0.15);
+        }
+
+        .overview-calendar-round {
+            font-weight: 800;
+            color: var(--f2-blue-dark);
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .overview-calendar-name {
+            font-weight: 700;
+            color: var(--f2-gray-dark);
+            font-size: 1.05em;
+            margin: 4px 0;
+        }
+
+        .overview-calendar-track {
+            color: var(--f2-gray-medium);
+            font-size: 0.85em;
+        }
+
+        .overview-calendar-date {
+            color: var(--f2-orange);
+            font-size: 0.82em;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .overview-podium { flex-direction: column; }
+            .overview-standing-row { grid-template-columns: 40px 1fr auto; }
+            .overview-standing-team { display: none; }
+        }
     </style>
 </head>
 <body>
     <div class="app-layout">
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <div class="sidebar-title">Temporadas</div>
-                <select id="season-select" class="nav-select"></select>
-            </div>
-            <div class="sidebar-meta" id="sidebar-status">Cargando...</div>
-        </aside>
-
         <main class="main-content">
             <div class="header">
                 <div class="header-content">
                     <h1>N&E SERIES</h1>
                     <p class="subtitle" id="season-subtitle">Championship Dashboard • Season 2026</p>
+                    <div class="season-selector">
+                        <label for="season-select" class="season-select-label">Seleccionar Temporada:</label>
+                        <select id="season-select" class="nav-select"></select>
+                    </div>
                 </div>
             </div>
 
             <div class="container">
+        <!-- Overview Container (solo visible en vista Overview) -->
+        <div id="overview-container"></div>
+
         <!-- Stats Cards -->
-        <div class="stats-grid">
+        <div class="stats-grid" id="stats-grid">
             <div class="stat-card">
                 <h3>Ronda Actual</h3>
                 <div class="value" id="current-round">-</div>
@@ -806,6 +1258,20 @@
             <summary>Ultima carrera</summary>
             <div class="section-body">
                 <div id="last-race-container"></div>
+            </div>
+        </details>
+
+        <details class="section-details" id="next-race-section" open>
+            <summary>Próxima carrera</summary>
+            <div class="section-body">
+                <div id="next-race-container"></div>
+            </div>
+        </details>
+
+        <details class="section-details" id="upcoming-calendar-section" open>
+            <summary>Calendario Próxima Temporada</summary>
+            <div class="section-body">
+                <div id="upcoming-calendar-content"></div>
             </div>
         </details>
 
@@ -883,6 +1349,8 @@
         let allData = {};
         let seasonsList = [];
         let lastSeason = null;
+        let upcomingSeason = null;
+        let globalNextRace = null;
         let currentStatsContext = null;
 
         function cleanJsonText(text) {
@@ -936,6 +1404,34 @@
                     ? 'A'
                     : prefix.charAt(0).toUpperCase();
             return `${prefixLetter}${number}${isSprint ? 'S' : ''}`;
+        }
+
+        function formatRaceDate(dateString) {
+            if (!dateString) return 'Fecha por confirmar';
+            
+            // Detectar si la fecha incluye componente de hora (tiene T o espacio con hora)
+            const hasTime = dateString.includes('T') || /\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}/.test(dateString);
+            
+            if (hasTime) {
+                // Formatear con fecha y hora
+                const date = new Date(dateString);
+                return date.toLocaleString('es-MX', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+            } else {
+                // Solo fecha (sin hora) - parsear manualmente para evitar problemas de zona horaria
+                const [year, month, day] = dateString.split('-').map(Number);
+                const date = new Date(year, month - 1, day);
+                return date.toLocaleDateString('es-MX', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+            }
         }
 
         function normalizeSeasonData(raw) {
@@ -1033,6 +1529,24 @@
                 }
             }
 
+            // Find upcoming season
+            upcomingSeason = seasonsList.find(s => !s.isOverall && allData[s.key]?.pending_rounds > 0)?.key || null;
+
+            let nextRace = null;
+            // Find the next race across all seasons
+            for (const season of seasonsList) {
+                const data = allData[season.key];
+                if (!data || !data.races) continue;
+                for (const race of data.races) {
+                    if (race.planned && (!race.results || race.results.length === 0)) {
+                        if (!nextRace || new Date(race.date) < new Date(nextRace.date)) {
+                            nextRace = { ...race, season: season.key, seasonName: season.name };
+                        }
+                    }
+                }
+            }
+            globalNextRace = nextRace;
+
             try {
                 const response = await fetch('Latest.json');
                 if (response.ok) {
@@ -1077,7 +1591,6 @@
 
         function createNavigationDropdown() {
             const select = document.getElementById('season-select');
-            const sidebarStatus = document.getElementById('sidebar-status');
             if (!select) return;
 
             select.innerHTML = '';
@@ -1085,8 +1598,7 @@
             const overall = seasonsList.find(s => s.isOverall);
             const currentInfo = regularSeasons.find(s => s.key === currentSeason);
 
-            const homeLabel = currentInfo ? `Temporada actual (${currentInfo.name})` : 'Temporada actual';
-            select.appendChild(new Option(homeLabel, 'home'));
+            select.appendChild(new Option('Overview', 'home'));
 
             regularSeasons.forEach(season => {
                 select.appendChild(new Option(season.name, season.key));
@@ -1098,10 +1610,6 @@
 
             select.value = 'home';
             select.onchange = (event) => switchView(event.target.value);
-
-            if (sidebarStatus) {
-                sidebarStatus.textContent = `${regularSeasons.length} temporadas detectadas`;
-            }
         }
 
         function switchView(viewKey) {
@@ -1111,8 +1619,8 @@
 
             if (viewKey === 'home') {
                 setViewMode('home');
-                updateSubtitle(currentSeason);
-                renderSeasonData(currentSeason, 'home');
+                document.getElementById('season-subtitle').textContent = 'Overview del Campeonato';
+                renderOverview();
                 return;
             }
 
@@ -1138,9 +1646,12 @@
             }
 
             const isLastSeason = seasonKey === lastSeason;
-            const statusText = seasonInfo.status
-                ? (seasonInfo.status.toLowerCase() === 'finished' ? 'Finalizada' : seasonInfo.status)
-                : (isLastSeason ? 'En Curso' : 'Finalizada');
+            const rawStatus = (seasonInfo.status || '').toLowerCase();
+            let statusText;
+            if (rawStatus === 'finished') statusText = 'Finalizada';
+            else if (rawStatus === 'in progress') statusText = 'En Progreso';
+            else if (seasonInfo.status) statusText = seasonInfo.status;
+            else statusText = isLastSeason ? 'En Curso' : 'Finalizada';
             document.getElementById('season-subtitle').textContent = `${seasonInfo.name} • ${statusText}`;
         }
 
@@ -1162,8 +1673,18 @@
             const superlicenseSection = document.getElementById('superlicense-section');
             const raceSelectorSection = document.getElementById('race-selector-section');
             const lastRaceSection = document.getElementById('last-race-section');
+            const nextRaceSection = document.getElementById('next-race-section');
+            const upcomingCalSection = document.getElementById('upcoming-calendar-section');
+            const overviewContainer = document.getElementById('overview-container');
+            const statsGrid = document.getElementById('stats-grid');
+            const globalInsights = document.getElementById('global-insights-section');
+            const standingsSection = document.getElementById('standings-section');
 
             if (mode === 'home') {
+                // Overview mode: show only overview container
+                if (overviewContainer) overviewContainer.style.display = 'block';
+                if (statsGrid) statsGrid.style.display = 'none';
+                if (globalInsights) globalInsights.style.display = 'none';
                 if (historical) historical.style.display = 'none';
                 if (teamSection) teamSection.style.display = 'none';
                 if (completedSection) completedSection.style.display = 'none';
@@ -1172,8 +1693,15 @@
                 if (attendanceSection) attendanceSection.style.display = 'none';
                 if (superlicenseSection) superlicenseSection.style.display = 'none';
                 if (raceSelectorSection) raceSelectorSection.style.display = 'none';
-                if (lastRaceSection) lastRaceSection.style.display = 'block';
+                if (standingsSection) standingsSection.style.display = 'none';
+                if (lastRaceSection) lastRaceSection.style.display = 'none';
+                if (nextRaceSection) nextRaceSection.style.display = 'none';
+                if (upcomingCalSection) upcomingCalSection.style.display = 'none';
             } else if (mode === 'overall') {
+                if (overviewContainer) overviewContainer.style.display = 'none';
+                if (statsGrid) statsGrid.style.display = 'grid';
+                if (globalInsights) globalInsights.style.display = 'block';
+                if (standingsSection) standingsSection.style.display = 'block';
                 if (historical) historical.style.display = 'block';
                 if (teamSection) teamSection.style.display = 'none';
                 if (completedSection) completedSection.style.display = 'none';
@@ -1183,7 +1711,13 @@
                 if (superlicenseSection) superlicenseSection.style.display = 'block';
                 if (raceSelectorSection) raceSelectorSection.style.display = 'block';
                 if (lastRaceSection) lastRaceSection.style.display = 'none';
+                if (nextRaceSection) nextRaceSection.style.display = 'none';
+                if (upcomingCalSection) upcomingCalSection.style.display = 'none';
             } else {
+                if (overviewContainer) overviewContainer.style.display = 'none';
+                if (statsGrid) statsGrid.style.display = 'grid';
+                if (globalInsights) globalInsights.style.display = 'block';
+                if (standingsSection) standingsSection.style.display = 'block';
                 if (historical) historical.style.display = 'none';
                 if (teamSection) teamSection.style.display = 'block';
                 if (completedSection) completedSection.style.display = 'block';
@@ -1193,6 +1727,8 @@
                 if (superlicenseSection) superlicenseSection.style.display = 'block';
                 if (raceSelectorSection) raceSelectorSection.style.display = 'block';
                 if (lastRaceSection) lastRaceSection.style.display = 'none';
+                if (nextRaceSection) nextRaceSection.style.display = 'none';
+                if (upcomingCalSection) upcomingCalSection.style.display = 'none';
             }
         }
 
@@ -1320,6 +1856,27 @@
                 Object.entries(seasonData.teams || {}).forEach(([teamId, team]) => {
                     allTeams.set(teamId, team);
                 });
+            }
+
+            // Enrich driver teams using teams_history from Championship.json
+            overallMeta.forEach((meta, driverId) => {
+                if (meta.teams_history && Array.isArray(meta.teams_history)) {
+                    const driverData = allDrivers.get(driverId);
+                    meta.teams_history.forEach(th => {
+                        if (th.team_id) {
+                            if (driverData) driverData.teams.add(th.team_id);
+                            if (!allTeams.has(th.team_id)) {
+                                allTeams.set(th.team_id, { name: th.team_name || th.team_id });
+                            }
+                        }
+                    });
+                }
+            });
+
+            // Aggregate race results from all seasons
+            for (const season of regularSeasons) {
+                const seasonData = allData[season.key];
+                if (!seasonData) continue;
 
                 // Process race results
                 (seasonData.races || []).forEach(race => {
@@ -1469,17 +2026,18 @@
                 if (!data) return;
 
                 const completedRaces = (data.races || []).filter(r => !r.planned && r.results?.length > 0);
-                const standings = calculateStandingsFromRaces(data.races || [], data.drivers || {}, data.teams || {});
+                const standings = completedRaces.length > 0 ? calculateStandingsFromRaces(data.races || [], data.drivers || {}, data.teams || {}) : [];
                 const leader = standings[0];
 
                 const isInProgress = isSeasonInProgress(season.key);
                 const championTitle = isInProgress ? 'Líder actual' : 'Campeón';
+                const statusLabel = isInProgress ? '(En Progreso)' : '(Finalizada)';
 
                 html += `
                     <div class="season-summary-card">
-                        <h3>${season.name} ${isInProgress ? '(En Curso)' : '(Finalizada)'}</h3>
+                        <h3>${season.name} ${statusLabel}</h3>
                         <ul class="season-stats-list">
-                            <li><span>${championTitle}:</span> <strong class="highlight">${leader?.['Piloto/Ronda'] || '-'}</strong></li>
+                            <li><span>${championTitle}:</span> <strong class="highlight">${leader?.['Piloto/Ronda'] || (completedRaces.length === 0 ? 'Sin datos' : '-')}</strong></li>
                             <li><span>Puntos del ${isInProgress ? 'líder' : 'campeón'}:</span> <strong>${leader?.Total || 0}</strong></li>
                             <li><span>Carreras disputadas:</span> <strong>${completedRaces.length}</strong></li>
                             <li><span>Participantes:</span> <strong>${Object.keys(data.drivers || {}).length}</strong></li>
@@ -1706,19 +2264,31 @@
             };
 
             // Render all sections
-            renderProgressionChart(calculatedStandings, completedRaces, isInProgress);
-            renderStandings(calculatedStandings, data.drivers, data.races, isInProgress);
+            if (completedRaces.length > 0) {
+                renderProgressionChart(calculatedStandings, completedRaces, isInProgress);
+                renderStandings(calculatedStandings, data.drivers, data.races, isInProgress);
+            } else {
+                // New season without races yet
+                const progressContainer = document.getElementById('progression-chart-container');
+                if (progressContainer) progressContainer.innerHTML = '<div class="no-data">Aún no hay carreras disputadas en esta temporada</div>';
+                const standingsBody = document.getElementById('standings-body');
+                if (standingsBody) standingsBody.innerHTML = '<tr><td colspan="8" class="no-data">Aún no hay datos de la temporada</td></tr>';
+            }
 
             if (mode !== 'home') {
-                renderDriverStats(data.drivers, data.teams, calculatedStandings, data.attendance, completedRaces.length, performance.statsByDriver);
-                renderAttendanceTable(data.drivers, data.teams, data.attendance, completedRaces.length, attendanceFallback);
-                renderSuperlicenseTable(data.drivers, data.teams);
-                renderRaceSelector(buildSeasonRaceItems(data), seasonKey);
-                renderTeamStats(data.drivers, data.teams, calculatedStandings);
-                renderCompletedRaces(completedRaces, data.drivers, data.teams);
+                if (completedRaces.length > 0) {
+                    renderDriverStats(data.drivers, data.teams, calculatedStandings, data.attendance, completedRaces.length, performance.statsByDriver);
+                    renderAttendanceTable(data.drivers, data.teams, data.attendance, completedRaces.length, attendanceFallback);
+                    renderSuperlicenseTable(data.drivers, data.teams);
+                    renderTeamStats(data.drivers, data.teams, calculatedStandings);
+                    renderCompletedRaces(completedRaces, data.drivers, data.teams);
+                }
                 renderPlannedRaces(plannedRaces, isInProgress);
             } else {
+                // Modo home - Overview de la temporada actual
                 renderLastRace(completedRaces, data.drivers, data.teams, allData.latest);
+                renderNextRace(plannedRaces.length > 0 ? plannedRaces : (globalNextRace ? [globalNextRace] : []));
+                if (upcomingSeason) renderUpcomingCalendar(upcomingSeason);
             }
 
             // Last updated
@@ -2458,6 +3028,38 @@
             `;
         }
 
+        function renderNextRace(plannedRaces) {
+            const container = document.getElementById('next-race-container');
+            if (!container) return;
+            container.innerHTML = '';
+
+            if (!plannedRaces || plannedRaces.length === 0) {
+                container.innerHTML = '<div class="no-data">No hay carreras planeadas</div>';
+                return;
+            }
+
+            const race = plannedRaces[0]; // La primera carrera planeada
+
+            const raceDate = formatRaceDate(race.date);
+
+            container.innerHTML = `
+                <div class="race-card planned">
+                    <h3>
+                        <span class="race-badge planned">PRÓXIMA</span>
+                        <span class="race-badge">R${race.round}</span>
+                        ${race.name}
+                    </h3>
+                    <div class="race-info">
+                        <div class="race-info-item"><strong>Fecha:</strong> ${raceDate}</div>
+                        ${race.track ? `<div class="race-info-item"><strong>Circuito:</strong> ${race.track}</div>` : ''}
+                    </div>
+                    <p style="margin-top: 15px; color: var(--f2-blue-medium); font-weight: 600; text-align: center;">
+                        Carrera pendiente de disputar
+                    </p>
+                </div>
+            `;
+        }
+
         function buildAttendanceFallback(races) {
             const counts = {};
             (races || []).forEach(race => {
@@ -2807,9 +3409,7 @@
                 const card = document.createElement('div');
                 card.className = 'race-card planned';
 
-                const raceDate = race.date ? new Date(race.date).toLocaleDateString('es-MX', {
-                    year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
-                }) : 'Fecha por confirmar';
+                const raceDate = formatRaceDate(race.date);
 
                 card.innerHTML = `
                     <h3>
@@ -2830,759 +3430,351 @@
             });
         }
 
-        loadAllData();
-        setInterval(loadAllData, 12000000);
-    </script>
-    <!--
-            // Combine data from all seasons
-            const allDrivers = new Map();
-            const allTeams = new Map();
-            let totalRaces = 0;
-            let totalDriversEver = new Set();
-
-            // Aggregate data from all seasons
-            for (const [seasonKey, seasonData] of Object.entries(allData)) {
-                if (!seasonData || seasonKey === 'overall') continue;
-
-                // Count races
-                totalRaces += (seasonData.races || []).filter(r => !r.planned && r.results?.length > 0).length;
-
-                // Collect drivers
-                Object.entries(seasonData.drivers || {}).forEach(([guid, driver]) => {
-                    totalDriversEver.add(guid);
-                    
-                    if (!allDrivers.has(guid)) {
-                        allDrivers.set(guid, {
-                            name: driver.name,
-                            totalPoints: 0,
-                            races: 0,
-                            wins: 0,
-                            podiums: 0,
-                            teams: new Set()
-                        });
-                    }
-
-                    const driverData = allDrivers.get(guid);
-                    if (driver.team_id) driverData.teams.add(driver.team_id);
-                });
-
-                // Collect teams
-                Object.entries(seasonData.teams || {}).forEach(([teamId, team]) => {
-                    allTeams.set(teamId, team);
-                });
-
-                // Process race results
-                (seasonData.races || []).forEach(race => {
-                    if (!race.planned && race.results) {
-                        race.results.forEach(result => {
-                            const driverData = allDrivers.get(result.driver_id);
-                            if (driverData) {
-                                driverData.totalPoints += (result.points || 0);
-                                driverData.races++;
-                                if (result.position === 1) driverData.wins++;
-                                if (result.position <= 3) driverData.podiums++;
-                            }
-                        });
-                    }
-                });
+        function renderUpcomingCalendar(seasonKey) {
+            const section = document.getElementById('upcoming-calendar-section');
+            if (!section) return;
+            const season = allData[seasonKey];
+            if (!season || !season.races || season.races.length === 0) {
+                section.style.display = 'none';
+                return;
             }
+            const container = document.getElementById('upcoming-calendar-content');
+            if (!container) return;
+            container.innerHTML = '';
 
-            // Find champions and top stats
-            const driversArray = Array.from(allDrivers.entries())
-                .map(([guid, data]) => ({ guid, ...data }))
-                .sort((a, b) => b.totalPoints - a.totalPoints);
+            const seasonLabel = seasonsList.find(s => s.key === seasonKey)?.name || seasonKey;
+            const title = document.createElement('h3');
+            title.textContent = 'Calendario ' + seasonLabel;
+            container.appendChild(title);
 
-            const mostWins = driversArray.reduce((max, d) => d.wins > max.wins ? d : max, driversArray[0] || { wins: 0 });
-            const mostPodiums = driversArray.reduce((max, d) => d.podiums > max.podiums ? d : max, driversArray[0] || { podiums: 0 });
-            const mostRaces = driversArray.reduce((max, d) => d.races > max.races ? d : max, driversArray[0] || { races: 0 });
+            const racesContainer = document.createElement('div');
+            racesContainer.className = 'races-grid';
 
-            // Update stats cards
-            document.getElementById('current-round').textContent = '3';
-            document.getElementById('total-drivers').textContent = totalDriversEver.size;
-            document.getElementById('completed-races').textContent = totalRaces;
-            document.getElementById('planned-races').textContent = '-';
-            document.getElementById('total-teams').textContent = allTeams.size;
-            document.getElementById('total-races').textContent = totalRaces;
+            section.style.display = 'block';
+            season.races.forEach(race => {
+                const raceCard = document.createElement('div');
+                raceCard.className = 'race-card planned';
+                const raceDate = formatRaceDate(race.date);
+                raceCard.innerHTML = '<h3>' +
+                    '<span class="race-badge planned">PRÓXIMA</span> ' +
+                    '<span class="race-badge">R' + race.round + '</span> ' +
+                    race.name +
+                    '</h3>' +
+                    '<div class="race-info">' +
+                    '<div class="race-info-item"><strong>Fecha:</strong> ' + raceDate + '</div>' +
+                    '<div class="race-info-item"><strong>Circuito:</strong> ' + race.track + '</div>' +
+                    '</div>';
+                racesContainer.appendChild(raceCard);
+            });
 
-            // Render historical stats
-            const histContainer = document.getElementById('historical-stats-container');
-            histContainer.innerHTML = `
-                <div class="historical-card">
-                    <h3>Campeón Histórico</h3>
-                    <div class="value">${driversArray[0]?.name || '-'}</div>
-                    <div class="subtext">${driversArray[0]?.totalPoints || 0} puntos totales</div>
-                </div>
-                <div class="historical-card">
-                    <h3>Más Victorias</h3>
-                    <div class="value">${mostWins.wins}</div>
-                    <div class="subtext">${mostWins.name || '-'}</div>
-                </div>
-                <div class="historical-card">
-                    <h3>Más Podios</h3>
-                    <div class="value">${mostPodiums.podiums}</div>
-                    <div class="subtext">${mostPodiums.name || '-'}</div>
-                </div>
-                <div class="historical-card">
-                    <h3>Más Carreras</h3>
-                    <div class="value">${mostRaces.races}</div>
-                    <div class="subtext">${mostRaces.name || '-'}</div>
-                </div>
-                <div class="historical-card">
-                    <h3>Total Temporadas</h3>
-                    <div class="value">3</div>
-                    <div class="subtext">Completadas hasta la fecha</div>
-                </div>
-                <div class="historical-card">
-                    <h3>Promedio Puntos/Carrera</h3>
-                    <div class="value">${driversArray[0] ? (driversArray[0].totalPoints / driversArray[0].races).toFixed(1) : 0}</div>
-                    <div class="subtext">Líder histórico</div>
-                </div>
-            `;
-
-            // Render season comparison
-            renderSeasonComparison();
-
-            // Render combined standings
-            renderCombinedStandings(driversArray, allTeams);
-
-            // Render progression chart for top drivers
-            renderHistoricalProgression(driversArray.slice(0, 8));
-
-            // Clear other sections
-            document.getElementById('team-stats-container').innerHTML = 
-                '<div class="no-data">Vista histórica - Estadísticas por equipo disponibles en cada temporada individual</div>';
-            document.getElementById('completed-races-container').innerHTML = 
-                '<div class="no-data">Vista histórica - Detalles de carreras disponibles en cada temporada individual</div>';
-            document.getElementById('planned-section').style.display = 'none';
+            container.appendChild(racesContainer);
         }
 
-        function renderSeasonComparison() {
-            const container = document.getElementById('season-comparison-container');
-            const seasonNames = {
-                s1: 'Temporada 1 - Pre-Temporada',
-                s2: 'Temporada 2 - Mini Championship',
-                s3: 'Temporada 3 - F1 2025'
-            };
+        function renderOverview() {
+            const container = document.getElementById('overview-container');
+            if (!container) return;
+
+            const championship = allData.overall;
+            const latest = allData.latest;
+
+            // Find the last season with completed races
+            const regularSeasons = seasonsList.filter(s => !s.isOverall);
+            let lastCompletedSeason = null;
+            let lastCompletedData = null;
+            let currentActiveSeason = null;
+            let currentActiveData = null;
+
+            for (let i = regularSeasons.length - 1; i >= 0; i--) {
+                const s = regularSeasons[i];
+                const data = allData[s.key];
+                if (!data) continue;
+
+                const completed = (data.races || []).filter(r => !r.planned && r.results?.length > 0);
+                if (completed.length > 0 && !lastCompletedSeason) {
+                    lastCompletedSeason = s;
+                    lastCompletedData = data;
+                }
+                if (data.pending_rounds > 0 && data.disputed_rounds === 0) {
+                    currentActiveSeason = s;
+                    currentActiveData = data;
+                } else if (data.pending_rounds > 0 && data.disputed_rounds > 0 && !currentActiveSeason) {
+                    currentActiveSeason = s;
+                    currentActiveData = data;
+                }
+            }
+
+            // Fallback: use last season if no upcoming found
+            if (!currentActiveSeason) {
+                const last = regularSeasons[regularSeasons.length - 1];
+                if (last) {
+                    currentActiveSeason = last;
+                    currentActiveData = allData[last.key];
+                }
+            }
+
+            // Find next race
+            let nextRace = globalNextRace;
 
             let html = '';
 
-            for (const [seasonKey, seasonName] of Object.entries(seasonNames)) {
-                const data = allData[seasonKey];
-                if (!data) continue;
+            // === CHAMPIONSHIP STATUS BANNER ===
+            const hasStarted = currentActiveData && currentActiveData.disputed_rounds > 0;
+            const firstRace = currentActiveData?.races?.[0];
 
-                const completedRaces = (data.races || []).filter(r => !r.planned && r.results?.length > 0);
-                const standings = calculateStandingsFromRaces(data.races || [], data.drivers || {}, data.teams || {});
-                const champion = standings[0];
+            if (!hasStarted && firstRace) {
+                const raceDate = new Date(firstRace.date);
+                const now = new Date();
+                const diffDays = Math.ceil((raceDate - now) / (1000 * 60 * 60 * 24));
 
                 html += `
-                    <div class="season-summary-card">
-                        <h3>${seasonName}</h3>
-                        <ul class="season-stats-list">
-                            <li><span>Campeón:</span> <strong class="highlight">${champion?.['Piloto/Ronda'] || '-'}</strong></li>
-                            <li><span>Puntos del campeón:</span> <strong>${champion?.Total || 0}</strong></li>
-                            <li><span>Carreras disputadas:</span> <strong>${completedRaces.length}</strong></li>
-                            <li><span>Participantes:</span> <strong>${Object.keys(data.drivers || {}).length}</strong></li>
-                            <li><span>Equipos:</span> <strong>${Object.keys(data.teams || {}).length}</strong></li>
-                        </ul>
+                    <div class="overview-banner">
+                        <div class="overview-banner-badge">PROXIMA TEMPORADA</div>
+                        <div class="overview-banner-title">${currentActiveSeason.name}</div>
+                        <div class="overview-banner-subtitle">${currentActiveData.total_rounds} carreras programadas</div>
+                        <div class="overview-banner-countdown">
+                            <div class="countdown-number">${Math.max(0, diffDays)}</div>
+                            <div class="countdown-label">dias para el inicio</div>
+                        </div>
+                        <div class="overview-banner-detail">${firstRace.name} &bull; ${firstRace.track} &bull; ${formatRaceDate(firstRace.date)}</div>
                     </div>
                 `;
+            } else if (hasStarted) {
+                const completed = currentActiveData.disputed_rounds || 0;
+                const total = currentActiveData.total_rounds || 0;
+                const progress = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+                html += `
+                    <div class="overview-banner">
+                        <div class="overview-banner-badge">EN CURSO</div>
+                        <div class="overview-banner-title">${currentActiveSeason.name}</div>
+                        <div class="overview-banner-subtitle">Ronda ${completed} de ${total}</div>
+                        <div class="overview-progress-bar">
+                            <div class="overview-progress-fill" style="width:${progress}%"></div>
+                        </div>
+                        <div class="overview-banner-detail">${progress}% completado</div>
+                    </div>
+                `;
+            }
+
+            // === QUICK STATS ===
+            const totalRaces = championship?.total_races || 0;
+            const totalSeasons = championship?.total_seasons || regularSeasons.length;
+            const totalDrivers = championship?.drivers?.length || 0;
+            const totalWins = (championship?.drivers || []).reduce((sum, d) => sum + (d.wins || 0), 0);
+
+            html += `
+                <div class="overview-quick-stats">
+                    <div class="overview-quick-stat">
+                        <div class="overview-quick-stat-value">${totalSeasons}</div>
+                        <div class="overview-quick-stat-label">Temporadas</div>
+                    </div>
+                    <div class="overview-quick-stat">
+                        <div class="overview-quick-stat-value">${totalRaces}</div>
+                        <div class="overview-quick-stat-label">Carreras Totales</div>
+                    </div>
+                    <div class="overview-quick-stat">
+                        <div class="overview-quick-stat-value">${totalDrivers}</div>
+                        <div class="overview-quick-stat-label">Pilotos Historicos</div>
+                    </div>
+                    <div class="overview-quick-stat">
+                        <div class="overview-quick-stat-value">${totalWins}</div>
+                        <div class="overview-quick-stat-label">Victorias Totales</div>
+                    </div>
+                </div>
+            `;
+
+            // === TWO COLUMN: LAST RACE + NEXT RACE ===
+            html += '<div class="overview-two-col">';
+
+            // -- Last Race --
+            html += '<div class="overview-card">';
+            html += '<div class="overview-card-header">Ultima Carrera</div>';
+            if (latest && latest.results) {
+                const podium = latest.results.filter(r => r.position <= 3);
+                html += `
+                    <div class="overview-card-body">
+                        <div class="overview-race-title">${latest.race_name || latest.name || 'Carrera'}</div>
+                        <div class="overview-race-info">${latest.track || ''} ${latest.season_id ? '&bull; ' + (seasonsList.find(s => s.key === latest.season_id)?.name || latest.season_id) : ''}</div>
+                        <div class="overview-podium">
+                            ${podium.map(r => `
+                                <div class="overview-podium-item podium-${r.position}">
+                                    <div class="overview-podium-pos">${r.position === 1 ? 'P1' : r.position === 2 ? 'P2' : 'P3'}</div>
+                                    <div class="overview-podium-name">${r.name}</div>
+                                    <div class="overview-podium-team">${r.team}</div>
+                                    <div class="overview-podium-points">${r.points} pts</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="overview-race-meta">
+                            ${latest.fastest_lap_driver ? `<span>Vuelta rapida: ${latest.fastest_lap_driver}</span>` : ''}
+                            <span>${latest.results.length} participantes</span>
+                        </div>
+                    </div>
+                `;
+            } else {
+                html += '<div class="overview-card-body"><div class="no-data">No hay datos de la ultima carrera</div></div>';
+            }
+            html += '</div>';
+
+            // -- Next Race --
+            html += '<div class="overview-card">';
+            html += '<div class="overview-card-header next-race">Proxima Carrera</div>';
+            if (nextRace) {
+                const rDate = new Date(nextRace.date);
+                const now = new Date();
+                const daysUntil = Math.ceil((rDate - now) / (1000 * 60 * 60 * 24));
+
+                html += `
+                    <div class="overview-card-body">
+                        <div class="overview-race-title">${nextRace.name}</div>
+                        <div class="overview-race-info">${nextRace.track || ''}</div>
+                        <div class="overview-countdown-inline">
+                            <div class="overview-countdown-big">${Math.max(0, daysUntil)}</div>
+                            <div class="overview-countdown-text">dias</div>
+                        </div>
+                        <div class="overview-race-date">${formatRaceDate(nextRace.date)}</div>
+                        ${nextRace.seasonName ? `<div class="overview-race-season">${nextRace.seasonName}</div>` : ''}
+                    </div>
+                `;
+            } else {
+                html += '<div class="overview-card-body"><div class="no-data">No hay carreras programadas</div></div>';
+            }
+            html += '</div>';
+
+            html += '</div>'; // close overview-two-col
+
+            // === STANDINGS SNAPSHOT ===
+            if (lastCompletedData) {
+                const standings = calculateStandingsFromRaces(lastCompletedData.races, lastCompletedData.drivers, lastCompletedData.teams);
+                const top5 = standings.slice(0, 5);
+                const isFinished = lastCompletedSeason.status?.toLowerCase() === 'finished';
+                const standingsLabel = isFinished
+                    ? `Clasificacion Final - ${lastCompletedSeason.name}`
+                    : `Clasificacion Actual - ${lastCompletedSeason.name}`;
+
+                html += `
+                    <div class="overview-card full-width">
+                        <div class="overview-card-header">${standingsLabel}</div>
+                        <div class="overview-card-body">
+                            <div class="overview-standings">
+                                ${top5.map((driver, idx) => `
+                                    <div class="overview-standing-row ${idx < 3 ? 'podium-' + (idx + 1) : ''}">
+                                        <div class="overview-standing-pos">${idx + 1}</div>
+                                        <div class="overview-standing-driver">${driver['Piloto/Ronda']}</div>
+                                        <div class="overview-standing-team">${driver['Equipo'] || '-'}</div>
+                                        <div class="overview-standing-points">${driver['Total']} pts</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // === HISTORICAL LEADERS ===
+            if (championship && championship.drivers && championship.drivers.length > 0) {
+                const drivers = [...championship.drivers].sort((a, b) => b.total_points - a.total_points);
+                const byWins = [...championship.drivers].sort((a, b) => b.wins - a.wins);
+                const byPodiums = [...championship.drivers].sort((a, b) => b.podiums - a.podiums);
+                const byRaces = [...championship.drivers].sort((a, b) => b.total_races - a.total_races);
+                const byFL = [...championship.drivers].sort((a, b) => (b.fastest_laps || 0) - (a.fastest_laps || 0));
+                const eligible = drivers.filter(d => d.total_races >= 10);
+                const bestAvg = eligible.length > 0
+                    ? eligible.sort((a, b) => (b.total_points / b.total_races) - (a.total_points / a.total_races))[0]
+                    : null;
+
+                html += `
+                    <div class="overview-card full-width">
+                        <div class="overview-card-header">Lideres Historicos</div>
+                        <div class="overview-card-body">
+                            <div class="overview-leaders-grid">
+                                <div class="overview-leader-item">
+                                    <div class="overview-leader-label">Mas Puntos</div>
+                                    <div class="overview-leader-value">${drivers[0].name}</div>
+                                    <div class="overview-leader-stat">${drivers[0].total_points} pts</div>
+                                </div>
+                                <div class="overview-leader-item">
+                                    <div class="overview-leader-label">Mas Victorias</div>
+                                    <div class="overview-leader-value">${byWins[0].name}</div>
+                                    <div class="overview-leader-stat">${byWins[0].wins} victorias</div>
+                                </div>
+                                <div class="overview-leader-item">
+                                    <div class="overview-leader-label">Mas Podios</div>
+                                    <div class="overview-leader-value">${byPodiums[0].name}</div>
+                                    <div class="overview-leader-stat">${byPodiums[0].podiums} podios</div>
+                                </div>
+                                <div class="overview-leader-item">
+                                    <div class="overview-leader-label">Mas Carreras</div>
+                                    <div class="overview-leader-value">${byRaces[0].name}</div>
+                                    <div class="overview-leader-stat">${byRaces[0].total_races} carreras</div>
+                                </div>
+                                <div class="overview-leader-item">
+                                    <div class="overview-leader-label">Mas Vueltas Rapidas</div>
+                                    <div class="overview-leader-value">${byFL[0].name}</div>
+                                    <div class="overview-leader-stat">${byFL[0].fastest_laps || 0} FL</div>
+                                </div>
+                                ${bestAvg ? `
+                                <div class="overview-leader-item">
+                                    <div class="overview-leader-label">Mejor Promedio Pts/Carrera</div>
+                                    <div class="overview-leader-value">${bestAvg.name}</div>
+                                    <div class="overview-leader-stat">${(bestAvg.total_points / bestAvg.total_races).toFixed(1)} pts/carrera</div>
+                                </div>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // === UPCOMING CALENDAR ===
+            if (currentActiveData && currentActiveData.races) {
+                const allRaces = currentActiveData.races;
+                const plannedRaces = allRaces.filter(r => r.planned);
+                if (plannedRaces.length > 0) {
+                    // Find the next upcoming race
+                    const now = new Date();
+                    let nextRoundNum = null;
+                    for (const race of plannedRaces) {
+                        if (race.date && new Date(race.date) >= now) {
+                            nextRoundNum = race.round;
+                            break;
+                        }
+                    }
+
+                    html += `
+                        <div class="overview-card full-width">
+                            <div class="overview-card-header">Calendario ${currentActiveSeason.name}</div>
+                            <div class="overview-card-body">
+                                <div class="overview-calendar-grid">
+                                    ${plannedRaces.map(race => `
+                                        <div class="overview-calendar-item${race.round === nextRoundNum ? ' next-up' : ''}">
+                                            <div class="overview-calendar-round">${race.round === nextRoundNum ? 'PROXIMA - ' : ''}R${race.round}</div>
+                                            <div class="overview-calendar-name">${race.name}</div>
+                                            <div class="overview-calendar-track">${race.track}</div>
+                                            <div class="overview-calendar-date">${formatRaceDate(race.date)}</div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+
+            // === LAST UPDATED ===
+            const exportedAt = championship?.exported_at || currentActiveData?.exported_at;
+            if (exportedAt) {
+                const date = new Date(exportedAt);
+                html += `<p class="last-updated">Ultima actualizacion: ${date.toLocaleString('es-MX', {
+                    year: 'numeric', month: 'long', day: 'numeric',
+                    hour: '2-digit', minute: '2-digit'
+                })}</p>`;
             }
 
             container.innerHTML = html;
         }
 
-        function renderCombinedStandings(driversArray, allTeams) {
-            const tbody = document.getElementById('standings-body');
-            tbody.innerHTML = '';
-
-            if (!driversArray || driversArray.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="13" class="no-data">No hay datos históricos</td></tr>';
-                return;
-            }
-
-            driversArray.slice(0, 20).forEach((driver, index) => {
-                const tr = document.createElement('tr');
-                
-                if (index === 0) tr.classList.add('podium-1');
-                else if (index === 1) tr.classList.add('podium-2');
-                else if (index === 2) tr.classList.add('podium-3');
-
-                const teamNames = Array.from(driver.teams).map(tid => allTeams.get(tid)?.name).filter(Boolean).join(', ') || '-';
-
-                tr.innerHTML = `
-                    <td class="position">${index + 1}</td>
-                    <td class="driver-name">${driver.name}</td>
-                    <td class="team-name">${teamNames}</td>
-                    <td class="points">${driver.races}</td>
-                    <td class="points">-</td>
-                    <td class="points">${driver.wins}</td>
-                    <td class="points">${driver.podiums}</td>
-                    <td class="points" colspan="5">${(driver.totalPoints / driver.races).toFixed(1)} pts/carrera</td>
-                    <td class="total-points">${driver.totalPoints}</td>
-                `;
-
-                tbody.appendChild(tr);
-            });
-        }
-
-        function renderHistoricalProgression(topDrivers) {
-            if (!topDrivers || topDrivers.length === 0) {
-                document.querySelector('.chart-container').innerHTML = 
-                    '<div class="no-data">No hay suficientes datos para mostrar la progresión</div>';
-                return;
-            }
-
-            // Create a timeline across all seasons
-            const timeline = [];
-            let raceCounter = 0;
-
-            for (const seasonKey of ['s1', 's2', 's3']) {
-                const data = allData[seasonKey];
-                if (!data) continue;
-
-                const races = (data.races || [])
-                    .filter(r => !r.planned && r.results?.length > 0)
-                    .sort((a, b) => a.round - b.round);
-
-                races.forEach(race => {
-                    raceCounter++;
-                    timeline.push({
-                        label: `S${seasonKey.slice(1)}R${race.round}`,
-                        raceId: race.id,
-                        seasonKey: seasonKey,
-                        results: race.results
-                    });
-                });
-            }
-
-            const datasets = topDrivers.map((driver, index) => {
-                const points = [];
-                let cumulative = 0;
-
-                timeline.forEach(raceData => {
-                    const result = raceData.results.find(r => r.driver_id === driver.guid);
-                    if (result) {
-                        cumulative += (result.points || 0);
-                    }
-                    points.push(cumulative);
-                });
-
-                const colors = [
-                    '#003366', '#0066cc', '#3399ff', '#ff6600', '#5a6d7e',
-                    '#004d99', '#66b3ff', '#ff8533', '#8b98a5', '#002244'
-                ];
-
-                return {
-                    label: driver.name,
-                    data: points,
-                    borderColor: colors[index % colors.length],
-                    backgroundColor: colors[index % colors.length] + '20',
-                    borderWidth: 3,
-                    tension: 0.3,
-                    pointRadius: 3,
-                    pointHoverRadius: 6
-                };
-            });
-
-            const ctx = document.getElementById('progressionChart');
-            if (progressionChart) progressionChart.destroy();
-
-            progressionChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: timeline.map(r => r.label),
-                    datasets: datasets
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                boxWidth: 15,
-                                padding: 12,
-                                font: { size: 10, weight: '600' }
-                            }
-                        },
-                        tooltip: {
-                            mode: 'index',
-                            intersect: false,
-                            backgroundColor: 'rgba(0, 51, 102, 0.95)',
-                            titleFont: { size: 12, weight: 'bold' },
-                            bodyFont: { size: 11 }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: 'Puntos Acumulados (Todas las Temporadas)',
-                                font: { size: 12, weight: 'bold' },
-                                color: '#003366'
-                            },
-                            grid: {
-                                color: 'rgba(0, 51, 102, 0.08)'
-                            }
-                        },
-                        x: {
-                            title: {
-                                display: true,
-                                text: 'Carreras (S = Temporada, R = Ronda)',
-                                font: { size: 12, weight: 'bold' },
-                                color: '#003366'
-                            },
-                            grid: {
-                                color: 'rgba(0, 51, 102, 0.08)'
-                            },
-                            ticks: {
-                                maxRotation: 45,
-                                minRotation: 45,
-                                font: { size: 9 }
-                            }
-                        }
-                    }
-                }
-            });
-        }
-
-        function renderSeasonData(seasonKey, mode = 'season') {
-            const data = allData[seasonKey];
-            
-            if (!data) {
-                document.querySelector('.container').innerHTML = 
-                    '<div class="error-message">No se encontraron datos para esta temporada</div>';
-                return;
-            }
-
-            const isInProgress = isSeasonInProgress(seasonKey);
-            const completedRaces = data.races.filter(r => !r.planned && r.results && r.results.length > 0);
-            const plannedRaces = data.races.filter(r => r.planned === true);
-
-            const calculatedStandings = calculateStandingsFromRaces(data.races, data.drivers, data.teams);
-            const performance = buildRacePerformanceStats(data.races || []);
-            const seasonInfo = seasonsList.find(s => s.key === seasonKey);
-
-            setStatCardTitles(isInProgress ? 'season' : 'season-finished');
-
-            document.getElementById('current-round').textContent = data.disputed_rounds || completedRaces.length;
-            document.getElementById('total-drivers').textContent = Object.keys(data.drivers || {}).length;
-            document.getElementById('completed-races').textContent = completedRaces.length;
-            document.getElementById('planned-races').textContent = isInProgress
-                ? (data.pending_rounds ?? plannedRaces.length)
-                : (data.total_rounds || data.races.length);
-            document.getElementById('total-teams').textContent = Object.keys(data.teams || {}).length;
-            document.getElementById('total-races').textContent = data.total_rounds || data.races.length;
-
-            renderGlobalInsights(performance, seasonInfo?.name || 'Temporada');
-            renderLeaderInsights(
-                buildLeaderInsights(
-                    performance.statsByDriver,
-                    (driverId) => data.drivers?.[driverId]?.name || driverId,
-                    performance.completedRaces.length
-                )
-            );
-
-            setStandingsHeader(false);
-            const standingsTitle = document.getElementById('standings-title');
-            if (standingsTitle) standingsTitle.textContent = isInProgress ? 'Clasificacion Actual' : 'Clasificacion Final';
-
-            currentStatsContext = {
-                mode: 'season',
-                seasonKey,
-                data,
-                standings: calculatedStandings,
-                totalRounds: completedRaces.length,
-                driverPerformance: performance.statsByDriver
-            };
-
-            renderProgressionChart(calculatedStandings, completedRaces, isInProgress);
-            renderStandings(calculatedStandings, data.drivers, data.races, isInProgress);
-
-            if (mode !== 'home') {
-                renderDriverStats(data.drivers, data.teams, calculatedStandings, data.attendance, completedRaces.length, performance.statsByDriver);
-                renderAttendanceTable(data.drivers, data.teams, data.attendance, completedRaces.length);
-                renderSuperlicenseTable(data.drivers, data.teams);
-                renderRaceSelector(buildSeasonRaceItems(data), seasonKey);
-                renderTeamStats(data.drivers, data.teams, calculatedStandings);
-                renderCompletedRaces(completedRaces, data.drivers, data.teams);
-                renderPlannedRaces(plannedRaces);
-            } else {
-                renderLastRace(completedRaces, data.drivers, data.teams, allData.latest);
-            }
-
-            if (data.exported_at) {
-                const date = new Date(data.exported_at);
-                document.getElementById('last-updated').textContent = 
-                    `Ultima actualizacion: ${date.toLocaleString('es-MX', {
-                        year: 'numeric', month: 'long', day: 'numeric',
-                        hour: '2-digit', minute: '2-digit'
-                    })}`;
-            }
-        }
-
-        function calculateStandingsFromRaces(races, drivers, teams) {
-            const driverPoints = {};
-
-            for (const [driverId, driverData] of Object.entries(drivers)) {
-                driverPoints[driverId] = {
-                    name: driverData.name,
-                    team: driverData.team_id ? (teams[driverData.team_id]?.name || '') : '',
-                    rounds: {},
-                    total: 0,
-                    racesDisputed: 0,
-                    penaltyPoints: driverData.penalty_points || 0
-                };
-            }
-
-            races.forEach(race => {
-                if (!race.planned && race.results) {
-                    const roundKey = 'R' + race.round;
-
-                    race.results.forEach(result => {
-                        const driverId = result.driver_id;
-
-                        if (!driverPoints[driverId]) {
-                            driverPoints[driverId] = {
-                                name: result.name || result.driver || driverId,
-                                team: result.team || '',
-                                rounds: {},
-                                total: 0,
-                                racesDisputed: 0,
-                                penaltyPoints: 0
-                            };
-                        }
-
-                        const points = result.points || 0;
-                        driverPoints[driverId].rounds[roundKey] = points;
-                        driverPoints[driverId].total += points;
-                        driverPoints[driverId].racesDisputed++;
-                    });
-                }
-            });
-
-            const standingsArray = Object.entries(driverPoints)
-                .map(([driverId, data]) => ({
-                    driverId: driverId,
-                    'Piloto/Ronda': data.name,
-                    'Equipo': data.team,
-                    'Total': data.total,
-                    'racesDisputed': data.racesDisputed,
-                    'penaltyPoints': data.penaltyPoints,
-                    ...data.rounds
-                }))
-                .sort((a, b) => b.Total - a.Total);
-
-            standingsArray.forEach((driver, index) => {
-                driver['Posición'] = index + 1;
-            });
-
-            return standingsArray;
-        }
-
-        function renderProgressionChart(standings, races) {
-            if (!standings || standings.length === 0 || races.length === 0) {
-                document.querySelector('.chart-container').innerHTML = 
-                    '<div class="no-data">No hay suficientes datos para mostrar la progresión</div>';
-                return;
-            }
-
-            const topDrivers = standings.slice(0, 10);
-            const rounds = races.map(r => r.round).sort((a, b) => a - b);
-
-            const datasets = topDrivers.map((driver, index) => {
-                const driverName = driver['Piloto/Ronda'];
-                const points = [];
-                let cumulative = 0;
-
-                rounds.forEach(round => {
-                    const roundKey = 'R' + round;
-                    const roundPoints = driver[roundKey] || 0;
-                    cumulative += roundPoints;
-                    points.push(cumulative);
-                });
-
-                const colors = [
-                    '#003366', '#0066cc', '#3399ff', '#ff6600', '#5a6d7e',
-                    '#004d99', '#66b3ff', '#ff8533', '#8b98a5', '#002244'
-                ];
-
-                return {
-                    label: driverName,
-                    data: points,
-                    borderColor: colors[index % colors.length],
-                    backgroundColor: colors[index % colors.length] + '20',
-                    borderWidth: 3,
-                    tension: 0.3,
-                    pointRadius: 5,
-                    pointHoverRadius: 7
-                };
-            });
-
-            const ctx = document.getElementById('progressionChart');
-            if (progressionChart) progressionChart.destroy();
-
-            progressionChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: rounds.map(r => 'R' + r),
-                    datasets: datasets
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                boxWidth: 15,
-                                padding: 15,
-                                font: { size: 11, weight: '600' }
-                            }
-                        },
-                        tooltip: {
-                            mode: 'index',
-                            intersect: false,
-                            backgroundColor: 'rgba(0, 51, 102, 0.95)',
-                            titleFont: { size: 13, weight: 'bold' },
-                            bodyFont: { size: 12 }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: 'Puntos Acumulados',
-                                font: { size: 13, weight: 'bold' },
-                                color: '#003366'
-                            },
-                            grid: {
-                                color: 'rgba(0, 51, 102, 0.08)'
-                            }
-                        },
-                        x: {
-                            title: {
-                                display: true,
-                                text: 'Ronda',
-                                font: { size: 13, weight: 'bold' },
-                                color: '#003366'
-                            },
-                            grid: {
-                                color: 'rgba(0, 51, 102, 0.08)'
-                            }
-                        }
-                    }
-                }
-            });
-        }
-
-        function renderStandings(standings, drivers, races) {
-            const tbody = document.getElementById('standings-body');
-            tbody.innerHTML = '';
-
-            if (!standings || standings.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="13" class="no-data">No hay datos de clasificación</td></tr>';
-                return;
-            }
-
-            standings.forEach((row, index) => {
-                const tr = document.createElement('tr');
-
-                if (index === 0) tr.classList.add('podium-1');
-                else if (index === 1) tr.classList.add('podium-2');
-                else if (index === 2) tr.classList.add('podium-3');
-
-                const racesDisputed = row.racesDisputed || 0;
-                const penaltyPoints = row.penaltyPoints || 0;
-
-                let penaltyClass = 'penalty-low';
-                if (penaltyPoints >= 10) penaltyClass = 'penalty-high';
-                else if (penaltyPoints >= 5) penaltyClass = 'penalty-medium';
-
-                tr.innerHTML = `
-                    <td class="position">${row['Posición']}</td>
-                    <td class="driver-name">${row['Piloto/Ronda']}</td>
-                    <td class="team-name">${row['Equipo'] || '-'}</td>
-                    <td class="points">${racesDisputed}</td>
-                    <td class="penalty-points ${penaltyClass}">${penaltyPoints.toFixed(1)}</td>
-                    <td class="points">${row['R1'] || 0}</td>
-                    <td class="points">${row['R2'] || 0}</td>
-                    <td class="points">${row['R3'] || 0}</td>
-                    <td class="points">${row['R4'] || 0}</td>
-                    <td class="points">${row['R5'] || 0}</td>
-                    <td class="points">${row['R6'] || 0}</td>
-                    <td class="points">${row['R7'] || 0}</td>
-                    <td class="total-points">${row['Total']}</td>
-                `;
-
-                tbody.appendChild(tr);
-            });
-        }
-
-        function renderTeamStats(drivers, teams, standings) {
-            const container = document.getElementById('team-stats-container');
-            if (!container) return;
-            container.innerHTML = '';
-
-            if (!teams || Object.keys(teams).length === 0) {
-                container.innerHTML = '<div class="no-data">No hay datos de equipos</div>';
-                return;
-            }
-
-            const teamStats = {};
-
-            for (const [teamId, team] of Object.entries(teams)) {
-                teamStats[teamId] = {
-                    name: team.name,
-                    drivers: 0,
-                    totalPoints: 0,
-                    bestDriver: null,
-                    bestPoints: 0
-                };
-            }
-
-            for (const [driverId, driver] of Object.entries(drivers)) {
-                if (driver.team_id && teamStats[driver.team_id]) {
-                    teamStats[driver.team_id].drivers++;
-
-                    const standing = standings.find(s => s['Piloto/Ronda'] === driver.name);
-                    if (standing) {
-                        const points = standing['Total'] || 0;
-                        teamStats[driver.team_id].totalPoints += points;
-
-                        if (points > teamStats[driver.team_id].bestPoints) {
-                            teamStats[driver.team_id].bestPoints = points;
-                            teamStats[driver.team_id].bestDriver = driver.name;
-                        }
-                    }
-                }
-            }
-
-            const sortedTeams = Object.entries(teamStats)
-                .sort(([,a], [,b]) => b.totalPoints - a.totalPoints);
-
-            sortedTeams.forEach(([teamId, stats]) => {
-                const card = document.createElement('div');
-                card.className = 'team-card';
-                card.innerHTML = `
-                    <h4>${stats.name}</h4>
-                    <div class="team-stats">
-                        <div class="team-stat-item">Pilotos: <strong>${stats.drivers}</strong></div>
-                        <div class="team-stat-item">Puntos: <strong>${stats.totalPoints}</strong></div>
-                        <div class="team-stat-item" style="grid-column: 1 / -1;">
-                            Mejor: <strong>${stats.bestDriver || '-'} (${stats.bestPoints} pts)</strong>
-                        </div>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        function renderCompletedRaces(races, drivers, teams) {
-            const container = document.getElementById('completed-races-container');
-            container.innerHTML = '';
-
-            if (races.length === 0) {
-                container.innerHTML = '<div class="no-data">No hay carreras disputadas</div>';
-                return;
-            }
-
-            races.sort((a, b) => b.round - a.round);
-
-            races.forEach(race => {
-                const card = document.createElement('div');
-                card.className = 'race-card';
-
-                const raceDate = race.date ? new Date(race.date).toLocaleDateString('es-MX', {
-                    year: 'numeric', month: 'long', day: 'numeric'
-                }) : 'Fecha no disponible';
-
-                let resultsHTML = '<div class="table-container"><table><thead><tr>' +
-                    '<th class="center">Pos</th><th>Piloto</th><th>Equipo</th>' +
-                    '<th class="center">Puntos</th><th class="center">Estado</th></tr></thead><tbody>';
-
-                (race.results || []).forEach(result => {
-                    const driver = drivers[result.driver_id];
-                    const team = driver && driver.team_id ? teams[driver.team_id] : null;
-                    const teamName = team ? team.name : (result.team || '-');
-
-                    resultsHTML += `
-                        <tr>
-                            <td class="position">${result.position}</td>
-                            <td class="driver-name">${result.name || driver?.name || 'N/A'}</td>
-                            <td class="team-name">${teamName}</td>
-                            <td class="points">${result.points || 0}</td>
-                            <td class="points">${result.status || 'FIN'}</td>
-                        </tr>
-                    `;
-                });
-
-                resultsHTML += '</tbody></table></div>';
-
-                card.innerHTML = `
-                    <h3>
-                        <span class="race-badge">R${race.round}</span>
-                        ${race.name}
-                    </h3>
-                    <div class="race-info">
-                        <div class="race-info-item"><strong>Fecha:</strong> ${raceDate}</div>
-                        ${race.track ? `<div class="race-info-item"><strong>Circuito:</strong> ${race.track}</div>` : ''}
-                        <div class="race-info-item"><strong>Participantes:</strong> ${race.results.length}</div>
-                    </div>
-                    ${resultsHTML}
-                `;
-
-                container.appendChild(card);
-            });
-        }
-
-        function renderPlannedRaces(races) {
-            const container = document.getElementById('planned-races-container');
-            const section = document.getElementById('planned-section');
-            if (!container || !section) return;
-            if (!container || !section) return;
-
-            if (races.length === 0) {
-                section.style.display = 'none';
-                return;
-            }
-
-            section.style.display = 'block';
-            container.innerHTML = '';
-            races.sort((a, b) => a.round - b.round);
-
-            races.forEach(race => {
-                const card = document.createElement('div');
-                card.className = 'race-card planned';
-
-                const raceDate = race.date ? new Date(race.date).toLocaleDateString('es-MX', {
-                    year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
-                }) : 'Fecha por confirmar';
-
-                card.innerHTML = `
-                    <h3>
-                        <span class="race-badge planned">PRÓXIMA</span>
-                        <span class="race-badge">R${race.round}</span>
-                        ${race.name}
-                    </h3>
-                    <div class="race-info">
-                        <div class="race-info-item"><strong>Fecha:</strong> ${raceDate}</div>
-                        ${race.track ? `<div class="race-info-item"><strong>Circuito:</strong> ${race.track}</div>` : ''}
-                    </div>
-                    <p style="margin-top: 15px; color: var(--f2-blue-medium); font-weight: 600; text-align: center;">
-                        Carrera pendiente de disputar
-                    </p>
-                `;
-
-                container.appendChild(card);
-            });
-        }
-
         loadAllData();
         setInterval(loadAllData, 120000);
     </script>
-    -->
 </body>
 </html>

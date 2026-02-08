@@ -1,8 +1,8 @@
 {
     "export_type": "season",
-    "championship_name": "ne series",
+    "championship_name": "NyE Series",
     "season_id": "series_3",
-    "season_name": "series 3",
+    "season_name": "Series 3",
     "total_rounds": 14,
     "disputed_rounds": 14,
     "pending_rounds": 0,
@@ -44,8 +44,8 @@
                 },
                 {
                     "position": 4,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 12.0,
                     "status": ""
@@ -68,8 +68,8 @@
                 },
                 {
                     "position": 7,
-                    "driver": "Kion99",
-                    "driver_id": "kion99",
+                    "driver": "Kion343",
+                    "driver_id": "kion343",
                     "team": "Alfa Romeo",
                     "points": 6.0,
                     "status": ""
@@ -193,16 +193,16 @@
                 },
                 {
                     "position": 3,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 15.0,
                     "status": ""
                 },
                 {
                     "position": 4,
-                    "driver": "Taco_Flow",
-                    "driver_id": "taco_flow",
+                    "driver": "Taco Antax",
+                    "driver_id": "taco_antax",
                     "team": "McLaren",
                     "points": 12.0,
                     "status": ""
@@ -249,8 +249,8 @@
                 },
                 {
                     "position": 10,
-                    "driver": "Kion99",
-                    "driver_id": "kion99",
+                    "driver": "Kion343",
+                    "driver_id": "kion343",
                     "team": "Alfa Romeo",
                     "points": 1.0,
                     "status": ""
@@ -294,8 +294,8 @@
                 },
                 {
                     "position": 3,
-                    "driver": "Taco_Flow",
-                    "driver_id": "taco_flow",
+                    "driver": "Taco Antax",
+                    "driver_id": "taco_antax",
                     "team": "McLaren",
                     "points": 15.0,
                     "status": ""
@@ -350,8 +350,8 @@
                 },
                 {
                     "position": 10,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 1.0,
                     "status": ""
@@ -383,7 +383,7 @@
             "planned": false,
             "winner": "Dominic9640",
             "fastest_lap": "Dominic9640",
-            "dotd": "Robert Cabechon",
+            "dotd": "robertCABECHON",
             "results": [
                 {
                     "position": 1,
@@ -395,8 +395,8 @@
                 },
                 {
                     "position": 2,
-                    "driver": "Taco_Flow",
-                    "driver_id": "taco_flow",
+                    "driver": "Taco Antax",
+                    "driver_id": "taco_antax",
                     "team": "McLaren",
                     "points": 18.0,
                     "status": ""
@@ -411,8 +411,8 @@
                 },
                 {
                     "position": 4,
-                    "driver": "Robert Cabechon",
-                    "driver_id": "robert_cabechon",
+                    "driver": "robertCABECHON",
+                    "driver_id": "robertcabechon",
                     "team": "Reserve Driver",
                     "points": 12.0,
                     "status": ""
@@ -427,8 +427,8 @@
                 },
                 {
                     "position": 6,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 8.0,
                     "status": ""
@@ -491,8 +491,8 @@
                 },
                 {
                     "position": 14,
-                    "driver": "Kion99",
-                    "driver_id": "kion99",
+                    "driver": "Kion343",
+                    "driver_id": "kion343",
                     "team": "Alfa Romeo",
                     "points": 0.0,
                     "status": ""
@@ -514,14 +514,14 @@
             "date": "",
             "track": "Japan",
             "planned": false,
-            "winner": "Taco_Flow",
-            "fastest_lap": "Taco_Flow",
+            "winner": "Taco Antax",
+            "fastest_lap": "Taco Antax",
             "dotd": "",
             "results": [
                 {
                     "position": 1,
-                    "driver": "Taco_Flow",
-                    "driver_id": "taco_flow",
+                    "driver": "Taco Antax",
+                    "driver_id": "taco_antax",
                     "team": "McLaren",
                     "points": 26.0,
                     "status": ""
@@ -616,8 +616,8 @@
                 },
                 {
                     "position": 13,
-                    "driver": "Kion99",
-                    "driver_id": "kion99",
+                    "driver": "Kion343",
+                    "driver_id": "kion343",
                     "team": "Alfa Romeo",
                     "points": 0.0,
                     "status": ""
@@ -632,7 +632,7 @@
             "track": "Qatar",
             "planned": false,
             "winner": "Puffy",
-            "fastest_lap": "Taco_Flow",
+            "fastest_lap": "Taco Antax",
             "dotd": "LovingTheZero",
             "results": [
                 {
@@ -645,8 +645,8 @@
                 },
                 {
                     "position": 2,
-                    "driver": "Taco_Flow",
-                    "driver_id": "taco_flow",
+                    "driver": "Taco Antax",
+                    "driver_id": "taco_antax",
                     "team": "McLaren",
                     "points": 19.0,
                     "status": ""
@@ -669,8 +669,8 @@
                 },
                 {
                     "position": 5,
-                    "driver": "Robert Cabechon",
-                    "driver_id": "robert_cabechon",
+                    "driver": "robertCABECHON",
+                    "driver_id": "robertcabechon",
                     "team": "Reserve Driver",
                     "points": 10.0,
                     "status": ""
@@ -733,7 +733,7 @@
             "track": "Silverstone",
             "planned": false,
             "winner": "Puffy",
-            "fastest_lap": "Taco_Flow",
+            "fastest_lap": "Taco Antax",
             "dotd": "",
             "results": [
                 {
@@ -762,8 +762,8 @@
                 },
                 {
                     "position": 4,
-                    "driver": "Taco_Flow",
-                    "driver_id": "taco_flow",
+                    "driver": "Taco Antax",
+                    "driver_id": "taco_antax",
                     "team": "McLaren",
                     "points": 13.0,
                     "status": ""
@@ -794,8 +794,8 @@
                 },
                 {
                     "position": 8,
-                    "driver": "Robert Cabechon",
-                    "driver_id": "robert_cabechon",
+                    "driver": "robertCABECHON",
+                    "driver_id": "robertcabechon",
                     "team": "Reserve Driver",
                     "points": 4.0,
                     "status": ""
@@ -810,8 +810,8 @@
                 },
                 {
                     "position": 10,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 1.0,
                     "status": ""
@@ -871,8 +871,8 @@
                 },
                 {
                     "position": 2,
-                    "driver": "Taco_Flow",
-                    "driver_id": "taco_flow",
+                    "driver": "Taco Antax",
+                    "driver_id": "taco_antax",
                     "team": "McLaren",
                     "points": 18.0,
                     "status": ""
@@ -895,8 +895,8 @@
                 },
                 {
                     "position": 5,
-                    "driver": "Kion99",
-                    "driver_id": "kion99",
+                    "driver": "Kion343",
+                    "driver_id": "kion343",
                     "team": "Alfa Romeo",
                     "points": 10.0,
                     "status": ""
@@ -1004,8 +1004,8 @@
                 },
                 {
                     "position": 4,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 12.0,
                     "status": ""
@@ -1060,8 +1060,8 @@
                 },
                 {
                     "position": 11,
-                    "driver": "Kion99",
-                    "driver_id": "kion99",
+                    "driver": "Kion343",
+                    "driver_id": "kion343",
                     "team": "Alfa Romeo",
                     "points": 0.0,
                     "status": ""
@@ -1105,8 +1105,8 @@
                 },
                 {
                     "position": 3,
-                    "driver": "Taco_Flow",
-                    "driver_id": "taco_flow",
+                    "driver": "Taco Antax",
+                    "driver_id": "taco_antax",
                     "team": "McLaren",
                     "points": 15.0,
                     "status": ""
@@ -1129,8 +1129,8 @@
                 },
                 {
                     "position": 6,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 8.0,
                     "status": ""
@@ -1200,14 +1200,14 @@
             "date": "",
             "track": "Interlagos",
             "planned": false,
-            "winner": "Taco_Flow",
+            "winner": "Taco Antax",
             "fastest_lap": "driver_hipacorn",
             "dotd": "AlexMatrix266",
             "results": [
                 {
                     "position": 1,
-                    "driver": "Taco_Flow",
-                    "driver_id": "taco_flow",
+                    "driver": "Taco Antax",
+                    "driver_id": "taco_antax",
                     "team": "McLaren",
                     "points": 25.0,
                     "status": ""
@@ -1286,7 +1286,7 @@
             "track": "Spa-Francorchamps",
             "planned": false,
             "winner": "Puffy",
-            "fastest_lap": "Taco_Flow",
+            "fastest_lap": "Taco Antax",
             "dotd": "",
             "results": [
                 {
@@ -1307,16 +1307,16 @@
                 },
                 {
                     "position": 3,
-                    "driver": "Taco_Flow",
-                    "driver_id": "taco_flow",
+                    "driver": "Taco Antax",
+                    "driver_id": "taco_antax",
                     "team": "McLaren",
                     "points": 16.0,
                     "status": ""
                 },
                 {
                     "position": 4,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 12.0,
                     "status": ""
@@ -1378,14 +1378,14 @@
             "date": "",
             "track": "Portimao",
             "planned": false,
-            "winner": "Taco_Flow",
-            "fastest_lap": "Taco_Flow",
+            "winner": "Taco Antax",
+            "fastest_lap": "Taco Antax",
             "dotd": "",
             "results": [
                 {
                     "position": 1,
-                    "driver": "Taco_Flow",
-                    "driver_id": "taco_flow",
+                    "driver": "Taco Antax",
+                    "driver_id": "taco_antax",
                     "team": "McLaren",
                     "points": 26.0,
                     "status": ""
@@ -1416,8 +1416,8 @@
                 },
                 {
                     "position": 5,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 10.0,
                     "status": ""
@@ -1485,8 +1485,8 @@
                 },
                 {
                     "position": 2,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 18.0,
                     "status": ""
@@ -1614,10 +1614,10 @@
             "driver_of_the_day": 2
         },
         {
-            "driver_id": "taco_flow",
-            "name": "Taco_Flow",
-            "team": "McLaren",
-            "team_id": "team_mclaren",
+            "driver_id": "taco_antax",
+            "name": "Taco Antax",
+            "team": "Haas",
+            "team_id": "team_haas",
             "total_points": 203.0,
             "rounds": {
                 "2": {
@@ -1924,8 +1924,8 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "tgouu",
-            "name": "Tgouu",
+            "driver_id": "tgoou",
+            "name": "Tgoou",
             "team": "Mercedes",
             "team_id": "team_mercedes",
             "total_points": 97.0,
@@ -2401,10 +2401,10 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "robert_cabechon",
-            "name": "Robert Cabechon",
-            "team": "Reserve Driver",
-            "team_id": "team_reserve_driver",
+            "driver_id": "robertcabechon",
+            "name": "robertCABECHON",
+            "team": "Alpine",
+            "team_id": "team_alpine",
             "total_points": 26.0,
             "rounds": {
                 "4": {
@@ -2490,10 +2490,10 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "kion99",
-            "name": "Kion99",
-            "team": "Alfa Romeo",
-            "team_id": "team_alfa_romeo",
+            "driver_id": "kion343",
+            "name": "Kion343",
+            "team": "Williams",
+            "team_id": "team_williams",
             "total_points": 17.0,
             "rounds": {
                 "1": {
@@ -2805,5 +2805,5 @@
             "driver_of_the_day": 0
         }
     ],
-    "exported_at": "2026-02-08T02:44:25"
+    "exported_at": "2026-02-08T15:53:32"
 }

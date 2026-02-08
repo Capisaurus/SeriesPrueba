@@ -1,8 +1,8 @@
 {
     "export_type": "season",
-    "championship_name": "ne series",
+    "championship_name": "NyE Series",
     "season_id": "series_2",
-    "season_name": "series 2",
+    "season_name": "Series 2",
     "total_rounds": 18,
     "disputed_rounds": 18,
     "pending_rounds": 0,
@@ -217,16 +217,16 @@
                 },
                 {
                     "position": 11,
-                    "driver": "AlexMatrix",
-                    "driver_id": "alexmatrix",
+                    "driver": "AlexMatrix266",
+                    "driver_id": "alexmatrix266",
                     "team": "Williams",
                     "points": 0.0,
                     "status": ""
                 },
                 {
                     "position": 12,
-                    "driver": "Victorxd",
-                    "driver_id": "victorxd",
+                    "driver": "Victor xd",
+                    "driver_id": "victor_xd",
                     "team": "Alpine",
                     "points": 0.0,
                     "status": ""
@@ -318,8 +318,8 @@
                 },
                 {
                     "position": 8,
-                    "driver": "Victorxd",
-                    "driver_id": "victorxd",
+                    "driver": "Victor xd",
+                    "driver_id": "victor_xd",
                     "team": "Alpine",
                     "points": 4.0,
                     "status": "DNF"
@@ -342,7 +342,7 @@
             "track": "",
             "planned": false,
             "winner": "NoSoyYo98",
-            "fastest_lap": "AntonioGC",
+            "fastest_lap": "Antonio GC",
             "dotd": "",
             "results": [
                 {
@@ -371,8 +371,8 @@
                 },
                 {
                     "position": 4,
-                    "driver": "Victorxd",
-                    "driver_id": "victorxd",
+                    "driver": "Victor xd",
+                    "driver_id": "victor_xd",
                     "team": "Alpine",
                     "points": 12.0,
                     "status": ""
@@ -395,8 +395,8 @@
                 },
                 {
                     "position": 7,
-                    "driver": "AntonioGC",
-                    "driver_id": "antoniogc",
+                    "driver": "Antonio GC",
+                    "driver_id": "antonio_gc",
                     "team": "Red Bull",
                     "points": 7.0,
                     "status": ""
@@ -488,8 +488,8 @@
                 },
                 {
                     "position": 5,
-                    "driver": "Victorxd",
-                    "driver_id": "victorxd",
+                    "driver": "Victor xd",
+                    "driver_id": "victor_xd",
                     "team": "Alpine",
                     "points": 10.0,
                     "status": ""
@@ -565,8 +565,8 @@
                 },
                 {
                     "position": 4,
-                    "driver": "Victorxd",
-                    "driver_id": "victorxd",
+                    "driver": "Victor xd",
+                    "driver_id": "victor_xd",
                     "team": "Alpine",
                     "points": 12.0,
                     "status": ""
@@ -775,8 +775,8 @@
                 },
                 {
                     "position": 8,
-                    "driver": "Victorxd",
-                    "driver_id": "victorxd",
+                    "driver": "Victor xd",
+                    "driver_id": "victor_xd",
                     "team": "Alpine",
                     "points": 4.0,
                     "status": ""
@@ -2373,10 +2373,10 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "victorxd",
-            "name": "Victorxd",
-            "team": "Alpine",
-            "team_id": "team_alpine",
+            "driver_id": "victor_xd",
+            "name": "Victor xd",
+            "team": "Williams",
+            "team_id": "team_williams",
             "total_points": 42.0,
             "rounds": {
                 "2": {
@@ -2546,10 +2546,10 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "antoniogc",
-            "name": "AntonioGC",
-            "team": "Red Bull",
-            "team_id": "team_red_bull",
+            "driver_id": "antonio_gc",
+            "name": "Antonio GC",
+            "team": "Aston Martin",
+            "team_id": "team_aston_martin",
             "total_points": 7.0,
             "rounds": {
                 "4": {
@@ -2582,10 +2582,10 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "alexmatrix",
-            "name": "AlexMatrix",
-            "team": "Reserve Driver",
-            "team_id": "team_reserve_driver",
+            "driver_id": "alexmatrix266",
+            "name": "AlexMatrix266",
+            "team": "Williams",
+            "team_id": "team_williams",
             "total_points": 0.0,
             "rounds": {
                 "2": {
@@ -2636,5 +2636,5 @@
             "driver_of_the_day": 0
         }
     ],
-    "exported_at": "2026-02-08T02:44:13"
+    "exported_at": "2026-02-08T15:53:16"
 }

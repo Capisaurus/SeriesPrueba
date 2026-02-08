@@ -1,8 +1,8 @@
 {
     "export_type": "season",
-    "championship_name": "ne series",
+    "championship_name": "NyE Series",
     "season_id": "series_5",
-    "season_name": "series 5",
+    "season_name": "Series 5",
     "total_rounds": 14,
     "disputed_rounds": 14,
     "pending_rounds": 0,
@@ -28,8 +28,8 @@
                 },
                 {
                     "position": 2,
-                    "driver": "JoseAntonio/VR-99",
-                    "driver_id": "joseantonio/vr-99",
+                    "driver": "JoseAntonioVR-99",
+                    "driver_id": "joseantoniovr-99",
                     "team": "Red Bull",
                     "points": 18.0,
                     "status": ""
@@ -129,8 +129,8 @@
                 },
                 {
                     "position": 2,
-                    "driver": "JoseAntonio/VR-99",
-                    "driver_id": "joseantonio/vr-99",
+                    "driver": "JoseAntonioVR-99",
+                    "driver_id": "joseantoniovr-99",
                     "team": "Red Bull",
                     "points": 18.0,
                     "status": ""
@@ -828,8 +828,8 @@
                 },
                 {
                     "position": 9,
-                    "driver": "JoseAntonio/VR-99",
-                    "driver_id": "joseantonio/vr-99",
+                    "driver": "JoseAntonioVR-99",
+                    "driver_id": "joseantoniovr-99",
                     "team": "Red Bull",
                     "points": 2.0,
                     "status": ""
@@ -2019,8 +2019,8 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "joseantonio/vr-99",
-            "name": "JoseAntonio/VR-99",
+            "driver_id": "joseantoniovr-99",
+            "name": "JoseAntonioVR-99",
             "team": "Red Bull",
             "team_id": "team_red_bull",
             "total_points": 38.0,
@@ -2344,5 +2344,5 @@
             "driver_of_the_day": 0
         }
     ],
-    "exported_at": "2026-02-08T02:44:38"
+    "exported_at": "2026-02-08T15:53:49"
 }

@@ -1,8 +1,8 @@
 {
     "export_type": "season",
-    "championship_name": "ne series",
+    "championship_name": "NyE Series",
     "season_id": "series_2_sprint",
-    "season_name": "series 2 sprint",
+    "season_name": "Series 2 sprint",
     "total_rounds": 10,
     "disputed_rounds": 10,
     "pending_rounds": 0,
@@ -15,7 +15,7 @@
             "track": "Hungary",
             "planned": false,
             "winner": "NoSoyYo98",
-            "fastest_lap": "Tgouu",
+            "fastest_lap": "Tgoou",
             "dotd": "",
             "results": [
                 {
@@ -44,8 +44,8 @@
                 },
                 {
                     "position": 4,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 13.0,
                     "status": ""
@@ -89,8 +89,8 @@
                 },
                 {
                     "position": 2,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 18.0,
                     "status": ""
@@ -158,8 +158,8 @@
                 },
                 {
                     "position": 3,
-                    "driver": "Cienfuegos",
-                    "driver_id": "cienfuegos",
+                    "driver": "Cienfuegosj23",
+                    "driver_id": "cienfuegosj23",
                     "team": "Red Bull",
                     "points": 15.0,
                     "status": ""
@@ -267,8 +267,8 @@
                 },
                 {
                     "position": 6,
-                    "driver": "Cienfuegos",
-                    "driver_id": "cienfuegos",
+                    "driver": "Cienfuegosj23",
+                    "driver_id": "cienfuegosj23",
                     "team": "Red Bull",
                     "points": 8.0,
                     "status": ""
@@ -466,8 +466,8 @@
                 },
                 {
                     "position": 4,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 12.0,
                     "status": ""
@@ -506,8 +506,8 @@
                 },
                 {
                     "position": 9,
-                    "driver": "Yindax",
-                    "driver_id": "yindax",
+                    "driver": "Yindaxmx",
+                    "driver_id": "yindaxmx",
                     "team": "AlphaTauri",
                     "points": 2.0,
                     "status": ""
@@ -543,8 +543,8 @@
                 },
                 {
                     "position": 3,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 15.0,
                     "status": ""
@@ -591,8 +591,8 @@
                 },
                 {
                     "position": 9,
-                    "driver": "Yindax",
-                    "driver_id": "yindax",
+                    "driver": "Yindaxmx",
+                    "driver_id": "yindaxmx",
                     "team": "AlphaTauri",
                     "points": 2.0,
                     "status": ""
@@ -628,8 +628,8 @@
                 },
                 {
                     "position": 2,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 18.0,
                     "status": ""
@@ -676,8 +676,8 @@
                 },
                 {
                     "position": 8,
-                    "driver": "Yindax",
-                    "driver_id": "yindax",
+                    "driver": "Yindaxmx",
+                    "driver_id": "yindaxmx",
                     "team": "AlphaTauri",
                     "points": 4.0,
                     "status": ""
@@ -745,16 +745,16 @@
                 },
                 {
                     "position": 7,
-                    "driver": "Yindax",
-                    "driver_id": "yindax",
+                    "driver": "Yindaxmx",
+                    "driver_id": "yindaxmx",
                     "team": "AlphaTauri",
                     "points": 6.0,
                     "status": ""
                 },
                 {
                     "position": 8,
-                    "driver": "Tgouu",
-                    "driver_id": "tgouu",
+                    "driver": "Tgoou",
+                    "driver_id": "tgoou",
                     "team": "Mercedes",
                     "points": 4.0,
                     "status": ""
@@ -961,8 +961,8 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "tgouu",
-            "name": "Tgouu",
+            "driver_id": "tgoou",
+            "name": "Tgoou",
             "team": "Mercedes",
             "team_id": "team_mercedes",
             "total_points": 80.0,
@@ -1232,10 +1232,10 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "cienfuegos",
-            "name": "Cienfuegos",
-            "team": "Red Bull",
-            "team_id": "team_red_bull",
+            "driver_id": "cienfuegosj23",
+            "name": "Cienfuegosj23",
+            "team": "Reserve Driver",
+            "team_id": "team_reserve_driver",
             "total_points": 23.0,
             "rounds": {
                 "3": {
@@ -1329,8 +1329,8 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "yindax",
-            "name": "Yindax",
+            "driver_id": "yindaxmx",
+            "name": "Yindaxmx",
             "team": "AlphaTauri",
             "team_id": "team_alphatauri",
             "total_points": 14.0,
@@ -1362,5 +1362,5 @@
             "driver_of_the_day": 0
         }
     ],
-    "exported_at": "2026-02-08T02:44:19"
+    "exported_at": "2026-02-08T15:53:22"
 }
