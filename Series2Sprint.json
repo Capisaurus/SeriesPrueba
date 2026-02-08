@@ -1,6 +1,6 @@
 {
     "export_type": "season",
-    "championship_name": "NYE Series",
+    "championship_name": "ne series",
     "season_id": "series_2_sprint",
     "season_name": "series 2 sprint",
     "total_rounds": 10,
@@ -21,7 +21,7 @@
                 {
                     "position": 1,
                     "driver": "NoSoyYo98",
-                    "driver_id": "driver_nosoyyo98",
+                    "driver_id": "nosoyyo98",
                     "team": "Mercedes",
                     "points": 25.0,
                     "status": ""
@@ -29,7 +29,7 @@
                 {
                     "position": 2,
                     "driver": "MrPresident2004",
-                    "driver_id": "driver_mrpresident2004",
+                    "driver_id": "mrpresident2004",
                     "team": "Red Bull",
                     "points": 18.0,
                     "status": ""
@@ -37,7 +37,7 @@
                 {
                     "position": 3,
                     "driver": "Chaky",
-                    "driver_id": "driver_chaky",
+                    "driver_id": "chaky",
                     "team": "Alpine",
                     "points": 15.0,
                     "status": ""
@@ -45,7 +45,7 @@
                 {
                     "position": 4,
                     "driver": "Tgouu",
-                    "driver_id": "driver_tgouu",
+                    "driver_id": "tgouu",
                     "team": "Mercedes",
                     "points": 13.0,
                     "status": ""
@@ -53,7 +53,7 @@
                 {
                     "position": 5,
                     "driver": "Gozark",
-                    "driver_id": "driver_gozark",
+                    "driver_id": "gozark",
                     "team": "McLaren",
                     "points": 10.0,
                     "status": ""
@@ -61,7 +61,7 @@
                 {
                     "position": 6,
                     "driver": "Capisaurus",
-                    "driver_id": "driver_capisaurus",
+                    "driver_id": "capisaurus",
                     "team": "Ferrari",
                     "points": 8.0,
                     "status": ""
@@ -82,7 +82,7 @@
                 {
                     "position": 1,
                     "driver": "NoSoyYo98",
-                    "driver_id": "driver_nosoyyo98",
+                    "driver_id": "nosoyyo98",
                     "team": "Mercedes",
                     "points": 26.0,
                     "status": ""
@@ -90,7 +90,7 @@
                 {
                     "position": 2,
                     "driver": "Tgouu",
-                    "driver_id": "driver_tgouu",
+                    "driver_id": "tgouu",
                     "team": "Mercedes",
                     "points": 18.0,
                     "status": ""
@@ -98,7 +98,7 @@
                 {
                     "position": 3,
                     "driver": "Chaky",
-                    "driver_id": "driver_chaky",
+                    "driver_id": "chaky",
                     "team": "Alpine",
                     "points": 15.0,
                     "status": ""
@@ -106,7 +106,7 @@
                 {
                     "position": 4,
                     "driver": "Capisaurus",
-                    "driver_id": "driver_capisaurus",
+                    "driver_id": "capisaurus",
                     "team": "Ferrari",
                     "points": 12.0,
                     "status": ""
@@ -114,7 +114,7 @@
                 {
                     "position": 5,
                     "driver": "MrPresident2004",
-                    "driver_id": "driver_mrpresident2004",
+                    "driver_id": "mrpresident2004",
                     "team": "Red Bull",
                     "points": 10.0,
                     "status": ""
@@ -122,7 +122,7 @@
                 {
                     "position": 6,
                     "driver": "Gozark",
-                    "driver_id": "driver_gozark",
+                    "driver_id": "gozark",
                     "team": "McLaren",
                     "points": 8.0,
                     "status": ""
@@ -143,7 +143,7 @@
                 {
                     "position": 1,
                     "driver": "MrPresident2004",
-                    "driver_id": "driver_mrpresident2004",
+                    "driver_id": "mrpresident2004",
                     "team": "Red Bull",
                     "points": 25.0,
                     "status": ""
@@ -151,7 +151,7 @@
                 {
                     "position": 2,
                     "driver": "Chaky",
-                    "driver_id": "driver_chaky",
+                    "driver_id": "chaky",
                     "team": "Alpine",
                     "points": 18.0,
                     "status": ""
@@ -159,7 +159,7 @@
                 {
                     "position": 3,
                     "driver": "Cienfuegos",
-                    "driver_id": "driver_cienfuegos",
+                    "driver_id": "cienfuegos",
                     "team": "Red Bull",
                     "points": 15.0,
                     "status": ""
@@ -167,7 +167,7 @@
                 {
                     "position": 4,
                     "driver": "NoSoyYo98",
-                    "driver_id": "driver_nosoyyo98",
+                    "driver_id": "nosoyyo98",
                     "team": "Mercedes",
                     "points": 12.0,
                     "status": ""
@@ -175,7 +175,7 @@
                 {
                     "position": 5,
                     "driver": "Capisaurus",
-                    "driver_id": "driver_capisaurus",
+                    "driver_id": "capisaurus",
                     "team": "Ferrari",
                     "points": 10.0,
                     "status": ""
@@ -183,7 +183,7 @@
                 {
                     "position": 6,
                     "driver": "Memingow",
-                    "driver_id": "driver_memingow",
+                    "driver_id": "memingow",
                     "team": "Aston Martin",
                     "points": 9.0,
                     "status": ""
@@ -191,7 +191,7 @@
                 {
                     "position": 7,
                     "driver": "SteelWarrior",
-                    "driver_id": "driver_steelwarrior",
+                    "driver_id": "steelwarrior",
                     "team": "Ferrari",
                     "points": 6.0,
                     "status": ""
@@ -199,7 +199,7 @@
                 {
                     "position": 8,
                     "driver": "Izquierdoxdd",
-                    "driver_id": "driver_izquierdoxdd",
+                    "driver_id": "izquierdoxdd",
                     "team": "Aston Martin",
                     "points": 4.0,
                     "status": ""
@@ -207,7 +207,7 @@
                 {
                     "position": 9,
                     "driver": "Yahuger",
-                    "driver_id": "driver_yahuger",
+                    "driver_id": "yahuger",
                     "team": "Haas",
                     "points": 2.0,
                     "status": "DNF"
@@ -228,7 +228,7 @@
                 {
                     "position": 1,
                     "driver": "SteelWarrior",
-                    "driver_id": "driver_steelwarrior",
+                    "driver_id": "steelwarrior",
                     "team": "Ferrari",
                     "points": 25.0,
                     "status": ""
@@ -236,7 +236,7 @@
                 {
                     "position": 2,
                     "driver": "Izquierdoxdd",
-                    "driver_id": "driver_izquierdoxdd",
+                    "driver_id": "izquierdoxdd",
                     "team": "Aston Martin",
                     "points": 18.0,
                     "status": ""
@@ -244,7 +244,7 @@
                 {
                     "position": 3,
                     "driver": "Chaky",
-                    "driver_id": "driver_chaky",
+                    "driver_id": "chaky",
                     "team": "Alpine",
                     "points": 15.0,
                     "status": ""
@@ -252,7 +252,7 @@
                 {
                     "position": 4,
                     "driver": "MrPresident2004",
-                    "driver_id": "driver_mrpresident2004",
+                    "driver_id": "mrpresident2004",
                     "team": "Red Bull",
                     "points": 12.0,
                     "status": ""
@@ -260,7 +260,7 @@
                 {
                     "position": 5,
                     "driver": "Memingow",
-                    "driver_id": "driver_memingow",
+                    "driver_id": "memingow",
                     "team": "Aston Martin",
                     "points": 10.0,
                     "status": ""
@@ -268,7 +268,7 @@
                 {
                     "position": 6,
                     "driver": "Cienfuegos",
-                    "driver_id": "driver_cienfuegos",
+                    "driver_id": "cienfuegos",
                     "team": "Red Bull",
                     "points": 8.0,
                     "status": ""
@@ -276,7 +276,7 @@
                 {
                     "position": 7,
                     "driver": "Capisaurus",
-                    "driver_id": "driver_capisaurus",
+                    "driver_id": "capisaurus",
                     "team": "Ferrari",
                     "points": 7.0,
                     "status": ""
@@ -284,7 +284,7 @@
                 {
                     "position": 8,
                     "driver": "NoSoyYo98",
-                    "driver_id": "driver_nosoyyo98",
+                    "driver_id": "nosoyyo98",
                     "team": "Mercedes",
                     "points": 4.0,
                     "status": ""
@@ -305,7 +305,7 @@
                 {
                     "position": 1,
                     "driver": "NoSoyYo98",
-                    "driver_id": "driver_nosoyyo98",
+                    "driver_id": "nosoyyo98",
                     "team": "Mercedes",
                     "points": 26.0,
                     "status": ""
@@ -313,7 +313,7 @@
                 {
                     "position": 2,
                     "driver": "MrPresident2004",
-                    "driver_id": "driver_mrpresident2004",
+                    "driver_id": "mrpresident2004",
                     "team": "Red Bull",
                     "points": 18.0,
                     "status": "DNF"
@@ -321,7 +321,7 @@
                 {
                     "position": 3,
                     "driver": "Capisaurus",
-                    "driver_id": "driver_capisaurus",
+                    "driver_id": "capisaurus",
                     "team": "Ferrari",
                     "points": 15.0,
                     "status": "DNF"
@@ -329,7 +329,7 @@
                 {
                     "position": 4,
                     "driver": "Izquierdoxdd",
-                    "driver_id": "driver_izquierdoxdd",
+                    "driver_id": "izquierdoxdd",
                     "team": "Aston Martin",
                     "points": 12.0,
                     "status": "DNF"
@@ -337,7 +337,7 @@
                 {
                     "position": 5,
                     "driver": "Memingow",
-                    "driver_id": "driver_memingow",
+                    "driver_id": "memingow",
                     "team": "Aston Martin",
                     "points": 10.0,
                     "status": "DNF"
@@ -345,7 +345,7 @@
                 {
                     "position": 6,
                     "driver": "Migueladiaz",
-                    "driver_id": "driver_migueladiaz",
+                    "driver_id": "migueladiaz",
                     "team": "Williams",
                     "points": 8.0,
                     "status": "DNF"
@@ -353,7 +353,7 @@
                 {
                     "position": 7,
                     "driver": "Yahuger",
-                    "driver_id": "driver_yahuger",
+                    "driver_id": "yahuger",
                     "team": "Haas",
                     "points": 6.0,
                     "status": "DNF"
@@ -374,7 +374,7 @@
                 {
                     "position": 1,
                     "driver": "NoSoyYo98",
-                    "driver_id": "driver_nosoyyo98",
+                    "driver_id": "nosoyyo98",
                     "team": "Mercedes",
                     "points": 26.0,
                     "status": ""
@@ -382,7 +382,7 @@
                 {
                     "position": 2,
                     "driver": "Memingow",
-                    "driver_id": "driver_memingow",
+                    "driver_id": "memingow",
                     "team": "Aston Martin",
                     "points": 18.0,
                     "status": ""
@@ -390,7 +390,7 @@
                 {
                     "position": 3,
                     "driver": "Migueladiaz",
-                    "driver_id": "driver_migueladiaz",
+                    "driver_id": "migueladiaz",
                     "team": "Williams",
                     "points": 15.0,
                     "status": ""
@@ -398,7 +398,7 @@
                 {
                     "position": 4,
                     "driver": "Izquierdoxdd",
-                    "driver_id": "driver_izquierdoxdd",
+                    "driver_id": "izquierdoxdd",
                     "team": "Aston Martin",
                     "points": 12.0,
                     "status": ""
@@ -406,7 +406,7 @@
                 {
                     "position": 5,
                     "driver": "Yahuger",
-                    "driver_id": "driver_yahuger",
+                    "driver_id": "yahuger",
                     "team": "Haas",
                     "points": 10.0,
                     "status": ""
@@ -414,7 +414,7 @@
                 {
                     "position": 6,
                     "driver": "MrPresident2004",
-                    "driver_id": "driver_mrpresident2004",
+                    "driver_id": "mrpresident2004",
                     "team": "Red Bull",
                     "points": 8.0,
                     "status": ""
@@ -422,7 +422,7 @@
                 {
                     "position": 7,
                     "driver": "Capisaurus",
-                    "driver_id": "driver_capisaurus",
+                    "driver_id": "capisaurus",
                     "team": "Ferrari",
                     "points": 6.0,
                     "status": ""
@@ -443,7 +443,7 @@
                 {
                     "position": 1,
                     "driver": "NoSoyYo98",
-                    "driver_id": "driver_nosoyyo98",
+                    "driver_id": "nosoyyo98",
                     "team": "Mercedes",
                     "points": 26.0,
                     "status": ""
@@ -451,7 +451,7 @@
                 {
                     "position": 2,
                     "driver": "Gozark",
-                    "driver_id": "driver_gozark",
+                    "driver_id": "gozark",
                     "team": "McLaren",
                     "points": 18.0,
                     "status": ""
@@ -459,7 +459,7 @@
                 {
                     "position": 3,
                     "driver": "MrPresident2004",
-                    "driver_id": "driver_mrpresident2004",
+                    "driver_id": "mrpresident2004",
                     "team": "Red Bull",
                     "points": 15.0,
                     "status": ""
@@ -467,7 +467,7 @@
                 {
                     "position": 4,
                     "driver": "Tgouu",
-                    "driver_id": "driver_tgouu",
+                    "driver_id": "tgouu",
                     "team": "Mercedes",
                     "points": 12.0,
                     "status": ""
@@ -475,7 +475,7 @@
                 {
                     "position": 5,
                     "driver": "Izquierdoxdd",
-                    "driver_id": "driver_izquierdoxdd",
+                    "driver_id": "izquierdoxdd",
                     "team": "Aston Martin",
                     "points": 10.0,
                     "status": ""
@@ -483,7 +483,7 @@
                 {
                     "position": 6,
                     "driver": "Capisaurus",
-                    "driver_id": "driver_capisaurus",
+                    "driver_id": "capisaurus",
                     "team": "Ferrari",
                     "points": 8.0,
                     "status": ""
@@ -491,7 +491,7 @@
                 {
                     "position": 7,
                     "driver": "Chaky",
-                    "driver_id": "driver_chaky",
+                    "driver_id": "chaky",
                     "team": "Alpine",
                     "points": 6.0,
                     "status": ""
@@ -499,7 +499,7 @@
                 {
                     "position": 8,
                     "driver": "Kion343",
-                    "driver_id": "driver_kion343",
+                    "driver_id": "kion343",
                     "team": "Reserve Driver",
                     "points": 4.0,
                     "status": ""
@@ -507,7 +507,7 @@
                 {
                     "position": 9,
                     "driver": "Yindax",
-                    "driver_id": "driver_yindax",
+                    "driver_id": "yindax",
                     "team": "AlphaTauri",
                     "points": 2.0,
                     "status": ""
@@ -528,7 +528,7 @@
                 {
                     "position": 1,
                     "driver": "MrPresident2004",
-                    "driver_id": "driver_mrpresident2004",
+                    "driver_id": "mrpresident2004",
                     "team": "Red Bull",
                     "points": 25.0,
                     "status": ""
@@ -536,7 +536,7 @@
                 {
                     "position": 2,
                     "driver": "NoSoyYo98",
-                    "driver_id": "driver_nosoyyo98",
+                    "driver_id": "nosoyyo98",
                     "team": "Mercedes",
                     "points": 19.0,
                     "status": ""
@@ -544,7 +544,7 @@
                 {
                     "position": 3,
                     "driver": "Tgouu",
-                    "driver_id": "driver_tgouu",
+                    "driver_id": "tgouu",
                     "team": "Mercedes",
                     "points": 15.0,
                     "status": ""
@@ -552,7 +552,7 @@
                 {
                     "position": 4,
                     "driver": "Memingow",
-                    "driver_id": "driver_memingow",
+                    "driver_id": "memingow",
                     "team": "Aston Martin",
                     "points": 12.0,
                     "status": ""
@@ -560,7 +560,7 @@
                 {
                     "position": 5,
                     "driver": "Izquierdoxdd",
-                    "driver_id": "driver_izquierdoxdd",
+                    "driver_id": "izquierdoxdd",
                     "team": "Aston Martin",
                     "points": 10.0,
                     "status": ""
@@ -568,7 +568,7 @@
                 {
                     "position": 6,
                     "driver": "Kion343",
-                    "driver_id": "driver_kion343",
+                    "driver_id": "kion343",
                     "team": "Reserve Driver",
                     "points": 8.0,
                     "status": ""
@@ -576,7 +576,7 @@
                 {
                     "position": 7,
                     "driver": "Gozark",
-                    "driver_id": "driver_gozark",
+                    "driver_id": "gozark",
                     "team": "McLaren",
                     "points": 6.0,
                     "status": ""
@@ -584,7 +584,7 @@
                 {
                     "position": 8,
                     "driver": "Capisaurus",
-                    "driver_id": "driver_capisaurus",
+                    "driver_id": "capisaurus",
                     "team": "Ferrari",
                     "points": 4.0,
                     "status": ""
@@ -592,7 +592,7 @@
                 {
                     "position": 9,
                     "driver": "Yindax",
-                    "driver_id": "driver_yindax",
+                    "driver_id": "yindax",
                     "team": "AlphaTauri",
                     "points": 2.0,
                     "status": ""
@@ -600,7 +600,7 @@
                 {
                     "position": 10,
                     "driver": "Chaky",
-                    "driver_id": "driver_chaky",
+                    "driver_id": "chaky",
                     "team": "Alpine",
                     "points": 1.0,
                     "status": ""
@@ -621,7 +621,7 @@
                 {
                     "position": 1,
                     "driver": "NoSoyYo98",
-                    "driver_id": "driver_nosoyyo98",
+                    "driver_id": "nosoyyo98",
                     "team": "Mercedes",
                     "points": 26.0,
                     "status": ""
@@ -629,7 +629,7 @@
                 {
                     "position": 2,
                     "driver": "Tgouu",
-                    "driver_id": "driver_tgouu",
+                    "driver_id": "tgouu",
                     "team": "Mercedes",
                     "points": 18.0,
                     "status": ""
@@ -637,7 +637,7 @@
                 {
                     "position": 3,
                     "driver": "Gozark",
-                    "driver_id": "driver_gozark",
+                    "driver_id": "gozark",
                     "team": "McLaren",
                     "points": 15.0,
                     "status": ""
@@ -645,7 +645,7 @@
                 {
                     "position": 4,
                     "driver": "Capisaurus",
-                    "driver_id": "driver_capisaurus",
+                    "driver_id": "capisaurus",
                     "team": "Ferrari",
                     "points": 12.0,
                     "status": ""
@@ -653,7 +653,7 @@
                 {
                     "position": 5,
                     "driver": "MrPresident2004",
-                    "driver_id": "driver_mrpresident2004",
+                    "driver_id": "mrpresident2004",
                     "team": "Red Bull",
                     "points": 10.0,
                     "status": ""
@@ -661,7 +661,7 @@
                 {
                     "position": 6,
                     "driver": "Zuriel99",
-                    "driver_id": "driver_zuriel99",
+                    "driver_id": "zuriel99",
                     "team": "Reserve Driver",
                     "points": 8.0,
                     "status": ""
@@ -669,7 +669,7 @@
                 {
                     "position": 7,
                     "driver": "Kion343",
-                    "driver_id": "driver_kion343",
+                    "driver_id": "kion343",
                     "team": "Reserve Driver",
                     "points": 6.0,
                     "status": ""
@@ -677,7 +677,7 @@
                 {
                     "position": 8,
                     "driver": "Yindax",
-                    "driver_id": "driver_yindax",
+                    "driver_id": "yindax",
                     "team": "AlphaTauri",
                     "points": 4.0,
                     "status": ""
@@ -698,7 +698,7 @@
                 {
                     "position": 1,
                     "driver": "MrPresident2004",
-                    "driver_id": "driver_mrpresident2004",
+                    "driver_id": "mrpresident2004",
                     "team": "Red Bull",
                     "points": 25.0,
                     "status": ""
@@ -706,7 +706,7 @@
                 {
                     "position": 2,
                     "driver": "NoSoyYo98",
-                    "driver_id": "driver_nosoyyo98",
+                    "driver_id": "nosoyyo98",
                     "team": "Mercedes",
                     "points": 19.0,
                     "status": ""
@@ -714,7 +714,7 @@
                 {
                     "position": 3,
                     "driver": "Kion343",
-                    "driver_id": "driver_kion343",
+                    "driver_id": "kion343",
                     "team": "Reserve Driver",
                     "points": 15.0,
                     "status": ""
@@ -722,7 +722,7 @@
                 {
                     "position": 4,
                     "driver": "Capisaurus",
-                    "driver_id": "driver_capisaurus",
+                    "driver_id": "capisaurus",
                     "team": "Ferrari",
                     "points": 12.0,
                     "status": ""
@@ -730,7 +730,7 @@
                 {
                     "position": 5,
                     "driver": "Zuriel99",
-                    "driver_id": "driver_zuriel99",
+                    "driver_id": "zuriel99",
                     "team": "Reserve Driver",
                     "points": 10.0,
                     "status": ""
@@ -738,7 +738,7 @@
                 {
                     "position": 6,
                     "driver": "Gozark",
-                    "driver_id": "driver_gozark",
+                    "driver_id": "gozark",
                     "team": "McLaren",
                     "points": 8.0,
                     "status": ""
@@ -746,7 +746,7 @@
                 {
                     "position": 7,
                     "driver": "Yindax",
-                    "driver_id": "driver_yindax",
+                    "driver_id": "yindax",
                     "team": "AlphaTauri",
                     "points": 6.0,
                     "status": ""
@@ -754,7 +754,7 @@
                 {
                     "position": 8,
                     "driver": "Tgouu",
-                    "driver_id": "driver_tgouu",
+                    "driver_id": "tgouu",
                     "team": "Mercedes",
                     "points": 4.0,
                     "status": ""
@@ -762,7 +762,7 @@
                 {
                     "position": 9,
                     "driver": "Chaky",
-                    "driver_id": "driver_chaky",
+                    "driver_id": "chaky",
                     "team": "Alpine",
                     "points": 2.0,
                     "status": ""
@@ -772,7 +772,7 @@
     ],
     "drivers": [
         {
-            "driver_id": "driver_nosoyyo98",
+            "driver_id": "nosoyyo98",
             "name": "NoSoyYo98",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -835,7 +835,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_mrpresident2004",
+            "driver_id": "mrpresident2004",
             "name": "MrPresident2004",
             "team": "Ferrari",
             "team_id": "team_ferrari",
@@ -898,7 +898,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_capisaurus",
+            "driver_id": "capisaurus",
             "name": "Capisaurus",
             "team": "Aston Martin",
             "team_id": "team_aston_martin",
@@ -961,7 +961,7 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_tgouu",
+            "driver_id": "tgouu",
             "name": "Tgouu",
             "team": "Mercedes",
             "team_id": "team_mercedes",
@@ -1004,7 +1004,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_chaky",
+            "driver_id": "chaky",
             "name": "Chaky",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -1052,7 +1052,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_izquierdoxdd",
+            "driver_id": "izquierdoxdd",
             "name": "Izquierdoxdd",
             "team": "Alfa Romeo",
             "team_id": "team_alfa_romeo",
@@ -1095,7 +1095,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_gozark",
+            "driver_id": "gozark",
             "name": "Gozark",
             "team": "McLaren",
             "team_id": "team_mclaren",
@@ -1138,7 +1138,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_memingow",
+            "driver_id": "memingow",
             "name": "Memingow",
             "team": "Aston Martin",
             "team_id": "team_aston_martin",
@@ -1176,7 +1176,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_kion343",
+            "driver_id": "kion343",
             "name": "Kion343",
             "team": "Williams",
             "team_id": "team_williams",
@@ -1209,7 +1209,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_steelwarrior",
+            "driver_id": "steelwarrior",
             "name": "SteelWarrior",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1232,7 +1232,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_cienfuegos",
+            "driver_id": "cienfuegos",
             "name": "Cienfuegos",
             "team": "Red Bull",
             "team_id": "team_red_bull",
@@ -1255,7 +1255,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_migueladiaz",
+            "driver_id": "migueladiaz",
             "name": "Migueladiaz",
             "team": "Williams",
             "team_id": "team_williams",
@@ -1278,7 +1278,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_yahuger",
+            "driver_id": "yahuger",
             "name": "Yahuger",
             "team": "Haas",
             "team_id": "team_haas",
@@ -1306,7 +1306,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_zuriel99",
+            "driver_id": "zuriel99",
             "name": "Zuriel99",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1329,7 +1329,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_yindax",
+            "driver_id": "yindax",
             "name": "Yindax",
             "team": "AlphaTauri",
             "team_id": "team_alphatauri",
@@ -1362,5 +1362,5 @@
             "driver_of_the_day": 0
         }
     ],
-    "exported_at": "2026-02-07T21:12:59"
+    "exported_at": "2026-02-08T02:44:19"
 }

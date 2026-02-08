@@ -1,6 +1,6 @@
 {
     "export_type": "race",
-    "championship_name": "NYE Series",
+    "championship_name": "ne series",
     "season_id": "series_6",
     "season_name": "",
     "race_id": "220",
@@ -9,12 +9,12 @@
     "date": "",
     "track": "Melbourne",
     "fastest_lap_driver": "Ulises",
-    "fastest_lap_driver_id": "driver_mtsfrg",
+    "fastest_lap_driver_id": "mtsfrg",
     "dotd_driver": "",
     "dotd_driver_id": "",
     "results": [
         {
-            "driver_id": "driver_mtsfrg",
+            "driver_id": "mtsfrg",
             "name": "MTSFRG",
             "team": "Haas",
             "position": 1,
@@ -31,7 +31,7 @@
             "events": []
         },
         {
-            "driver_id": "driver_sz_angel",
+            "driver_id": "sz_angel",
             "name": "Sz Angel",
             "team": "Mercedes",
             "position": 2,
@@ -48,7 +48,7 @@
             "events": []
         },
         {
-            "driver_id": "driver_leozever",
+            "driver_id": "leozever",
             "name": "Leozever",
             "team": "Williams",
             "position": 3,
@@ -65,7 +65,7 @@
             "events": []
         },
         {
-            "driver_id": "driver_memingow",
+            "driver_id": "memingow",
             "name": "Memingow",
             "team": "Red Bull",
             "position": 4,
@@ -82,7 +82,7 @@
             "events": []
         },
         {
-            "driver_id": "driver_gabrielb01",
+            "driver_id": "gabriel.b01",
             "name": "Gabriel.b01",
             "team": "Sauber",
             "position": 5,
@@ -99,7 +99,7 @@
             "events": []
         },
         {
-            "driver_id": "driver_puffy",
+            "driver_id": "puffy",
             "name": "HipAcorn",
             "team": "Haas",
             "position": 6,
@@ -116,7 +116,7 @@
             "events": []
         },
         {
-            "driver_id": "driver_termopolio",
+            "driver_id": "termopolio",
             "name": "Termopolio",
             "team": "Red Bull",
             "position": 7,
@@ -133,7 +133,7 @@
             "events": []
         },
         {
-            "driver_id": "driver_sgc_lionel",
+            "driver_id": "sgc_lionel",
             "name": "SGC Lionel",
             "team": "Reserve Driver",
             "position": 8,
@@ -150,7 +150,7 @@
             "events": []
         },
         {
-            "driver_id": "driver_siegerng",
+            "driver_id": "siegerng",
             "name": "SiegerNG",
             "team": "Aston Martin",
             "position": 9,
@@ -167,7 +167,7 @@
             "events": []
         },
         {
-            "driver_id": "driver_capisaurus",
+            "driver_id": "capisaurus",
             "name": "Capisaurus",
             "team": "Ferrari",
             "position": 10,
@@ -185,5 +185,5 @@
         }
     ],
     "sprint_results": [],
-    "exported_at": "2026-02-07T21:14:46"
+    "exported_at": "2026-02-08T02:44:56"
 }

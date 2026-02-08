@@ -1660,6 +1660,7 @@
 
             const calculatedStandings = calculateStandingsFromRaces(data.races, data.drivers, data.teams);
             const performance = buildRacePerformanceStats(data.races || []);
+            const attendanceFallback = buildAttendanceFallback(completedRaces);
             const seasonInfo = seasonsList.find(s => s.key === seasonKey);
 
             // Update stats cards with proper labels
@@ -1693,7 +1694,8 @@
                 data,
                 standings: calculatedStandings,
                 totalRounds: completedRaces.length,
-                driverPerformance: performance.statsByDriver
+                driverPerformance: performance.statsByDriver,
+                attendanceFallback
             };
 
             // Render all sections
@@ -1702,7 +1704,7 @@
 
             if (mode !== 'home') {
                 renderDriverStats(data.drivers, data.teams, calculatedStandings, data.attendance, completedRaces.length, performance.statsByDriver);
-                renderAttendanceTable(data.drivers, data.teams, data.attendance, completedRaces.length);
+                renderAttendanceTable(data.drivers, data.teams, data.attendance, completedRaces.length, attendanceFallback);
                 renderSuperlicenseTable(data.drivers, data.teams);
                 renderRaceSelector(buildSeasonRaceItems(data), seasonKey);
                 renderTeamStats(data.drivers, data.teams, calculatedStandings);
@@ -2449,7 +2451,19 @@
             `;
         }
 
-        function renderAttendanceTable(drivers, teams, attendance, totalRounds) {
+        function buildAttendanceFallback(races) {
+            const counts = {};
+            (races || []).forEach(race => {
+                if (race.planned || !race.results) return;
+                race.results.forEach(result => {
+                    if (!result?.driver_id) return;
+                    counts[result.driver_id] = (counts[result.driver_id] || 0) + 1;
+                });
+            });
+            return counts;
+        }
+
+        function renderAttendanceTable(drivers, teams, attendance, totalRounds, attendanceFallback = {}) {
             const tbody = document.getElementById('attendance-body');
             if (!tbody) return;
             tbody.innerHTML = '';
@@ -2463,7 +2477,10 @@
             const rows = driverEntries.map(([driverId, driver]) => {
                 const teamName = driver.team_id ? (teams[driver.team_id]?.name || '-') : '-';
                 const attendanceRecord = attendance?.[driverId] || {};
-                const attended = Object.values(attendanceRecord).filter(val => val === 'A').length;
+                const hasRecord = Object.keys(attendanceRecord).length > 0;
+                const attended = hasRecord
+                    ? Object.values(attendanceRecord).filter(val => val === 'A').length
+                    : (attendanceFallback?.[driverId] || 0);
                 const percent = totalRounds > 0 ? Math.round((attended / totalRounds) * 100) : 0;
                 return { driverId, name: driver.name, teamName, attended, percent };
             }).sort((a, b) => b.attended - a.attended);
@@ -2729,7 +2746,10 @@
                 });
 
                 const attendanceRecord = data.attendance?.[driverId] || {};
-                const attended = Object.values(attendanceRecord).filter(val => val === 'A').length;
+                const hasRecord = Object.keys(attendanceRecord).length > 0;
+                const attended = hasRecord
+                    ? Object.values(attendanceRecord).filter(val => val === 'A').length
+                    : (currentStatsContext.attendanceFallback?.[driverId] || 0);
                 const attendanceText = currentStatsContext.totalRounds > 0
                     ? `${attended}/${currentStatsContext.totalRounds} (${Math.round((attended / currentStatsContext.totalRounds) * 100)}%)`
                     : '-';

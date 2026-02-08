@@ -1,67 +1,67 @@
 {
     "export_type": "championship",
-    "championship_name": "NYE Series",
+    "championship_name": "ne series",
     "total_seasons": 9,
     "total_races": 114,
     "seasons": [
         {
             "season_id": "academy_1",
             "season_name": "academy 1",
-            "status": "Finished",
+            "status": "In Progress",
             "total_races": 9
         },
         {
             "season_id": "academy_2",
             "season_name": "academy 2",
-            "status": "Finished",
+            "status": "In Progress",
             "total_races": 10
         },
         {
             "season_id": "series_1",
             "season_name": "series 1",
-            "status": "Finished",
+            "status": "In Progress",
             "total_races": 14
         },
         {
             "season_id": "series_2",
             "season_name": "series 2",
-            "status": "Finished",
+            "status": "In Progress",
             "total_races": 18
         },
         {
             "season_id": "series_2_sprint",
             "season_name": "series 2 sprint",
-            "status": "Finished",
+            "status": "In Progress",
             "total_races": 10
         },
         {
             "season_id": "series_3",
             "season_name": "series 3",
-            "status": "Finished",
+            "status": "In Progress",
             "total_races": 14
         },
         {
             "season_id": "series_4",
             "season_name": "series 4",
-            "status": "Finished",
+            "status": "In Progress",
             "total_races": 13
         },
         {
             "season_id": "series_5",
             "season_name": "series 5",
-            "status": "Finished",
+            "status": "In Progress",
             "total_races": 14
         },
         {
             "season_id": "series_6",
             "season_name": "series 6",
-            "status": "Finished",
+            "status": "In Progress",
             "total_races": 12
         }
     ],
     "drivers": [
         {
-            "driver_id": "driver_izquierdoxdd",
+            "driver_id": "izquierdoxdd",
             "name": "Izquierdoxdd",
             "team": "Alfa Romeo",
             "team_id": "team_alfa_romeo",
@@ -74,7 +74,7 @@
             "driver_of_the_day": 7
         },
         {
-            "driver_id": "driver_mrpresident2004",
+            "driver_id": "mrpresident2004",
             "name": "MrPresident2004",
             "team": "Ferrari",
             "team_id": "team_ferrari",
@@ -87,7 +87,7 @@
             "driver_of_the_day": 8
         },
         {
-            "driver_id": "driver_puffy",
+            "driver_id": "puffy",
             "name": "Puffy",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -100,7 +100,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_capisaurus",
+            "driver_id": "capisaurus",
             "name": "Capisaurus",
             "team": "Aston Martin",
             "team_id": "team_aston_martin",
@@ -113,7 +113,7 @@
             "driver_of_the_day": 3
         },
         {
-            "driver_id": "driver_memingow",
+            "driver_id": "memingow",
             "name": "Memingow",
             "team": "Aston Martin",
             "team_id": "team_aston_martin",
@@ -126,7 +126,7 @@
             "driver_of_the_day": 4
         },
         {
-            "driver_id": "driver_nosoyyo98",
+            "driver_id": "nosoyyo98",
             "name": "NoSoyYo98",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -139,7 +139,20 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_sz_angel",
+            "driver_id": "mtsfrg",
+            "name": "Ulises",
+            "team": "Haas",
+            "team_id": "team_haas",
+            "country": "",
+            "total_races": 19,
+            "total_points": 449.5,
+            "wins": 11,
+            "podiums": 14,
+            "fastest_laps": 6,
+            "driver_of_the_day": 0
+        },
+        {
+            "driver_id": "sz_angel",
             "name": "Sz Angel",
             "team": "Mercedes",
             "team_id": "team_mercedes",
@@ -152,7 +165,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_joseantoniovr-99",
+            "driver_id": "joseantoniovr-99",
             "name": "JoseAntonioVR-99",
             "team": "Red Bull",
             "team_id": "team_red_bull",
@@ -165,7 +178,7 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_termopolio",
+            "driver_id": "termopolio",
             "name": "Termopolio",
             "team": "Williams",
             "team_id": "team_williams",
@@ -178,7 +191,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_ar2d2",
+            "driver_id": "ar2d2",
             "name": "Ar2D2",
             "team": "Alfa Romeo",
             "team_id": "team_alfa_romeo",
@@ -191,7 +204,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_steelwarrior",
+            "driver_id": "steelwarrior",
             "name": "SteelWarrior",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -204,20 +217,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_mtsfrg",
-            "name": "Ulises",
-            "team": "Haas",
-            "team_id": "team_haas",
-            "country": "",
-            "total_races": 9,
-            "total_points": 245.0,
-            "wins": 6,
-            "podiums": 8,
-            "fastest_laps": 6,
-            "driver_of_the_day": 0
-        },
-        {
-            "driver_id": "driver_tgoou",
+            "driver_id": "tgoou",
             "name": "Tgoou",
             "team": "Mercedes",
             "team_id": "team_mercedes",
@@ -230,7 +230,7 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_raptor-b212",
+            "driver_id": "raptor-b212",
             "name": "RaPTor-B212",
             "team": "AlphaTauri",
             "team_id": "team_alphatauri",
@@ -243,20 +243,7 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_ulises",
-            "name": "Ulises",
-            "team": "Mercedes",
-            "team_id": "team_mercedes",
-            "country": "",
-            "total_races": 10,
-            "total_points": 213.5,
-            "wins": 5,
-            "podiums": 6,
-            "fastest_laps": 7,
-            "driver_of_the_day": 2
-        },
-        {
-            "driver_id": "driver_taco_flow",
+            "driver_id": "taco_flow",
             "name": "Taco_Flow",
             "team": "McLaren",
             "team_id": "team_mclaren",
@@ -269,7 +256,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_tgouu",
+            "driver_id": "tgouu",
             "name": "Tgouu",
             "team": "Mercedes",
             "team_id": "team_mercedes",
@@ -282,7 +269,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_dragon6590z",
+            "driver_id": "dragon6590z",
             "name": "Dragon6590z",
             "team": "Red Bull",
             "team_id": "team_red_bull",
@@ -295,7 +282,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_fernandoangarita",
+            "driver_id": "fernandoangarita",
             "name": "Fernandoangarita",
             "team": "McLaren",
             "team_id": "team_mclaren",
@@ -308,7 +295,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_hector_zambrano",
+            "driver_id": "hector_zambrano",
             "name": "Hector Zambrano",
             "team": "Mercedes",
             "team_id": "team_mercedes",
@@ -321,7 +308,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_mrstevehyuga",
+            "driver_id": "mrstevehyuga",
             "name": "MrSteveHyuga",
             "team": "Haas",
             "team_id": "team_haas",
@@ -334,7 +321,7 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_thiago",
+            "driver_id": "thiago",
             "name": "Thiago",
             "team": "Mercedes",
             "team_id": "team_mercedes",
@@ -347,7 +334,7 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_gozark",
+            "driver_id": "gozark",
             "name": "Gozark",
             "team": "McLaren",
             "team_id": "team_mclaren",
@@ -360,7 +347,7 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_chenzoobeni_benasi",
+            "driver_id": "chenzoobeni_benasi",
             "name": "Chenzoobeni benasi",
             "team": "Mercedes",
             "team_id": "team_mercedes",
@@ -373,7 +360,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_alexmatrix",
+            "driver_id": "alexmatrix",
             "name": "AlexMatrix",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -386,7 +373,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_taco_antax",
+            "driver_id": "taco_antax",
             "name": "Taco Antax",
             "team": "Haas",
             "team_id": "team_haas",
@@ -399,7 +386,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_lerrythecool22",
+            "driver_id": "lerrythecool22",
             "name": "lerrythecool22",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -412,7 +399,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_antonio_gc",
+            "driver_id": "antonio_gc",
             "name": "Antonio GC",
             "team": "Aston Martin",
             "team_id": "team_aston_martin",
@@ -425,7 +412,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_leozever",
+            "driver_id": "leozever",
             "name": "Leozever",
             "team": "Williams",
             "team_id": "team_williams",
@@ -438,7 +425,7 @@
             "driver_of_the_day": 2
         },
         {
-            "driver_id": "driver_aleex11",
+            "driver_id": "aleex11",
             "name": "ALEEX11",
             "team": "McLaren",
             "team_id": "team_mclaren",
@@ -451,7 +438,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_hyuga",
+            "driver_id": "hyuga",
             "name": "Hyuga",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -464,7 +451,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_checo_alvarez",
+            "driver_id": "checo_alvarez",
             "name": "Checo Alvarez",
             "team": "Red Bull",
             "team_id": "team_red_bull",
@@ -477,7 +464,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_dominic9640",
+            "driver_id": "dominic9640",
             "name": "Dominic9640",
             "team": "Ferrari",
             "team_id": "team_ferrari",
@@ -490,7 +477,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_chokogarcia",
+            "driver_id": "chokogarcia",
             "name": "Chokogarcia",
             "team": "AlphaTauri",
             "team_id": "team_alphatauri",
@@ -503,7 +490,7 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_drasticalrose",
+            "driver_id": "drasticalrose",
             "name": "Drasticalrose",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -516,7 +503,7 @@
             "driver_of_the_day": 2
         },
         {
-            "driver_id": "driver_jd_castillo",
+            "driver_id": "jd_castillo",
             "name": "JD Castillo",
             "team": "Aston Martin",
             "team_id": "team_aston_martin",
@@ -529,7 +516,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_drmaziozare",
+            "driver_id": "dr.maziozare",
             "name": "Dr.Maziozare",
             "team": "Alfa Romeo",
             "team_id": "team_alfa_romeo",
@@ -542,7 +529,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_amz_racing",
+            "driver_id": "amz_racing",
             "name": "AMZ Racing",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -555,7 +542,7 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_dragon6590",
+            "driver_id": "dragon6590",
             "name": "Dragon6590",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -568,7 +555,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_elgast",
+            "driver_id": "elgast",
             "name": "ElGast",
             "team": "Mercedes",
             "team_id": "team_mercedes",
@@ -581,7 +568,7 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_yindaxmx",
+            "driver_id": "yindaxmx",
             "name": "Yindaxmx",
             "team": "AlphaTauri",
             "team_id": "team_alphatauri",
@@ -594,7 +581,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_gozark72",
+            "driver_id": "gozark72",
             "name": "Gozark72",
             "team": "McLaren",
             "team_id": "team_mclaren",
@@ -607,7 +594,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_cienfuegosj23",
+            "driver_id": "cienfuegosj23",
             "name": "Cienfuegosj23",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -620,7 +607,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_diegomoran",
+            "driver_id": "diegomoran",
             "name": "DiegoMoran",
             "team": "Haas",
             "team_id": "team_haas",
@@ -633,7 +620,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_chaky",
+            "driver_id": "chaky",
             "name": "Chaky",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -646,7 +633,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_d4rk1ng",
+            "driver_id": "d4rk1ng",
             "name": "D4RK1NG",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -659,7 +646,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_kairi_seele",
+            "driver_id": "kairi_seele",
             "name": "Kairi Seele",
             "team": "AlphaTauri",
             "team_id": "team_alphatauri",
@@ -672,7 +659,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_nightsky",
+            "driver_id": "nightsky",
             "name": "NightSky",
             "team": "Red Bull",
             "team_id": "team_red_bull",
@@ -685,7 +672,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_harryh",
+            "driver_id": "harryh",
             "name": "HarryH",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -698,7 +685,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_t4k_slinky",
+            "driver_id": "t4k_slinky",
             "name": "T4K Slinky",
             "team": "Haas",
             "team_id": "team_haas",
@@ -711,7 +698,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_charal",
+            "driver_id": "charal",
             "name": "Charal",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -724,7 +711,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_worka",
+            "driver_id": "worka",
             "name": "Worka",
             "team": "McLaren",
             "team_id": "team_mclaren",
@@ -737,7 +724,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_gabrielb01",
+            "driver_id": "gabriel.b01",
             "name": "Gabriel.b01",
             "team": "Sauber",
             "team_id": "team_sauber",
@@ -750,7 +737,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_aaronxob",
+            "driver_id": "aaronxob",
             "name": "Aaronxob",
             "team": "McLaren",
             "team_id": "team_mclaren",
@@ -763,7 +750,7 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_caballeromx841",
+            "driver_id": "caballeromx841",
             "name": "CaballeroMX841",
             "team": "Alfa Romeo",
             "team_id": "team_alfa_romeo",
@@ -776,7 +763,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_menita",
+            "driver_id": "menita",
             "name": "Menita",
             "team": "Haas",
             "team_id": "team_haas",
@@ -789,7 +776,7 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_comant",
+            "driver_id": "comant",
             "name": "Comant",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -802,7 +789,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_alexmatrix266",
+            "driver_id": "alexmatrix266",
             "name": "AlexMatrix266",
             "team": "Williams",
             "team_id": "team_williams",
@@ -815,7 +802,7 @@
             "driver_of_the_day": 3
         },
         {
-            "driver_id": "driver_jeancaa",
+            "driver_id": "jeancaa",
             "name": "JeanCAA",
             "team": "McLaren",
             "team_id": "team_mclaren",
@@ -828,7 +815,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_siegerng",
+            "driver_id": "siegerng",
             "name": "SiegerNG",
             "team": "Aston Martin",
             "team_id": "team_aston_martin",
@@ -841,7 +828,7 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_byjeancaa",
+            "driver_id": "byjeancaa",
             "name": "ByJeanCAA",
             "team": "Aston Martin",
             "team_id": "team_aston_martin",
@@ -854,7 +841,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_rafa809rd",
+            "driver_id": "rafa809rd",
             "name": "Rafa809RD",
             "team": "Williams",
             "team_id": "team_williams",
@@ -867,7 +854,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_emmanuel",
+            "driver_id": "emmanuel",
             "name": "Emmanuel",
             "team": "Williams",
             "team_id": "team_williams",
@@ -880,7 +867,7 @@
             "driver_of_the_day": 2
         },
         {
-            "driver_id": "driver_victorxd",
+            "driver_id": "victorxd",
             "name": "Victorxd",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -893,7 +880,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_knash",
+            "driver_id": "knash",
             "name": "Knash",
             "team": "McLaren",
             "team_id": "team_mclaren",
@@ -906,7 +893,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_pina",
+            "driver_id": "pina",
             "name": "Pina",
             "team": "Sauber",
             "team_id": "team_sauber",
@@ -919,7 +906,7 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_itssulen",
+            "driver_id": "itssulen",
             "name": "ItsSulen",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -932,7 +919,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_rafard",
+            "driver_id": "rafard",
             "name": "RafaRD",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -945,7 +932,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_joseantonio-vr-99",
+            "driver_id": "joseantonio/vr-99",
             "name": "JoseAntonio/VR-99",
             "team": "Red Bull",
             "team_id": "team_red_bull",
@@ -958,7 +945,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_carlitos",
+            "driver_id": "carlitos",
             "name": "Carlitos",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -971,7 +958,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_saugormond83",
+            "driver_id": "saugormond83",
             "name": "Saugormond83",
             "team": "Ferrari",
             "team_id": "team_ferrari",
@@ -984,7 +971,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_kion343",
+            "driver_id": "kion343",
             "name": "Kion343",
             "team": "Williams",
             "team_id": "team_williams",
@@ -997,7 +984,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_robertcabechon",
+            "driver_id": "robertcabechon",
             "name": "robertCABECHON",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -1010,7 +997,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_verstappen",
+            "driver_id": "verstappen",
             "name": "Verstappen",
             "team": "AlphaTauri",
             "team_id": "team_alphatauri",
@@ -1023,7 +1010,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_fenix",
+            "driver_id": "fenix",
             "name": "Fenix",
             "team": "Red Bull",
             "team_id": "team_red_bull",
@@ -1036,7 +1023,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_ivan",
+            "driver_id": "ivan",
             "name": "IvAn",
             "team": "McLaren",
             "team_id": "team_mclaren",
@@ -1049,7 +1036,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_neseison13",
+            "driver_id": "neseison13",
             "name": "neseison13",
             "team": "McLaren",
             "team_id": "team_mclaren",
@@ -1062,7 +1049,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_victor_xd",
+            "driver_id": "victor_xd",
             "name": "Victor xd",
             "team": "Williams",
             "team_id": "team_williams",
@@ -1075,7 +1062,7 @@
             "driver_of_the_day": 2
         },
         {
-            "driver_id": "driver_anboo_03",
+            "driver_id": "anboo_03",
             "name": "Anboo_03",
             "team": "Sauber",
             "team_id": "team_sauber",
@@ -1088,7 +1075,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_t4kslinky",
+            "driver_id": "t4kslinky",
             "name": "T4KSLINKY",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -1101,7 +1088,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_docfer",
+            "driver_id": "docfer",
             "name": "DocFer",
             "team": "AlphaTauri",
             "team_id": "team_alphatauri",
@@ -1114,7 +1101,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_robert_cabechon",
+            "driver_id": "robert_cabechon",
             "name": "Robert Cabechon",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1127,7 +1114,7 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_thepredator",
+            "driver_id": "thepredator",
             "name": "ThePredator",
             "team": "Mercedes",
             "team_id": "team_mercedes",
@@ -1140,7 +1127,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_cienfuegos",
+            "driver_id": "cienfuegos",
             "name": "Cienfuegos",
             "team": "Red Bull",
             "team_id": "team_red_bull",
@@ -1153,7 +1140,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_fernando_angarita",
+            "driver_id": "fernando_angarita",
             "name": "Fernando Angarita",
             "team": "Haas",
             "team_id": "team_haas",
@@ -1166,7 +1153,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_migueladiaz",
+            "driver_id": "migueladiaz",
             "name": "Migueladiaz",
             "team": "Williams",
             "team_id": "team_williams",
@@ -1179,7 +1166,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_chichein",
+            "driver_id": "chichein",
             "name": "Chichein",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1192,7 +1179,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_chuky",
+            "driver_id": "chuky",
             "name": "Chuky",
             "team": "Williams",
             "team_id": "team_williams",
@@ -1205,7 +1192,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_connor",
+            "driver_id": "connor",
             "name": "Connor",
             "team": "Sauber",
             "team_id": "team_sauber",
@@ -1218,7 +1205,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_lovingthezero",
+            "driver_id": "lovingthezero",
             "name": "LovingTheZero",
             "team": "Ferrari",
             "team_id": "team_ferrari",
@@ -1231,7 +1218,7 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_yavi",
+            "driver_id": "yavi",
             "name": "Yavi",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1244,7 +1231,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_cheincher",
+            "driver_id": "cheincher",
             "name": "Cheincher",
             "team": "Haas",
             "team_id": "team_haas",
@@ -1257,7 +1244,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_yahuger",
+            "driver_id": "yahuger",
             "name": "Yahuger",
             "team": "Haas",
             "team_id": "team_haas",
@@ -1270,7 +1257,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_zuriel99",
+            "driver_id": "zuriel99",
             "name": "Zuriel99",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1283,7 +1270,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_jhonatan1826",
+            "driver_id": "jhonatan1826",
             "name": "Jhonatan1826",
             "team": "AlphaTauri",
             "team_id": "team_alphatauri",
@@ -1296,7 +1283,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_kion99",
+            "driver_id": "kion99",
             "name": "Kion99",
             "team": "Alfa Romeo",
             "team_id": "team_alfa_romeo",
@@ -1309,7 +1296,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_chuyto",
+            "driver_id": "chuyto",
             "name": "Chuyto",
             "team": "Alfa Romeo",
             "team_id": "team_alfa_romeo",
@@ -1322,7 +1309,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_schizain",
+            "driver_id": "schizain",
             "name": "Schizain",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1335,7 +1322,7 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_aaron22220909",
+            "driver_id": "aaron22220909",
             "name": "Aaron22220909",
             "team": "Sauber",
             "team_id": "team_sauber",
@@ -1348,7 +1335,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_sgc_lionel",
+            "driver_id": "sgc_lionel",
             "name": "SGC Lionel",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1361,7 +1348,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_yindax",
+            "driver_id": "yindax",
             "name": "Yindax",
             "team": "AlphaTauri",
             "team_id": "team_alphatauri",
@@ -1374,7 +1361,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_tolentino",
+            "driver_id": "tolentino",
             "name": "Tolentino",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1387,7 +1374,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_crossdragon",
+            "driver_id": "crossdragon",
             "name": "CrossDragon",
             "team": "Mercedes",
             "team_id": "team_mercedes",
@@ -1400,7 +1387,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_jess_2zirete",
+            "driver_id": "jesus_2zirete",
             "name": "Jesús 2zirete",
             "team": "Racing Bulls",
             "team_id": "team_racing_bulls",
@@ -1413,7 +1400,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_seb",
+            "driver_id": "seb",
             "name": "Seb",
             "team": "AlphaTauri",
             "team_id": "team_alphatauri",
@@ -1426,7 +1413,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_kevcazar23",
+            "driver_id": "kevcazar23",
             "name": "KevCazar23",
             "team": "Mercedes",
             "team_id": "team_mercedes",
@@ -1439,7 +1426,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_laluz",
+            "driver_id": "laluz",
             "name": "LaLuz",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -1452,7 +1439,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_not_kevsho",
+            "driver_id": "not_kevsho",
             "name": "Not Kevsho",
             "team": "Racing Bulls",
             "team_id": "team_racing_bulls",
@@ -1465,7 +1452,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_oscarpicazo1321",
+            "driver_id": "oscarpicazo1321",
             "name": "OscarPicazo1321",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -1478,7 +1465,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_quesocedar",
+            "driver_id": "quesocedar",
             "name": "Quesocedar",
             "team": "Haas",
             "team_id": "team_haas",
@@ -1491,7 +1478,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_supersalva",
+            "driver_id": "supersalva",
             "name": "SuperSalva",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -1504,7 +1491,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_manuuuu",
+            "driver_id": "manuuuu",
             "name": "Manuuuu",
             "team": "Sauber",
             "team_id": "team_sauber",
@@ -1517,7 +1504,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_ghost",
+            "driver_id": "ghost",
             "name": "Ghost",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1530,7 +1517,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_gioxr",
+            "driver_id": "gioxr",
             "name": "GioXr",
             "team": "Aston Martin",
             "team_id": "team_aston_martin",
@@ -1543,7 +1530,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_humbert071287",
+            "driver_id": "humbert071287",
             "name": "Humbert071287",
             "team": "Ferrari",
             "team_id": "team_ferrari",
@@ -1556,7 +1543,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_issei",
+            "driver_id": "issei",
             "name": "Issei",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1569,7 +1556,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_josshammet13",
+            "driver_id": "josshammet13",
             "name": "JossHammet13",
             "team": "Red Bull",
             "team_id": "team_red_bull",
@@ -1582,7 +1569,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_methalomudvayne",
+            "driver_id": "methalomudvayne",
             "name": "Methalomudvayne",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -1595,7 +1582,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_victor",
+            "driver_id": "victor",
             "name": "Victor",
             "team": "Williams",
             "team_id": "team_williams",
@@ -1608,7 +1595,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_antoniogc",
+            "driver_id": "antoniogc",
             "name": "AntonioGC",
             "team": "Red Bull",
             "team_id": "team_red_bull",
@@ -1621,7 +1608,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_roosevelth",
+            "driver_id": "roosevelth",
             "name": "Roosevelth",
             "team": "Haas",
             "team_id": "team_haas",
@@ -1634,7 +1621,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_anboo",
+            "driver_id": "anboo",
             "name": "Anboo",
             "team": "McLaren",
             "team_id": "team_mclaren",
@@ -1647,7 +1634,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_dobler",
+            "driver_id": "dobler",
             "name": "Dobler",
             "team": "McLaren",
             "team_id": "team_mclaren",
@@ -1660,7 +1647,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_christian_gutirrez",
+            "driver_id": "christian_gutierrez",
             "name": "Christian Gutiérrez",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1673,7 +1660,7 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_snipermonkey",
+            "driver_id": "snipermonkey",
             "name": "SniperMonkey",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1686,7 +1673,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_daniel_zanotti",
+            "driver_id": "daniel_zanotti",
             "name": "Daniel Zanotti",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -1699,7 +1686,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_skarator",
+            "driver_id": "skarator",
             "name": "Skarator",
             "team": "McLaren",
             "team_id": "team_mclaren",
@@ -1712,7 +1699,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_dstrooke52",
+            "driver_id": "dstrooke52",
             "name": "Dstrooke52",
             "team": "Williams",
             "team_id": "team_williams",
@@ -1725,7 +1712,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_emia1",
+            "driver_id": "emia1",
             "name": "EmiA1",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1738,7 +1725,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_istconker",
+            "driver_id": "istconker",
             "name": "IstConker",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1751,7 +1738,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_marcosr",
+            "driver_id": "marcosr",
             "name": "Marcosr",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1764,7 +1751,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_ak3v12d",
+            "driver_id": "ak3v12d",
             "name": "AK3V12D",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1777,7 +1764,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_atlas_fenix",
+            "driver_id": "atlas_fenix",
             "name": "Atlas Fenix",
             "team": "Williams",
             "team_id": "team_williams",
@@ -1790,7 +1777,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_mistermaniack",
+            "driver_id": "mistermaniack",
             "name": "MisterManiack",
             "team": "Mercedes",
             "team_id": "team_mercedes",
@@ -1803,7 +1790,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_p4ndy",
+            "driver_id": "p4ndy",
             "name": "P4ndy",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1816,7 +1803,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_argos2",
+            "driver_id": "argos2",
             "name": "Argos2",
             "team": "Ferrari",
             "team_id": "team_ferrari",
@@ -1829,7 +1816,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_bjornot",
+            "driver_id": "bjornot",
             "name": "BjornOt",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1842,7 +1829,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_david",
+            "driver_id": "david",
             "name": "David",
             "team": "Williams",
             "team_id": "team_williams",
@@ -1855,7 +1842,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_davis",
+            "driver_id": "davis",
             "name": "Davis",
             "team": "Williams",
             "team_id": "team_williams",
@@ -1868,7 +1855,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_drastical",
+            "driver_id": "drastical",
             "name": "Drastical",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1881,7 +1868,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_extrim",
+            "driver_id": "extrim",
             "name": "Extrim",
             "team": "Red Bull",
             "team_id": "team_red_bull",
@@ -1894,7 +1881,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_gabrielo",
+            "driver_id": "gabrielo",
             "name": "Gabrielo",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -1907,7 +1894,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_gamecomics07",
+            "driver_id": "gamecomics07",
             "name": "Gamecomics07",
             "team": "Haas",
             "team_id": "team_haas",
@@ -1920,7 +1907,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_getmatwolf",
+            "driver_id": "getmatwolf",
             "name": "GetMatWolf",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -1933,7 +1920,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_izquierdo",
+            "driver_id": "izquierdo",
             "name": "Izquierdo",
             "team": "Ferrari",
             "team_id": "team_ferrari",
@@ -1946,7 +1933,7 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_juanjet",
+            "driver_id": "juanjet",
             "name": "JUANJET",
             "team": "AlphaTauri",
             "team_id": "team_alphatauri",
@@ -1959,7 +1946,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_jocep8",
+            "driver_id": "jocep8",
             "name": "Jocep8",
             "team": "Haas",
             "team_id": "team_haas",
@@ -1972,7 +1959,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_jorch_rmz",
+            "driver_id": "jorch_rmz",
             "name": "Jorch Rmz",
             "team": "Red Bull",
             "team_id": "team_red_bull",
@@ -1985,7 +1972,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_jose_antonio_vr",
+            "driver_id": "jose_antonio_vr",
             "name": "Jose Antonio VR",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -1998,7 +1985,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_josshammet",
+            "driver_id": "josshammet",
             "name": "JossHammet",
             "team": "Red Bull",
             "team_id": "team_red_bull",
@@ -2011,7 +1998,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_josuevilleda",
+            "driver_id": "josuevilleda",
             "name": "JosueVilleda",
             "team": "AlphaTauri",
             "team_id": "team_alphatauri",
@@ -2024,7 +2011,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_kingsmoke",
+            "driver_id": "kingsmoke",
             "name": "KINGSMOKE",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -2037,7 +2024,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_kevcazar",
+            "driver_id": "kevcazar",
             "name": "KevCazar",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -2050,7 +2037,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_kiondalala",
+            "driver_id": "kiondalala",
             "name": "Kiondalala",
             "team": "McLaren",
             "team_id": "team_mclaren",
@@ -2063,7 +2050,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_lobo",
+            "driver_id": "lobo",
             "name": "Lobo",
             "team": "Haas",
             "team_id": "team_haas",
@@ -2076,7 +2063,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_lucifergv",
+            "driver_id": "lucifergv",
             "name": "LuciferGv",
             "team": "Racing Bulls",
             "team_id": "team_racing_bulls",
@@ -2089,7 +2076,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_memoxrey",
+            "driver_id": "memoxrey",
             "name": "MemoXRey",
             "team": "Alfa Romeo",
             "team_id": "team_alfa_romeo",
@@ -2102,7 +2089,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_moonknight99189",
+            "driver_id": "moonknight99189",
             "name": "MoonKnight99189",
             "team": "Williams",
             "team_id": "team_williams",
@@ -2115,7 +2102,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_notkevsho",
+            "driver_id": "notkevsho",
             "name": "NotKevsho",
             "team": "Aston Martin",
             "team_id": "team_aston_martin",
@@ -2128,7 +2115,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_oscar_picazo",
+            "driver_id": "oscar_picazo",
             "name": "Oscar_Picazo",
             "team": "McLaren",
             "team_id": "team_mclaren",
@@ -2141,7 +2128,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_oskkker",
+            "driver_id": "oskkker",
             "name": "Oskkker",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -2154,7 +2141,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_panchito",
+            "driver_id": "panchito",
             "name": "Panchito",
             "team": "McLaren",
             "team_id": "team_mclaren",
@@ -2167,7 +2154,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_perujo",
+            "driver_id": "perujo",
             "name": "Perujo",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -2180,7 +2167,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_rigo",
+            "driver_id": "rigo",
             "name": "Rigo",
             "team": "Red Bull",
             "team_id": "team_red_bull",
@@ -2193,7 +2180,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_rubycrayfish",
+            "driver_id": "rubycrayfish",
             "name": "RubyCrayfish",
             "team": "Ferrari",
             "team_id": "team_ferrari",
@@ -2206,7 +2193,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_tatysflores",
+            "driver_id": "tatysflores",
             "name": "TatysFlores",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -2219,7 +2206,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_thepredator99",
+            "driver_id": "thepredator99",
             "name": "Thepredator99",
             "team": "Haas",
             "team_id": "team_haas",
@@ -2232,7 +2219,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_tobert",
+            "driver_id": "tobert",
             "name": "Tobert",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -2245,7 +2232,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_ubis_damian",
+            "driver_id": "ubis_damian",
             "name": "Ubis Damian",
             "team": "Reserve Driver",
             "team_id": "team_reserve_driver",
@@ -2258,7 +2245,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_urielcito",
+            "driver_id": "urielcito",
             "name": "Urielcito",
             "team": "AlphaTauri",
             "team_id": "team_alphatauri",
@@ -2271,7 +2258,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_zayitas",
+            "driver_id": "zayitas",
             "name": "Zayitas",
             "team": "Ferrari",
             "team_id": "team_ferrari",
@@ -2284,7 +2271,7 @@
             "driver_of_the_day": 1
         },
         {
-            "driver_id": "driver_rabs0728",
+            "driver_id": "rabs0728",
             "name": "rabs0728",
             "team": "AlphaTauri",
             "team_id": "team_alphatauri",
@@ -2297,7 +2284,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_zacnite24",
+            "driver_id": "zacnite24",
             "name": "zacnite24",
             "team": "Ferrari",
             "team_id": "team_ferrari",
@@ -2310,7 +2297,7 @@
             "driver_of_the_day": 0
         },
         {
-            "driver_id": "driver_zaphkiel",
+            "driver_id": "zaphkiel",
             "name": "zaphkiel",
             "team": "Alpine",
             "team_id": "team_alpine",
@@ -2323,5 +2310,5 @@
             "driver_of_the_day": 0
         }
     ],
-    "exported_at": "2026-02-07T21:10:41"
+    "exported_at": "2026-02-08T02:43:35"
 }
