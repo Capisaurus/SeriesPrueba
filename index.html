@@ -1660,10 +1660,10 @@
             const driverSection = document.getElementById('driver-stats-section');
             const attendanceSection = document.getElementById('attendance-section');
             const superlicenseSection = document.getElementById('superlicense-section');
-            const raceSelectorSection = document.getElementById('race-selector-section');
             const lastRaceSection = document.getElementById('last-race-section');
             const nextRaceSection = document.getElementById('next-race-section');
             const upcomingCalSection = document.getElementById('upcoming-calendar-section');
+            const progressionSection = document.getElementById('progression-section');
             const overviewContainer = document.getElementById('overview-container');
             const statsGrid = document.getElementById('stats-grid');
             const globalInsights = document.getElementById('global-insights-section');
@@ -1681,11 +1681,11 @@
                 if (driverSection) driverSection.style.display = 'none';
                 if (attendanceSection) attendanceSection.style.display = 'none';
                 if (superlicenseSection) superlicenseSection.style.display = 'none';
-                if (raceSelectorSection) raceSelectorSection.style.display = 'none';
                 if (standingsSection) standingsSection.style.display = 'none';
                 if (lastRaceSection) lastRaceSection.style.display = 'none';
                 if (nextRaceSection) nextRaceSection.style.display = 'none';
                 if (upcomingCalSection) upcomingCalSection.style.display = 'none';
+                if (progressionSection) progressionSection.style.display = 'none';
             } else if (mode === 'overall') {
                 if (overviewContainer) overviewContainer.style.display = 'none';
                 if (statsGrid) statsGrid.style.display = 'grid';
@@ -1698,10 +1698,10 @@
                 if (driverSection) driverSection.style.display = 'block';
                 if (attendanceSection) attendanceSection.style.display = 'block';
                 if (superlicenseSection) superlicenseSection.style.display = 'block';
-                if (raceSelectorSection) raceSelectorSection.style.display = 'block';
                 if (lastRaceSection) lastRaceSection.style.display = 'none';
                 if (nextRaceSection) nextRaceSection.style.display = 'none';
                 if (upcomingCalSection) upcomingCalSection.style.display = 'none';
+                if (progressionSection) progressionSection.style.display = 'block';
             } else {
                 if (overviewContainer) overviewContainer.style.display = 'none';
                 if (statsGrid) statsGrid.style.display = 'grid';
@@ -1714,10 +1714,10 @@
                 if (driverSection) driverSection.style.display = 'block';
                 if (attendanceSection) attendanceSection.style.display = 'block';
                 if (superlicenseSection) superlicenseSection.style.display = 'block';
-                if (raceSelectorSection) raceSelectorSection.style.display = 'block';
                 if (lastRaceSection) lastRaceSection.style.display = 'none';
                 if (nextRaceSection) nextRaceSection.style.display = 'none';
-                if (upcomingCalSection) upcomingCalSection.style.display = 'none';
+                if (upcomingCalSection) upcomingCalSection.style.display = 'block';
+                if (progressionSection) progressionSection.style.display = 'block';
             }
         }
 
@@ -1966,7 +1966,6 @@
             );
             renderAttendanceTableOverall(driversArray, allTeams, attendanceTotals, totalRaces);
             renderSuperlicenseTableOverall(driversArray, allTeams, allDrivers);
-            renderRaceSelector(buildOverallRaceItems(), 'overall');
 
             // Clear other sections
             const teamContainer = document.getElementById('team-stats-container');
@@ -2054,8 +2053,9 @@
         }
 
         function renderHistoricalProgression(topDrivers) {
+            const container = document.getElementById('progression-chart-container');
             if (!topDrivers || topDrivers.length === 0) {
-                document.querySelector('.chart-container').innerHTML = 
+                if (container) container.innerHTML = 
                     '<div class="no-data">No hay suficientes datos para mostrar la progresión</div>';
                 return;
             }
@@ -2115,6 +2115,7 @@
             });
 
             const ctx = document.getElementById('progressionChart');
+            if (!ctx) return;
             if (progressionChart) progressionChart.destroy();
 
             progressionChart = new Chart(ctx, {
@@ -2534,8 +2535,9 @@
         }
 
         function renderProgressionChart(standings, races, isInProgress) {
+            const container = document.getElementById('progression-chart-container');
             if (!standings || standings.length === 0 || races.length === 0) {
-                document.querySelector('.chart-container').innerHTML = 
+                if (container) container.innerHTML = 
                     '<div class="no-data">No hay suficientes datos para mostrar la progresión</div>';
                 return;
             }
@@ -2573,6 +2575,7 @@
             });
 
             const ctx = document.getElementById('progressionChart');
+            if (!ctx) return;
             if (progressionChart) progressionChart.destroy();
 
             const chartTitle = isInProgress ? 'Progresión del Campeonato (En Curso)' : 'Progresión del Campeonato (Finalizado)';
@@ -2635,7 +2638,7 @@
             });
         }
 
-        function renderStandings(standings, drivers, races, isInProgress) {
+        function renderStandings(standings, drivers, races, isInProgress, totalRounds) {
             const tbody = document.getElementById('standings-body');
             tbody.innerHTML = '';
 
@@ -2643,6 +2646,8 @@
                 tbody.innerHTML = '<tr><td colspan="13" class="no-data">No hay datos de clasificación</td></tr>';
                 return;
             }
+
+            const roundsCount = totalRounds || 7;
 
             standings.forEach((row, index) => {
                 const tr = document.createElement('tr');
@@ -2658,19 +2663,19 @@
                 if (penaltyPoints >= 10) penaltyClass = 'penalty-high';
                 else if (penaltyPoints >= 5) penaltyClass = 'penalty-medium';
 
+                let roundsCells = '';
+                for (let i = 1; i <= roundsCount; i++) {
+                    const val = row['R' + i];
+                    roundsCells += `<td class="points">${val !== undefined ? val : '-'}</td>`;
+                }
+
                 tr.innerHTML = `
                     <td class="position">${row['Posición']}</td>
                     <td class="driver-name clickable" data-driver-id="${row.driverId}">${row['Piloto/Ronda']}</td>
                     <td class="team-name">${row['Equipo'] || '-'}</td>
                     <td class="points">${racesDisputed}</td>
                     <td class="penalty-points ${penaltyClass}">${penaltyPoints.toFixed(1)}</td>
-                    <td class="points">${row['R1'] || 0}</td>
-                    <td class="points">${row['R2'] || 0}</td>
-                    <td class="points">${row['R3'] || 0}</td>
-                    <td class="points">${row['R4'] || 0}</td>
-                    <td class="points">${row['R5'] || 0}</td>
-                    <td class="points">${row['R6'] || 0}</td>
-                    <td class="points">${row['R7'] || 0}</td>
+                    ${roundsCells}
                     <td class="total-points">${row['Total']}</td>
                 `;
 
@@ -2791,114 +2796,6 @@
                 .filter(item => item.id);
 
             renderDriverSelector(items);
-        }
-
-        function buildSeasonRaceItems(data) {
-            const races = (data.races || [])
-                .filter(r => !r.planned && r.results?.length > 0)
-                .sort((a, b) => a.round - b.round);
-
-            return races.map(race => ({
-                id: race.race_id || race.id || `r${race.round}`,
-                label: `R${race.round} • ${race.name}`,
-                race,
-                drivers: data.drivers,
-                teams: data.teams
-            }));
-        }
-
-        function buildOverallRaceItems() {
-            const items = [];
-            const regularSeasons = seasonsList
-                .filter(s => !s.isOverall)
-                .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
-
-            regularSeasons.forEach(season => {
-                const data = allData[season.key];
-                if (!data) return;
-
-                const races = (data.races || [])
-                    .filter(r => !r.planned && r.results?.length > 0)
-                    .sort((a, b) => a.round - b.round);
-
-                races.forEach(race => {
-                    const seasonLabel = season.shortLabel || season.name || season.key;
-                    items.push({
-                        id: `${season.key}_${race.race_id || race.id || race.round}`,
-                        label: `${seasonLabel} R${race.round} • ${race.name}`,
-                        race,
-                        drivers: data.drivers,
-                        teams: data.teams
-                    });
-                });
-            });
-
-            return items;
-        }
-
-        function renderRaceSelector(raceItems, viewKey) {
-            const select = document.getElementById('race-select');
-            const container = document.getElementById('race-results-container');
-            if (!select || !container) return;
-
-            select.innerHTML = '';
-
-            if (!raceItems || raceItems.length === 0) {
-                container.innerHTML = '<div class="no-data">No hay carreras disponibles</div>';
-                select.disabled = true;
-                return;
-            }
-
-            raceItems.forEach(item => {
-                select.appendChild(new Option(item.label, item.id));
-            });
-
-            select.disabled = false;
-            select.value = raceItems[0].id;
-            renderRaceResults(raceItems[0]);
-
-            select.onchange = (event) => {
-                const selected = raceItems.find(item => item.id === event.target.value);
-                renderRaceResults(selected);
-            };
-        }
-
-        function renderRaceResults(raceItem) {
-            const container = document.getElementById('race-results-container');
-            if (!container) return;
-
-            if (!raceItem || !raceItem.race) {
-                container.innerHTML = '<div class="no-data">No hay datos de carrera</div>';
-                return;
-            }
-
-            const race = raceItem.race;
-            const drivers = raceItem.drivers || {};
-            const teams = raceItem.teams || {};
-
-            let resultsHTML = '<div class="table-container"><table><thead><tr>' +
-                '<th class="center">Pos</th><th>Piloto</th><th>Equipo</th>' +
-                '<th class="center">Puntos</th><th class="center">Estado</th></tr></thead><tbody>';
-
-            (race.results || []).forEach(result => {
-                const driver = drivers[result.driver_id];
-                const team = driver && driver.team_id ? teams[driver.team_id] : null;
-                const teamName = team ? team.name : (result.team || '-');
-
-                resultsHTML += `
-                    <tr>
-                        <td class="position">${result.position}</td>
-                        <td class="driver-name">${result.name || driver?.name || 'N/A'}</td>
-                        <td class="team-name">${teamName}</td>
-                        <td class="points">${result.points || 0}</td>
-                        <td class="points">${result.status || 'FIN'}</td>
-                    </tr>
-                `;
-            });
-
-            resultsHTML += '</tbody></table></div>';
-
-            container.innerHTML = resultsHTML;
         }
 
         function renderLastRace(completedRaces, drivers, teams, latestData = null) {
@@ -3361,15 +3258,18 @@
         }
 
         function renderPlannedRaces(races, isInProgress) {
-            const container = document.getElementById('planned-races-container');
-            const section = document.getElementById('planned-section');
+            const container = document.getElementById('upcoming-calendar-content');
+            const section = document.getElementById('upcoming-calendar-section');
+            const summary = section?.querySelector('summary');
 
             if (races.length === 0 || !isInProgress) {
-                section.style.display = 'none';
+                if (section) section.style.display = 'none';
                 return;
             }
 
-            section.style.display = 'block';
+            if (section) section.style.display = 'block';
+            if (summary) summary.textContent = 'Próximas Carreras';
+            if (!container) return;
             container.innerHTML = '';
             races.sort((a, b) => a.round - b.round);
 
